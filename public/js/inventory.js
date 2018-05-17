@@ -42,10 +42,10 @@ $(function() {
                 objArray.posted_from = data[i].posted_from;
                 objArray.interest_level = data[i].interest_level;
                 objArray.notes = data[i].notes;
-                objArray.response = "<i id='rejection' value='" + i + "' class='fa fa-pencil fa-lg jobResponse center-td' aria-hidden='true'></i>";
-                objArray.rejection = "<a href='#'><i id='jobRejection' value='" + data[i].id + "' class='fa fa-trash fa-lg deleteJob center-td' aria-hidden='true'></i></a>";
-                objArray.edit = "<i id='updateMe' value='" + i + "' class='fa fa-pencil fa-lg updateJob center-td' aria-hidden='true'></i>";
-                objArray.delete = "<a href='#'><i id='deleteMe' value='" + data[i].id + "' class='fa fa-trash fa-lg deleteJob center-td' aria-hidden='true'></i></a>";
+                objArray.response = "<i id='rejection' value='" + i + "' class='fa fa-comment-alt fa-lg jobResponse center-td' aria-hidden='true'></i>";
+                objArray.rejection = "<a href='#'><i id='jobRejection' value='" + data[i].id + "' class='fa fa-user-slash fa-lg deleteJob center-td' aria-hidden='true'></i></a>";
+                objArray.edit = "<i id='updateMe' value='" + i + "' class='fa fa-edit fa-lg updateJob center-td' aria-hidden='true'></i>";
+                objArray.delete = "<a href='#'><i id='deleteMe' value='" + data[i].id + "' class='fa fa-trash-alt fa-lg deleteJob center-td' aria-hidden='true'></i></a>";
                 
                 arrayofJobs.push(objArray);
             }

@@ -30,6 +30,9 @@ module.exports = function(app) {
 
     // route for saving a new job
     app.post("/api/inventory", function(req, res) {
+        console.log("~~~~~~~~~~~~HERE~~~~~~~~~~~~");
+        console.log(req.body);
+        console.log("~~~~~~~~~~~~HERE~~~~~~~~~~~~");
         db.Job.create(req.body)
     });
 

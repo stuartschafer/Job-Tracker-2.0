@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Job Tracker | Add a Job</title>
+	<title>Job Tracker | Add</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -46,94 +46,128 @@
 		<div class="addWrapper">
 			<!-- FORM TO ADD AN ITEM -->
 			<div class="container" id="newJobForm">
-				<h2 id="addHeader">Add a Job</h2>	
+				<h2 id="addHeader">Add a New Job</h2>	
 				<div class="row">
 					<div class="col-sm-10">
 						<form class="form-horizontal">
 
-							<!--item name input-->
+							<!--Date job was applied for-->
 							<div class="form-group">
-								<label for="input_item_name" class="col-sm-3 control-label">Item Name</label>
+									<label for="input_date_applied" class="col-sm-3 control-label">Date Applied</label>
+									<div class="col-sm-9">
+										<input type="date" class="form-control" id="date_applied" name="date_applied" placeholder="01/01/2018" required>
+									</div>
+								</div>
+
+							<!--Job name input-->
+							<div class="form-group">
+								<label for="input_job_name" class="col-sm-3 control-label">Job Position</label>
 								<div class="col-sm-9">
-									<input type="text" class="form-control" id="item_name" name="item_name" placeholder="Macbook Pro">
+									<input type="text" class="form-control" id="job_name" name="job_name" placeholder="Web Developer" required>
 								</div>
 							</div>
 
-							<!--location input-->
+							<!--Company input-->
+							<div class="form-group">
+									<label for="input_company" class="col-sm-3 control-label">Company</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="company" placeholder="The Best, Inc." required>
+									</div>
+								</div>
+							
+							<!--Location input-->
 							<div class="form-group">
 								<label for="input_location" class="col-sm-3 control-label">Location</label>
 								<div class="col-sm-9">
-									<input type="text" class="form-control" id="location" placeholder="Bedroom">
+									<input type="text" class="form-control" id="location" placeholder="Anywhere, US" required>
 								</div>
 							</div>
 
-							<!--category dropdown-->
+							<!--Description input-->
 							<div class="form-group">
-								<label for="input_category" class="col-sm-3 control-label">Category</label>
+								<label for="input_description" class="col-sm-3 control-label">Description</label>
 								<div class="col-sm-9">
-								<select class="form-control" id="category">
-									<option selected>Category</option>
-									<option>Electronics</option>
-									<option>Appliances</option>
-									<option>Furniture</option>
-									<option>Jewelry</option>
-									<option>Kitchenware</option>
-									<option>Tools / Machinery</option>
-									<option>Collectibles</option>
-									<option>Clothing</option>
-									<option>Recreation</option>
-									<option>Misc</option>
-								</select>	    
-									<!--<input type="text" class="form-control" id="category" placeholder="category"> -->
+									<input type="text" class="form-control" id="description" placeholder="Jr. Web Developer" required>
 								</div>
 							</div>
 
-							<!--value input-->
+							<!--ID# input-->
 							<div class="form-group">
-								<label for="input_value" class="col-sm-3 control-label">Value ($)</label>
+								<label for="input_id_number" class="col-sm-3 control-label">ID Number</label>
 								<div class="col-sm-9">
-									<input type="number" class="form-control" id="value" placeholder="750">
+									<input type="text" class="form-control" id="id_number" placeholder="optional">
 								</div>
 							</div>
 
-							<!--date purchased input-->
+							<!--Link input-->
 							<div class="form-group">
-								<label for="input_date" class="col-sm-3 control-label">Date Purchased</label>
+								<label for="input_link" class="col-sm-3 control-label">Web Link</label>
 								<div class="col-sm-9">
-									<input type="date" class="form-control" id="date_purchased" placeholder="01/01/2017">
+									<input type="url" class="form-control" id="link" placeholder="optional">
 								</div>
 							</div>
 
-							<!--purchase price input-->
+							<!--Posted From input-->
 							<div class="form-group">
-								<label for="input_purchase_price" class="col-sm-3 control-label">Purchase Price ($)</label>
+								<label for="input_posted_from" class="col-sm-3 control-label">Posted From</label>
 								<div class="col-sm-9">
-									<input type="number" class="form-control" id="purchase_price" placeholder="1200">
+									<input type="text" class="form-control" id="posted_from" placeholder="Monster, Glassdoor, Career Builder, etc">
 								</div>
 							</div>
 
-							<!--serial number input-->
+							<!--Interest Level input-->
 							<div class="form-group">
-								<label for="input_serial_number" class="col-sm-3 control-label">Serial Number</label>
-								<div class="col-sm-9">
-									<input type="text" class="form-control" id="serial_number" placeholder="7ADF89DF7">
-								</div>
-							</div>	
-
-							<!--image url input-->
-							<div class="form-group">
-								<label for="input_image" class="col-sm-3 control-label">Image URL</label>
-								<div class="col-sm-9">
-									<input type="url" class="form-control" id="image" placeholder="macbook.jpg">
+								<label for="input_interest_level" class="col-sm-3 control-label">Level of Interest</label>
+								
+								<div class="form-check form-check-inline" id="interestLevel">
+										&nbsp
+									<label class="form-check-label">
+										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_1" value="1"> 1
+									</label>
+									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+									<label class="form-check-label">
+										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_2" value="2"> 2
+									</label>
+									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+									<label class="form-check-label">
+										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_3" value="3"> 3
+									</label>
+									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+									<label class="form-check-label">
+										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_4" value="4"> 4
+									</label>
+									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+									<label class="form-check-label">
+										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_5" value="5"> 5
+									</label>
+									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+									<label class="form-check-label">
+										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_6" value="6"> 6
+									</label>
+									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+									<label class="form-check-label">
+										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_7" value="7"> 7
+									</label>
+									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+									<label class="form-check-label">
+										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_8" value="8"> 8
+									</label>
+									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+									<label class="form-check-label">
+										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_9" value="9"> 9
+									</label>
+									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+									<label class="form-check-label">
+										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_10" value="10"> 10
+									</label>
 								</div>
 							</div>
 
-							<!--notes input-->
+							<!--Notes input-->
 							<div class="form-group">
-								<label for="input_notes" class="col-sm-3 control-label" id="notes">Notes</label>
+								<label for="input_notes" class="col-sm-3 control-label">Notes</label>
 								<div class="col-sm-9">
-									<textarea class="form-control" rows="3"></textarea>
-									<!-- <input type="text" class="form-control" id="input_notes" placeholder="notes"> -->
+									<textarea class="form-control" id="notes" rows="3"></textarea>
 								</div>
 							</div>
 
@@ -145,7 +179,7 @@
 							<!--submit button-->
 							<div class="form-group">
 								<div class="col-sm-offset-3 col-sm-9">
-									<button type="submit" class="btn btn-warning" id="newItem">Submit</button>
+									<button type="submit" class="btn btn-warning" id="newJob">Submit</button>
 								</div>
 							</div>
 
@@ -159,7 +193,7 @@
 		<footer class="footer">
 			<div class="container">
 				<p>
-					<a href="https://github.com/MASTIN/Virtual-Locker">
+					<a href="https://github.com/stuartschafer/Job-Tracker-2.0">
 					<i class="fa fa-github"></i></a>
 				</p>
 			</div>    
