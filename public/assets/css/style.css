@@ -178,10 +178,18 @@ tr.shown td.details-control {
 	width: 40px;
 }
 
+.subsection {
+	color: green;
+}
+
 /* RESPONSIVE BACKGROUND IMAGE */
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
   img.bg {
     left: 50%;
     margin-left: -512px;   /* 50% */
   }
+}
+
+.col-md-12 {
+	width: auto !important;
 }

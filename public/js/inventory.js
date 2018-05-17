@@ -13,8 +13,10 @@ $(function() {
     //Formatting function for row details //
     function format (data) {
         var jobDetails = "<div class='row'>";
-        jobDetails += "<div class='col-md-6'><h5>Notes:<h5><p>" + data.notes + "</p>";
-        jobDetails += "<div class='col-md-6'>" + data.image + "</div></div>";
+        jobDetails += "<div class='col-md-12'><h5>Notes:   <span class='subsection'>" + data.notes + "</span></div>";
+        jobDetails += "<div class='col-md-12'><h5>Link:   <span class='subsection'>" + data.link + "</span></div>";
+        jobDetails += "<div class='col-md-12'><h5>Posted From:   <span class='subsection'>" + data.posted_from + "</span></div>";
+        //jobDetails += "<div class='col-md-6'>" + data.image + "</div></div>";
         return jobDetails;
     }
     
@@ -71,10 +73,10 @@ $(function() {
                 { "data": "location" },
                 { "data": "description" },
                 { "data": "id_number" },
-                { "data": "link" },
+                //{ "data": "link" },
                 { "data": "posted_from" },
                 { "data": "interest_level" },
-                { "data": "notes" },
+                //{ "data": "notes" },
                 { "data": "response" },
                 { "data": "rejection" },
                 { "data": "edit" },
