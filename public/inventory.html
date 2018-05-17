@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Job Tracker | Jobs</title>
+
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<!-- CUSTOM STYLESHEET -->
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<!-- Favicon link -->
+	<link rel="icon" href="assets/images/safelogo.png" type="image/png" sizes="16x16">
+	<!-- FONT AWESOME and GOOGLE FONTS -->
+	<script src="https://use.fontawesome.com/feca357678.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	 
+	 <!--DataTables for Bootstrap-->
+  	<script src="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css"></script>
+  	<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>    
+	<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+	<!-- Link to Moment.js should go here -->
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+		<!-- CUSTOM JAVASCRIPT -->
+	<script src="js/inventory.js"></script>
+
+</head>
+<body>
+	<div class="genContainer">
+		<!-- FIXED NAVBAR -->
+		<nav class="fixed-nav-bar">
+		  	<!-- Logo / link to main menu -->
+		  	<a href="/menu">Job Tracker<img id="navbarlogo" src="./assets/images/safelogo.png"></a>
+			<!-- dropdown menu -->
+			<div class="dropdown" id="menudropdown">
+			  	<button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">
+			  		Menu<span class="caret"></span>
+			  	</button>
+				<ul class="dropdown-menu">
+				    <li><a href="/add">Add New Job</a></li>
+				    <li><a href="/inventory">View Applications</a></li>
+				    <li><a href="/logout">Logout</a></li>
+			  	</ul>
+			</div>
+		</nav>
+
+		<!-- BACKGROUND IMAGE -->
+		<img class="bgimage" src="./assets/images/grey.jpg">
+
+		<div class="container">
+			<!-- DATABLE -->
+			<div id="table-container">
+				<h1 class="headerInventory"><span class="showNameInventory"></span> Inventory</h1>
+				<table id="inventory" class="table table-hover table-responsive" cellspacing="0" width="100%">
+					<thead>
+					<tr>
+						<th></th>
+
+
+						<th>Date<br>Applied <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+						<th>Position <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+						<th>Company <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+						<th>Location <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+						<th>Description <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+						<th>ID # </th>
+						<th>Link </th>
+						<th>Posted<br>From </th>
+						<th>Interest<br>Level </th>
+						<th>Notes </th>
+						<th>Response </th>
+						<th>Rejection </th>
+						<th>Update</th>
+						<th>Delete</th>
+					</tr>
+					</thead>
+
+					<tbody>
+						<!--table rows inserted here from inventory.js-->	
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- STICKY FOOTER -->
+		<footer>
+			<div class="container">
+				<p>
+					<a href="https://github.com/stuartschafer/Job-Tracker-2.0">
+					<i class="fa fa-github"></i></a>
+				</p>
+			</div>    
+		</footer>
+	</div>
+</body>
+</html>

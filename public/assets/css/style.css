@@ -1,0 +1,187 @@
+/* STICKY FOOTER STYLES */
+body {
+  	height: 100%;
+}
+
+html {
+	height: 100%;
+	position: relative;
+}
+
+.genContainer {
+	height: auto;
+	position: relative;
+}
+
+/* RESPONSIVE BACKGROUND IMAGE */
+.bgimage {
+	z-index: -100;
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+	
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+	
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: .5;
+}
+
+/* NAVBAR STYLING */
+.fixed-nav-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	width: 100%;
+ 	height: 65px;
+ 	line-height: 65px;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 22px;
+	background: rgba(169,169,169, .3);
+	color: #E3E1DC;
+}
+
+.fixed-nav-bar a {
+	margin-left: 7%;
+	color: #3E3F47;
+}
+
+.fixed-nav-bar a:hover {
+	color: #eb9316;
+	text-decoration: none;
+}
+
+#navbarlogo {
+	width: 35px;
+	height: auto;
+}
+
+#menudropdown {
+	float: right;
+	margin-right: 100px;
+}
+
+/*TABLE STYLING*/
+#table-container {
+	padding-top: 90px;
+	padding-bottom: 170px;
+}
+
+#inventory {
+	min-height: 250px;
+	border: 5px #EBEBEC solid;
+}
+#inventory thead, tfoot {
+	background-color: #D4D4D4; 	
+}
+/*center icons in table*/
+.center-td {
+	margin-left: 25%;
+	margin-right: 35%;
+	width: 40%;
+}
+
+.updateItem, .deleteItem {
+	color: #3E3F47;
+	text-align: center;
+}
+
+th {
+	text-align: center;
+}
+
+/* ADD ITEM PAGE STYLING */
+#addHeader {
+	text-align: center;
+}
+
+#newItemForm {
+	/* Fallback for web browsers that do not support RGBa */
+    background: rgb(207, 200, 200);
+	/* center the form on the page */
+	width: 60%;
+	/* RGBa with 0.6 opacity */
+	/* this will change opacity of the background and not the content */
+	background: rgba(207, 200, 200, .6);
+}
+
+.addWrapper {
+	padding-top: 90px;
+	padding-bottom: 170px;
+	background: url("../images/grey.jpg") no-repeat center center fixed; 	
+	opacity: .8;
+}
+
+.showName {
+	color: #eb9316;
+	text-align: left;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	left: 20px;
+	top: 15px;
+}
+
+.showNameInventory, .headerInventory {
+	color: #eb9316;
+}
+
+/* FOOTER STYLES */
+footer {
+	background: rgba(207, 200, 200, .6) url("../images/grey.jpg") no-repeat center center fixed;
+	color: #696969;
+	font-size: 12px;
+	line-height: 2;
+	border-top: solid 15px rgba(169,169,169, .3);
+	border-bottom: solid 60px rgba(169,169,169, .3);
+	text-align: center;
+	height: 140px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+footer a {
+	color: rgb(169,169,169);
+	font-size: 24px;
+}
+
+footer a:hover {
+	color: #696969;
+}
+
+.alertUser {
+	text-align: right;
+	color: #eb9316;
+	font-size: 12px;
+}
+
+.tableImage {
+	max-width: 200px;
+	height: auto;
+}
+
+td.details-control {
+    background: url('../images/expand-button.png') no-repeat center center;
+	background-size: 12px;
+	width: 40px;
+}
+
+tr.shown td.details-control {
+    background: url('../images/expand-arrow.png') no-repeat center center;
+	background-size: 12px;
+	width: 40px;
+}
+
+/* RESPONSIVE BACKGROUND IMAGE */
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
