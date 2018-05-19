@@ -11,6 +11,7 @@ $(function() {
 
     //Update the post to the database
     function submitEditedJob(jobChanged) { 
+        //console.log(jobChanged.UserId);
         $.ajax({
             method: "PUT",
             url: "/api/inventory",
@@ -25,42 +26,43 @@ $(function() {
     $("#editedJob").on("click", function(event) {
         event.preventDefault();
 
-        var newDateApplied = $("#date_applied").val();
-        var newJobName = $("#job_name").val().trim();
-        var newCompany = $("#company").val().trim();
-        var newLocation = $("#location").val().trim();
-        var newDescription = $("#description").val().trim();
-        var newIdNumber = $("#id_number").val().trim();
-        var newLink = $("#link").val().trim();
-        var newPostedFrom = $("#posted_from").val().trim();
-        var newInterestLevel = $("input:radio[name=inlineRadioOptions]:checked").val();
-        var newNotes = $("#notes").val();
+        var editedDateApplied = $("#date_applied").val();
+        var editedJobName = $("#job_name").val().trim();
+        var editedCompany = $("#company").val().trim();
+        var editedLocation = $("#location").val().trim();
+        var editedDescription = $("#description").val().trim();
+        var editedIdNumber = $("#id_number").val().trim();
+        var editedLink = $("#link").val().trim();
+        var editedPostedFrom = $("#posted_from").val().trim();
+        var editedInterestLevel = $("input:radio[name=inlineRadioOptions2]:checked").val();
+        var editedNotes = $("#notes").val();
         var userEntered = userLoggedInId;
 
         //Check to make sure these fields are not empty
-        if (!newDateApplied) {
+        if (!editedDateApplied) {
             $(".alertUser").text("Please select a date.");
             return;
         } 
-        if (!newJobName) {
+        if (!editedJobName) {
             $(".alertUser").text("Please enter a job position.");
             return;
         } 
-        if (!newCompany) {
+        if (!editedCompany) {
             $(".alertUser").text("Please choose a company.");
             return;
         }
-        if (!newLocation) {
+        if (!editedLocation) {
             $(".alertUser").text("Please enter a location.");
             return;
         }
-        if (!newDescription) {
+        if (!editedDescription) {
             $(".alertUser").text("Please enter a job description.");
             return;
         }
 
         //Create a new object to go into the database
         var jobChanged = {
+            id: jobBeingEdited.id,
             date_applied: editedDateApplied,
             position: editedJobName,
             company: editedCompany,
@@ -87,7 +89,7 @@ $(function() {
     console.log(jobBeingEdited);
 
     $("#date_applied").val(moment(jobBeingEdited.date_applied).format("YYYY-MM-DD"));
-    $("#position").val(jobBeingEdited.position);
+    $("#job_name").val(jobBeingEdited.position);
     $("#company").val(jobBeingEdited.company);
     $("#location").val(jobBeingEdited.location);
     $("#description").val(jobBeingEdited.description);
