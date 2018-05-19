@@ -44,7 +44,7 @@ $(function() {
                 objArray.notes = data[i].notes;
                 objArray.response = "<i id='rejection' value='" + i + "' class='fa fa-comment-alt fa-lg jobResponse center-td' aria-hidden='true'></i>";
                 objArray.rejection = "<a href='#'><i id='jobRejection' value='" + data[i].id + "' class='fa fa-user-slash fa-lg deleteJob center-td' aria-hidden='true'></i></a>";
-                objArray.edit = "<i id='updateMe' value='" + i + "' class='fa fa-edit fa-lg updateJob center-td' aria-hidden='true'></i>";
+                objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob center-td' aria-hidden='true'></i></a>";
                 objArray.delete = "<a href='#'><i id='deleteMe' value='" + data[i].id + "' class='fa fa-trash-alt fa-lg deleteJob center-td' aria-hidden='true'></i></a>";
                 
                 arrayofJobs.push(objArray);
@@ -103,11 +103,16 @@ $(function() {
     // Get the info of the job that was clicked and save to session storage for update
     $("#inventory").on("click", ".updateJob", function() {
         var id = $(this).attr('value');
+        //console.log("id = " + id);
 
         $.get("/api/inventory", editJob);
 
         function editJob(data) {
-            sessionStorage.setJob("jobtoEdit", JSON.stringify(data[id]));
+            for (var x=0; x<data.length; x++) {
+                if (data[x].id == id) {
+                    sessionStorage.setItem("jobtoEdit", JSON.stringify(data[x]));
+                }
+            }
             gotoEditPage();
          }
         

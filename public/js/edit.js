@@ -24,46 +24,52 @@ $(function() {
 
     $("#editedJob").on("click", function(event) {
         event.preventDefault();
-       
-        var editedJobName = $("#job_name").val().trim();
-        var editedLocation = $("#location").val().trim();
-        var editedCategory = $("#category").val();
 
-        //A value has to be entered or server will crash
-        var editedValue = $("#value").val() || 0;  
-        //A value has to be entered or server will crash
-        var editedDatePurchased = $("#date_purchased").val() || "2049-12-31";
-        //A value has to be entered or server will crash
-        var editedPurchasePrice = $("#purchase_price").val().trim() || 0;
-        var editedSerialNumber = $("#serial_number").val().trim();
-        var editedImage = $("#image").val().trim();
-        var editedNotes = $("#loadNotes").val().trim();
+        var newDateApplied = $("#date_applied").val();
+        var newJobName = $("#job_name").val().trim();
+        var newCompany = $("#company").val().trim();
+        var newLocation = $("#location").val().trim();
+        var newDescription = $("#description").val().trim();
+        var newIdNumber = $("#id_number").val().trim();
+        var newLink = $("#link").val().trim();
+        var newPostedFrom = $("#posted_from").val().trim();
+        var newInterestLevel = $("input:radio[name=inlineRadioOptions]:checked").val();
+        var newNotes = $("#notes").val();
+        var userEntered = userLoggedInId;
 
         //Check to make sure these fields are not empty
-        if (!editdJobName) {
-            $(".alertUser").text("Please enter a job posting.");
+        if (!newDateApplied) {
+            $(".alertUser").text("Please select a date.");
             return;
         } 
-         if (!editedLocation) {
+        if (!newJobName) {
+            $(".alertUser").text("Please enter a job position.");
+            return;
+        } 
+        if (!newCompany) {
+            $(".alertUser").text("Please choose a company.");
+            return;
+        }
+        if (!newLocation) {
             $(".alertUser").text("Please enter a location.");
             return;
         }
-         if (editedCategory === "Category") {
-            $(".alertUser").text("Please choose a category.");
+        if (!newDescription) {
+            $(".alertUser").text("Please enter a job description.");
             return;
         }
 
         //Create a new object to go into the database
         var jobChanged = {
-            id: jobBeingEdited.id,
-            job_name: editedJobName,
+            date_applied: editedDateApplied,
+            position: editedJobName,
+            company: editedCompany,
             location: editedLocation,
-            category: editedCategory,
-            value: editedValue,
-            date_purchased: editedDatePurchased,
-            purchase_price: editedPurchasePrice,
-            serial_number: editedSerialNumber,
-            image: editedImage,
+            description: editedDescription,
+            id_number: editedIdNumber,
+            link: editedLink,
+            posted_from: editedPostedFrom,
+            interest_level: editedInterestLevel,
             notes: editedNotes,
             UserId: userLoggedInId
         };
@@ -77,16 +83,17 @@ $(function() {
     /////**********ON PAGE LOAD**********/////
 
     //Pull the info from sessionstorage to display existing values in edit form
-    var jobBeingEdited = JSON.parse(sessionStorage.getJob("jobtoEdit"));
+    var jobBeingEdited = JSON.parse(sessionStorage.getItem("jobtoEdit"));
     console.log(jobBeingEdited);
 
-    $("#job_name").val(jobBeingEdited.job_name);
+    $("#date_applied").val(moment(jobBeingEdited.date_applied).format("YYYY-MM-DD"));
+    $("#position").val(jobBeingEdited.position);
+    $("#company").val(jobBeingEdited.company);
     $("#location").val(jobBeingEdited.location);
-    $("#category").val(jobBeingEdited.category);
-    $("#value").val(jobBeingEdited.value);
-    $("#date_purchased").val(moment(jobBeingEdited.date_purchased).format("YYYY-MM-DD"));
-    $("#purchase_price").val(jobBeingEdited.purchase_price);
-    $("#serial_number").val(jobBeingEdited.serial_number);
-    $("#image").val(jobBeingEdited.image);
-    $("#loadNotes").val(jobBeingEdited.notes);
+    $("#description").val(jobBeingEdited.description);
+    $("#id_number").val(jobBeingEdited.id_number);
+    $("#link").val(jobBeingEdited.link);
+    $("#posted_from").val(jobBeingEdited.posted_from);
+    //$("input:radio[name=inlineRadioOptions]:checked").val(jobBeingEdited.);
+    $("#notes").val(jobBeingEdited.notes);
 });
