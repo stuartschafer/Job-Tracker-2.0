@@ -34,7 +34,7 @@
 #headerlogo {
 	width: 100px;
 	height: auto;
-	margin-top: -35px;
+	margin-top: -60px;
 	z-index: -3;
 }
 
@@ -47,7 +47,7 @@
 }
 
 #slogan {
-	color: #eb9316;
+	color: green;
 	text-align: left;
 	position: relative;
 	top: -20px;
@@ -112,4 +112,10 @@ button.login:last-child {
     left: 50%;
     margin-left: -512px;   /* 50% */
   }
+}
+
+#invButton, #addButton {
+	margin: 0px 5px 0px 50px;
+	float: left;
+	width: 35%;
 }

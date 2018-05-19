@@ -56,8 +56,6 @@ $(function() {
 
     //Create the table and display on inventory page
     function makeTable() {
-        console.log("ARRAYOFJOBSS...");
-        console.log(arrayofJobs);
         var table = $('#inventory').DataTable({
             "data": arrayofJobs,
             "columns": [
@@ -73,10 +71,8 @@ $(function() {
                 { "data": "location" },
                 { "data": "description" },
                 { "data": "id_number" },
-                //{ "data": "link" },
                 { "data": "posted_from" },
                 { "data": "interest_level" },
-                //{ "data": "notes" },
                 { "data": "response" },
                 { "data": "rejection" },
                 { "data": "edit" },

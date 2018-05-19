@@ -25,7 +25,7 @@ var config = new shinejs.Config({
   opacity: 0.5,
   offset: 0.5,
   offsetPow: 2,
-  shadowRGB: new shinejs.Color(240, 173, 78)
+  shadowRGB: new shinejs.Color(50, 205, 50)
 });
 
 var config2 = new shinejs.Config({
@@ -33,7 +33,7 @@ var config2 = new shinejs.Config({
   opacity: 0.5,
   offset: 0.5,
   offsetPow: 2,
-  shadowRGB: new shinejs.Color(119, 136, 153)
+  shadowRGB: new shinejs.Color(50, 205, 50)
 });
 
 var config3 = new shinejs.Config({
@@ -41,7 +41,7 @@ var config3 = new shinejs.Config({
   opacity: 0.5,
   offset: 0.5,
   offsetPow: 2,
-  shadowRGB: new shinejs.Color(0, 0, 255)
+  shadowRGB: new shinejs.Color(50, 205, 50)
 });
 
 window.addEventListener('mousemove', function(event) {
