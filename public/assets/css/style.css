@@ -112,8 +112,7 @@ th {
 
 .addWrapper {
 	padding-top: 90px;
-	padding-bottom: 170px;
-	background: url("../images/green.jpeg") no-repeat center center fixed; 	
+	padding-bottom: 170px; 	
 	opacity: .8;
 }
 
@@ -133,14 +132,14 @@ th {
 
 /* FOOTER STYLES */
 footer {
-	background: rgba(207, 200, 200, .6) url("../images/green.jpeg") no-repeat center center fixed;
+	background: mediumseagreen;
 	color: #696969;
 	font-size: 12px;
 	line-height: 2;
 	border-top: solid 15px rgba(169,169,169, .3);
 	border-bottom: solid 60px rgba(169,169,169, .3);
 	text-align: center;
-	height: 140px;
+	height: 70px;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -157,8 +156,8 @@ footer a:hover {
 
 .alertUser {
 	text-align: right;
-	color: #eb9316;
-	font-size: 12px;
+	color: red;
+	font-size: 30px;
 }
 
 .tableImage {
@@ -193,4 +192,14 @@ tr.shown td.details-control {
 
 .col-md-12 {
 	width: auto !important;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+	background-color: green;
+	border-color: green;
+}
+
+.fa-github:before {
+	font-size: 50px;
+	color: green;
 }
