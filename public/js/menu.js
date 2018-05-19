@@ -4,7 +4,7 @@ $(function() {
       $(".showName").text(data.name + "\'s");
     });
 
-  //event listeners to route user to corresponding page
+//event listeners to route user to corresponding page
   $("#invButton").click(function () {
     location.href = "/inventory";
   });
@@ -17,8 +17,8 @@ $(function() {
 var shine = new Shine(document.getElementById('landingPageHeader'));
 var shine1 = new Shine(document.getElementById('logoshadow'));
 var shine2 = new Shine(document.getElementById('shinename'));
-var shine3 = new Shine(document.getElementById('invButton'));
-var shine4 = new Shine(document.getElementById('addButton'));
+//var shine3 = new Shine(document.getElementById('invButton'));
+//var shine4 = new Shine(document.getElementById('addButton'));
 
 var config = new shinejs.Config({
   numSteps: 10,
@@ -55,15 +55,9 @@ window.addEventListener('mousemove', function(event) {
   shine2.config = config2;
   shine2.draw();
 
-  shine3.light.position.x = event.clientX * 1.5;
-  shine3.light.position.y = event.clientY * 1.5;
-  shine3.config = config3;
-  shine3.draw();
+  
 
-  shine4.light.position.x = event.clientX * 1.5;
-  shine4.light.position.y = event.clientY * 1.5;
-  shine4.config = config3;
-  shine4.draw();
+ 
 
   shine.light.position.x = event.clientX * 1.5;
   shine.light.position.y = event.clientY * 1.5;

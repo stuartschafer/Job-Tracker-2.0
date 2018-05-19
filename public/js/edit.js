@@ -34,6 +34,7 @@ $(function() {
         var editedIdNumber = $("#id_number").val().trim();
         var editedLink = $("#link").val().trim();
         var editedPostedFrom = $("#posted_from").val().trim();
+
         var editedInterestLevel = $("input:radio[name=inlineRadioOptions2]:checked").val();
         var editedNotes = $("#notes").val();
         var userEntered = userLoggedInId;
@@ -96,6 +97,6 @@ $(function() {
     $("#id_number").val(jobBeingEdited.id_number);
     $("#link").val(jobBeingEdited.link);
     $("#posted_from").val(jobBeingEdited.posted_from);
-    //$("input:radio[name=inlineRadioOptions]:checked").val(jobBeingEdited.);
+    $("#interest_level_" + jobBeingEdited.interest_level).prop('checked', true);
     $("#notes").val(jobBeingEdited.notes);
 });

@@ -34,15 +34,19 @@
 #headerlogo {
 	width: 100px;
 	height: auto;
-	margin-top: -140px;
+	margin-top: -35px;
 	z-index: -3;
+}
+
+.headLogo {
+	margin-top: -50% !important;
 }
 
 #landingPageHeader {
 	color: #3E3F47;
 	font-size: 80px;
 	text-align: center;
-	font-family: 'Fjalla One', sans-serif;
+	font-family: 'Kavivanar', cursive;
 	line-height: 90px;
 }
 
@@ -52,6 +56,7 @@
 	position: relative;
 	top: -20px;
 	left: 7px;
+	font-size: 180%;
 }
 
 #menuPagelogo {
@@ -67,6 +72,10 @@
 	text-align: center;
 	margin-top: 30px;
 	width: 110%;
+}
+
+.login {
+	height: 50px;
 }
 
 button.login:last-child {
@@ -118,4 +127,12 @@ button.login:last-child {
 	margin: -25px 5px 0px 30px;
 	float: left;
 	width: 35%;
+}
+
+.fa-sign-in, .fa-user-plus {
+	font-size:160%;
+}
+
+#buttons {
+	margin: -10px -110px 0 20px;
 }

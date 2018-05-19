@@ -14,7 +14,7 @@ $(function() {
     function format (data) {
         var jobDetails = "<div class='row'>";
         jobDetails += "<div class='col-md-12'><h5>Notes:   <span class='subsection'>" + data.notes + "</span></div>";
-        jobDetails += "<div class='col-md-12'><h5>Link:   <span class='subsection'>" + data.link + "</span></div>";
+        jobDetails += "<div class='col-md-12'><h5>Link:   <span class='subsection'><a href='https://" + data.link + "' target='_blank'>" + data.link + "</a></span></div>";
         jobDetails += "<div class='col-md-12'><h5>Posted From:   <span class='subsection'>" + data.posted_from + "</span></div>";
         //jobDetails += "<div class='col-md-6'>" + data.image + "</div></div>";
         return jobDetails;
@@ -42,8 +42,8 @@ $(function() {
                 objArray.posted_from = data[i].posted_from;
                 objArray.interest_level = data[i].interest_level;
                 objArray.notes = data[i].notes;
-                objArray.response = "<i id='rejection' value='" + i + "' class='fa fa-comment-alt fa-lg jobResponse center-td' aria-hidden='true'></i>";
-                objArray.rejection = "<a href='#'><i id='jobRejection' value='" + data[i].id + "' class='fa fa-user-slash fa-lg deleteJob center-td' aria-hidden='true'></i></a>";
+                objArray.response = "<a href='#'><i id='response' value='" + i + "' class='fa fa-comment-alt fa-lg jobResponse center-td' aria-hidden='true'></i></a>";
+                objArray.rejection = "<a href='#'><i id='rejection' value='" + data[i].id + "' class='fa fa-user-slash fa-lg jobRejection center-td' aria-hidden='true'></i></a>";
                 objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob center-td' aria-hidden='true'></i></a>";
                 objArray.delete = "<a href='#'><i id='deleteMe' value='" + data[i].id + "' class='fa fa-trash-alt fa-lg deleteJob center-td' aria-hidden='true'></i></a>";
                 
@@ -84,6 +84,7 @@ $(function() {
         //Event listener for opening and closing job details
         $('#inventory tbody').on('click', 'td.details-control', function () {
             var tr = $(this).closest('tr');
+            console.log(tr);
             var row = table.row( tr );
     
             if (row.child.isShown()) {
