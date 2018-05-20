@@ -31,6 +31,7 @@ $(function() {
             } else {
                 //Empty the object each time the loop is run
                 var objArray = {};
+                
                 //Set the properties of the object
                 objArray.date_applied = moment(data[i].date_applied).format("L");
                 objArray.position = data[i].position;
@@ -42,8 +43,8 @@ $(function() {
                 objArray.posted_from = data[i].posted_from;
                 objArray.interest_level = data[i].interest_level;
                 objArray.notes = data[i].notes;
-                objArray.response = "<a href='#'><i id='response' value='" + i + "' class='fa fa-comment-alt fa-lg jobResponse center-td' aria-hidden='true'></i></a>";
-                objArray.rejection = "<a href='#'><i id='rejection' value='" + data[i].id + "' class='fa fa-user-slash fa-lg jobRejection center-td' aria-hidden='true'></i></a>";
+                objArray.response = "<a href='#'><i class='fas fa-comment-dots center-td' value='" + data[i].id + "' data-toggle='modal' data-target='#responseModal'></i></a>";
+                //objArray.rejection = "<a href='#'><i id='rejection' value='" + data[i].id + "' class='fa fa-user-slash fa-lg jobRejection center-td' aria-hidden='true'></i></a>";
                 objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob center-td' aria-hidden='true'></i></a>";
                 objArray.delete = "<a href='#'><i id='deleteMe' value='" + data[i].id + "' class='fa fa-trash-alt fa-lg deleteJob center-td' aria-hidden='true'></i></a>";
                 
@@ -74,7 +75,7 @@ $(function() {
                 { "data": "posted_from" },
                 { "data": "interest_level" },
                 { "data": "response" },
-                { "data": "rejection" },
+                //{ "data": "rejection" },
                 { "data": "edit" },
                 { "data": "delete" }
             ],

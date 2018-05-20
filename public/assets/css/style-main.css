@@ -86,7 +86,7 @@ button.login:last-child {
 	opacity: .3;
 }
 
-#signinModal, #signupModal {
+#signinModal, #signupModal, #responseModal {
 	margin-top: 100px;
 }
 
@@ -135,4 +135,8 @@ button.login:last-child {
 
 #buttons {
 	margin: -10px -110px 0 20px;
+}
+
+.response {
+	width: 45%;
 }

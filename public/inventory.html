@@ -73,8 +73,8 @@
 						<th>Posted<br>From <span class="fa fa-sort" aria-hidden="true"></span></th>
 						<th>Interest<br>Level <span class="fa fa-sort" aria-hidden="true"></span></th>
 						<!-- <th>Notes </th> -->
-						<th>Response </th>
-						<th>Rejection </th>
+						<th>Employer<br>Response </th>
+						
 						<th>Update</th>
 						<th>Delete</th>
 					</tr>
@@ -84,6 +84,65 @@
 						<!--table rows inserted here from inventory.js-->	
 					</tbody>
 				</table>
+			</div>
+		</div>
+
+		<!-- Employer response modal-->
+		<!-- Sign in Modal -->
+		<div class="modal fade" id="responseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+		
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" id="response">Company's Response ... <span id="companyName"></span></h3>
+					</div>
+			
+					<div class="modal-body">
+						<form class="form-horizontal response" id="responseGood" name="goodnews" method="post" action="/signin">
+							<label for="goodNewsForm">GOOD NEWS</label>
+							<select class="form-control" id="responseGoodOptions">
+								<option></option>
+								<option>Requested Interview</option>
+								<option>Phone Interview</option>
+								<option>Will Contact Me</option>
+								<option>Positive Comments</option>
+								<option>Made an Offer for Employment</option>
+								<option>Made it Through Next Round</option>
+							</select>	
+						</form>
+
+						<form class="form-horizontal response" id="responseBad" name="badnews" method="post" action="/signin">
+							<label for="badNewsForm">BAD NEWS</label>
+							<select class="form-control" id="responseBadOptions">
+								<option></option>
+								<option>Not the Right Fit</option>
+								<option>Position was Closed</option>
+								<option>Hiring Freeze</option>
+								<option>They Went in a Different Direction</option>
+								<option>Position Was Filled</option>
+							</select>	
+						</form>
+					</div>
+					<br><br><br>
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="radio" name="gridRadios" id="applicationStatus" value="active">
+							Mark application as <span id="statusActiveLabel">ACTIVE</span>
+						</label>
+						</div>
+						<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="radio" name="gridRadios" id="applicationStatus" value="inactive">
+							Mark application as <span id="statusInactiveLabel">INACTIVE</span>
+						</label>
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" id="signinbutton" class="btn btn-success">Submit</button>
+					</div>
+				</div>
 			</div>
 		</div>
 

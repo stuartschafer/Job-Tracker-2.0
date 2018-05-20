@@ -212,3 +212,38 @@ tr.shown td.details-control {
 	color: green;
 	font-size: 200%;
 }
+
+.modal-dialog {
+	margin-top: 10%;
+}
+
+.face {
+	font-size: 150%;
+}
+
+
+.form-check {
+	margin-top: 2%;
+	margin-left: 2%;
+	margin-bottom: 2%;
+}
+
+#statusActiveLabel {
+	color: green;
+}
+
+#statusInactiveLabel {
+	color: red;
+}
+
+.response {
+	width: 47%;
+}
+
+#responseGood {
+	float: left;
+}
+
+#responseBad {
+	float: right;
+}
