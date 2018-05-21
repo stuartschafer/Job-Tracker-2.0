@@ -71,7 +71,7 @@ $(function() {
                 objArray.response = "<a href='#'><i class='fas fa-comment-dots center-td' value='" + data[i].id + "' data-toggle='modal' data-target='#responseModal'></i></a>";
                 //objArray.rejection = "<a href='#'><i id='rejection' value='" + data[i].id + "' class='fa fa-user-slash fa-lg jobRejection center-td' aria-hidden='true'></i></a>";
                 objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob center-td' aria-hidden='true'></i></a>";
-                objArray.delete = "<a href='#'><i id='deleteMe' value='" + data[i].id + "' class='fa fa-trash-alt fa-lg deleteJob center-td' aria-hidden='true'></i></a>";
+                //objArray.delete = "<a href='#'><i id='deleteMe' value='" + data[i].id + "' class='fa fa-trash-alt fa-lg deleteJob center-td' aria-hidden='true'></i></a>";
 
                 if (view === "Active" && data[i].status === "Active") {
                     arrayofJobs.push(objArray);
@@ -113,7 +113,7 @@ $(function() {
                 { "data": "interest_level" },
                 { "data": "response" },
                 { "data": "edit" },
-                { "data": "delete" }
+                //{ "data": "delete" }
             ],
             "order": [[8, 'des']]
         });
