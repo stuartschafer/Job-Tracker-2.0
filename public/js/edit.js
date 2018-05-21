@@ -11,7 +11,6 @@ function viewInactive() {
 }
 
 $(function() {
-    
     var userLoggedInId = "";
     // This gets the id and name of the user
     $.get("/api/user_data").then(function(data) {

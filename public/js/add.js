@@ -11,7 +11,6 @@ function viewInactive() {
 }
 
 $(function(){ 
-
     var userLoggedInId = "";
     var userLoggedInName = "";
     

@@ -27,7 +27,6 @@ $(function() {
     /////**********GLOBAL VARIABLES***********/////
     //Store current user data
     var userLoggedInId;
-    // var userLoggedInName;
    
     //Store objects from DB
     var arrayofJobs = [];

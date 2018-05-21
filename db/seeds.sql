@@ -21,7 +21,6 @@ VALUES ("2018-04-03", "Not a good job", "Scrubs R Us", "Blahtown, USA", "Not a g
 
 
 
-
 CREATE TABLE USERS (
     id INTEGER(11) AUTO_INCREMENT NOT NULL,
     name VARCHAR(30) NOT NULL,

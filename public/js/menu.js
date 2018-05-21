@@ -24,8 +24,6 @@ $(function() {
     var shine = new Shine(document.getElementById('landingPageHeader'));
     var shine1 = new Shine(document.getElementById('logoshadow'));
     var shine2 = new Shine(document.getElementById('shinename'));
-    //var shine3 = new Shine(document.getElementById('invButton'));
-    //var shine4 = new Shine(document.getElementById('addButton'));
 
     var config = new shinejs.Config({
         numSteps: 10,
@@ -61,10 +59,6 @@ $(function() {
         shine2.light.position.y = event.clientY * 1.5;
         shine2.config = config2;
         shine2.draw();
-
-      
-
-    
 
         shine.light.position.x = event.clientX * 1.5;
         shine.light.position.y = event.clientY * 1.5;
