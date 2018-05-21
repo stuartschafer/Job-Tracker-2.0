@@ -12,7 +12,7 @@
 	<!-- Favicon link -->
 	<link rel="icon" href="assets/images/jobtracker2.png" type="image/png" sizes="16x16">
 	<!-- FONT AWESOME and GOOGLE FONTS -->
-	<script src="https://use.fontawesome.com/feca357678.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Acme|Kavivanar" rel="stylesheet">
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -36,9 +36,10 @@
 			  		Menu<span class="caret"></span>
 			  	</button>
 				<ul class="dropdown-menu">
-				    <li><a href="/add">Add New Job</a></li>
-				    <li><a href="/inventory">View Applications</a></li>
-				    <li><a href="/logout">Logout</a></li>
+					<li><a href="/add">Add New Job</a></li>
+					<li><a onclick="viewActive()">View ACTIVE Applications</a></li>
+					<li><a onclick="viewInactive()">View INACTIVE Applications</a></li>
+					<li><a href="/logout">Logout</a></li>
 			  	</ul>
 			</div>
 		</nav>

@@ -1,4 +1,25 @@
+// This section determines which information the user is to see
+// Either Active Applications, or Inactive Applications
+function viewActive() {
+    sessionStorage.setItem("whichView", "Active");
+    location.reload();
+}
+
+function viewInactive() {
+    sessionStorage.setItem("whichView", "Inactive");
+    location.reload();
+}
+
+let view = sessionStorage.getItem("whichView");
+
 $(function() {
+    if (view === "Active") {
+        $("#whichView").text("Active");
+    } else {
+        $("#whichView").text("Inactive");
+    }
+
+    let showActiveorInactive = "";
     let objArray = {};
     let allStuff;
     let idResponse;
@@ -9,7 +30,8 @@ $(function() {
     // var userLoggedInName;
    
     //Store objects from DB
-    var arrayofJobs = [];   
+    var arrayofJobs = [];
+    let arrayofInactiveJobs = [];   
     
     /////**********FUNCTIONS**********/////
 
@@ -45,14 +67,18 @@ $(function() {
                 objArray.posted_from = data[i].posted_from;
                 objArray.interest_level = data[i].interest_level;
                 objArray.notes = data[i].notes;
-                objArray.status = data[i].status || "";
+                objArray.status = data[i].status;
                 objArray.status_response = data[i].status_response || "";
                 objArray.response = "<a href='#'><i class='fas fa-comment-dots center-td' value='" + data[i].id + "' data-toggle='modal' data-target='#responseModal'></i></a>";
                 //objArray.rejection = "<a href='#'><i id='rejection' value='" + data[i].id + "' class='fa fa-user-slash fa-lg jobRejection center-td' aria-hidden='true'></i></a>";
                 objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob center-td' aria-hidden='true'></i></a>";
                 objArray.delete = "<a href='#'><i id='deleteMe' value='" + data[i].id + "' class='fa fa-trash-alt fa-lg deleteJob center-td' aria-hidden='true'></i></a>";
-                
-                arrayofJobs.push(objArray);
+
+                if (view === "Active" && data[i].status === "Active") {
+                    arrayofJobs.push(objArray);
+                } else if (view === "Inactive" && data[i].status === "Inactive") {
+                    arrayofInactiveJobs.push(objArray);
+                }
                 allStuff = data;
             }
         }
@@ -62,8 +88,15 @@ $(function() {
 
     //Create the table and display on inventory page
     function makeTable() {
+        let jobs = [];
+        if (view === "Active") {
+            jobs = arrayofJobs;
+        } else {
+            jobs = arrayofInactiveJobs;
+        }
+
         var table = $('#inventory').DataTable({
-            "data": arrayofJobs,
+            "data": jobs,
             "columns": [
                 {
                     "className": 'details-control',
@@ -80,7 +113,6 @@ $(function() {
                 { "data": "posted_from" },
                 { "data": "interest_level" },
                 { "data": "response" },
-                //{ "data": "rejection" },
                 { "data": "edit" },
                 { "data": "delete" }
             ],
@@ -149,7 +181,7 @@ $(function() {
         let response = "";
         let goOn = "yes";
         $("#userError").text("");   
-        let responseNotes = $("#responseNotes").val().trim();
+        let responseNotes = $("#responseNotes").val().trim() || "";
 
         if (!$("#responseGoodOptions").val() && !$("#responseBadOptions").val()) {
             $("#userError").text("Please make a selection from the Good or Bad to proceed.");
@@ -169,23 +201,20 @@ $(function() {
         // Specific id they clicked on
         console.log(idResponse);
         if (goOn === "yes") {
+            if (responseNotes != "") {
+                responseNotes = " - " + responseNotes;
+            }
+
             for (var x=0; x<allStuff.length; x++) {
-                if (allStuff[x].status_response === null) {
-                    //status_response = "(" + status_day + ") - " + response + " - " + responseNotes + " || ";
-                    status_response = "(" + status_day + ") - " + response + " - " + responseNotes + " &#9883; ";
+                if (allStuff[x].status_response === "") {
+                    //status_response = "(" + status_day + ") - " + response + responseNotes + responseNotes + " || ";
+                    status_response = "(" + status_day + ") - " + response + responseNotes + " &#9883; ";
                     companyResponse = "";
                 } else {
-                    //status_response = "(" + status_day + ") - " + response + " - " + responseNotes + " || ";
-                    status_response = "(" + status_day + ") - " + response + " - " + responseNotes + " &#9883; ";
+                    //status_response = "(" + status_day + ") - " + response + responseNotes + " || ";
+                    status_response = "(" + status_day + ") - " + response + responseNotes + " &#9883; ";
                     companyResponse = allStuff[x].status_response;
                 }
-
-                // If a Good News was selected, then  a smiling face will be shown, otherwise it'll be a frown
-                //if ($("#responseGoodOptions").val() != "") {
-                    //status_response = "&#9786;" + status_response;
-                //} else {
-                    //status_response = "&#9785;" + status_response;
-                //}
                 
                 if (idResponse == allStuff[x].id) {
                     jobInfo = {

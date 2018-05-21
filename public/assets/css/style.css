@@ -57,7 +57,7 @@ h1 {
 }
 
 .fixed-nav-bar a:hover {
-	color: #eb9316;
+	color: white;
 	text-decoration: none;
 }
 
@@ -68,7 +68,7 @@ h1 {
 
 #menudropdown {
 	float: right;
-	margin-right: 100px;
+	margin-right: 17%;
 }
 
 /*TABLE STYLING*/

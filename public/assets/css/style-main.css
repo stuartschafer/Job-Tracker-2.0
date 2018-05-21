@@ -136,3 +136,9 @@ button.login:last-child {
 #buttons {
 	margin: -10px -110px 0 20px;
 }
+
+#inactButton {
+	margin-top: 2%;
+	margin-left: 24%;
+	width: auto;
+}

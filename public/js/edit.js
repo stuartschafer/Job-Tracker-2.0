@@ -1,3 +1,15 @@
+// This section determines which information the user is to see
+// Either Active Applications, or Inactive Applications
+function viewActive() {
+    sessionStorage.setItem("whichView", "Active");
+    location.href = "/inventory.html";
+}
+
+function viewInactive() {
+    sessionStorage.setItem("whichView", "Inactive");
+    location.href = "/inventory.html";
+}
+
 $(function() {
     
     var userLoggedInId = "";
@@ -37,7 +49,7 @@ $(function() {
         let editedInterestLevel = $("input:radio[name=inlineRadioOptions2]:checked").val();
         let editedNotes = $("#notes").val();
         let editedStatus = $("input:radio[name=statusRadios]:checked").val();
-        let editedStatusResponse = $("#status_response").val().trim();
+        let editedStatusResponse = $("#status_response").val().trim() || "";
 
         // This converts the boring characters to the special ASCII characters
         let editedStatusResponseView = editedStatusResponse.replace(/---/g, "&#9883;");
@@ -97,6 +109,7 @@ $(function() {
 
     //Pull the info from sessionstorage to display existing values in edit form
     var jobBeingEdited = JSON.parse(sessionStorage.getItem("jobtoEdit"));
+    
     // This is to replce the special ASCII characters that displays weird
     let status_response_view = jobBeingEdited.status_response.replace(/&#9883;/g, " --- ");
     //status_response_view = status_response_view.replace(/&#9786;/g, " :) ");

@@ -1,3 +1,15 @@
+// This section determines which information the user is to see
+// Either Active Applications, or Inactive Applications
+function viewActive() {
+    sessionStorage.setItem("whichView", "Active");
+    location.href = "/inventory.html";
+}
+
+function viewInactive() {
+    sessionStorage.setItem("whichView", "Inactive");
+    location.href = "/inventory.html";
+}
+
 $(function(){ 
 
     var userLoggedInId = "";
@@ -69,6 +81,7 @@ $(function(){
             interest_level: newInterestLevel,
             notes: newNotes,
             status: "Active",
+            status_response: "",
             UserId: userLoggedInId
         };
        
@@ -76,8 +89,6 @@ $(function(){
         newJob.location = (newJob.location).toLowerCase().replace(/(^|\s)[a-z]/g, function(letter) {
             return letter.toUpperCase();
         });
-        console.log("~~~~~~~~~~~~~~~~~ newJob ~~~~~~~~~~~~~~~~~");
-        console.log(newJob);
         submitJob(newJob);
     });
 }) 
