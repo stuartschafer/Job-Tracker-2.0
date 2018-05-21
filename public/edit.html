@@ -56,11 +56,11 @@
 
 							<!--Date job was applied for-->
 							<div class="form-group">
-									<label for="input_date_applied" class="col-sm-3 control-label">Date Applied</label>
-									<div class="col-sm-9">
-										<input type="date" class="form-control" id="date_applied" name="date_applied" placeholder="01/01/2018" required>
-									</div>
+								<label for="input_date_applied" class="col-sm-3 control-label">Date Applied</label>
+								<div class="col-sm-9">
+									<input type="date" class="form-control" id="date_applied" name="date_applied" placeholder="01/01/2018" required>
 								</div>
+							</div>
 
 							<!--Job name input-->
 							<div class="form-group">
@@ -120,12 +120,12 @@
 
 							<!--Interest Level input-->
 							<div class="form-group">
-								<label for="input_interest_level" class="col-sm-3 control-label">Level of Interest</label>
+								<label for="input_interest_level" id="interestLevelLabel" class="col-sm-3 control-label">Level of Interest</label>
 								
 								<div class="form-check form-check-inline" id="interestLevel">
 										&nbsp
 									<label class="form-check-label">
-										<input class="form-check-input" type="radio" name="inlineRadioOptions2" id="interest_level_1"  e="1"> 1
+										<input class="form-check-input" type="radio" name="inlineRadioOptions2" id="interest_level_1" value="1"> 1
 									</label>
 									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 									<label class="form-check-label">
@@ -173,6 +173,30 @@
 									<textarea class="form-control" id="notes" rows="3"></textarea>
 								</div>
 							</div>
+
+							<!-- Status section-->
+							<div class="form-group">
+									<label for="input_interest_level" class="col-sm-3 control-label">Status of Application</label>
+									
+									<div class="form-check form-check-inline" id="interestLevel">
+											&nbsp
+										<label class="form-check-label">
+											<input class="form-check-input" type="radio" name="statusRadios" id="status_Active" value="Active"> Active
+										</label>
+										&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+										<label class="form-check-label">
+											<input class="form-check-input" type="radio" name="statusRadios" id="status_Inactive" value="Inactive"> Inactive
+										</label>
+									</div>
+								</div>
+
+								<!-- Status response section-->
+								<div class="form-group">
+									<label for="input_notes" class="col-sm-3 control-label">Employer's Responses & Notes</label>
+									<div class="col-sm-9">
+										<textarea class="form-control" id="status_response" rows="3"></textarea>
+									</div>
+								</div>
 
 							<!--alert user if required field is empty-->
 							<div>

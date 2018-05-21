@@ -237,7 +237,7 @@ tr.shown td.details-control {
 }
 
 .response {
-	width: 47%;
+	width: 48%;
 }
 
 #responseGood {
@@ -246,4 +246,33 @@ tr.shown td.details-control {
 
 #responseBad {
 	float: right;
+}
+
+#statusSection {
+	color: red;
+}
+
+#linkSection {
+	color: green;
+}
+
+#userError {
+	color: red;
+}
+
+.responseDate {
+	margin-bottom: 2%;
+}
+
+.active_inactive {
+	margin-top: 2%;
+}
+
+#interestLevel {
+	margin: 0px;
+	margin-bottom: -.5%;
+}
+
+#interestLevelLabel {
+	margin-top: -.5%;
 }

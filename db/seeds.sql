@@ -7,14 +7,14 @@ USE Job_Tracker_db;
 INSERT INTO USERS (name, email, password, createdAt, updatedAt) VALUES ("Stuart", "stuart@mail.com", "$2a$08$.jrNX0mqZ56hb4q9/u9xxe.OJBS/WUQYbJ7CbWRGUpWbIc.GP8dQ6", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 -- Inserting info for the Jobs table for UserId 1
-INSERT INTO JOBS (date_applied, position, company, location, description, id_number, link, posted_from, interest_level, notes, createdAt, updatedAt, UserId)
-VALUES ("2018-05-01", "President", "Schafer Enterprise", "Raleigh, NC", "Do everything", "111", "www.cnn.com", "LinkedIn", 5, "Well, I guess you run this.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
+INSERT INTO JOBS (date_applied, position, company, location, description, id_number, link, posted_from, interest_level, notes, status, createdAt, updatedAt, UserId)
+VALUES ("2018-05-01", "President", "Schafer Enterprise", "Raleigh, NC", "Do everything", "111", "www.cnn.com", "LinkedIn", 5, "Well, I guess you run this.", "Active", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
 
-INSERT INTO JOBS (date_applied, position, company, location, description, id_number, link, posted_from, interest_level, notes, createdAt, updatedAt, UserId)
-VALUES ("2018-05-02", "Vice President", "Schafer Industries", "Charlotte, NC", "Do everything almost everything", "12345", "www.yahoo.com", "Glassdoor", 3, "You kinda run things around here.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
+INSERT INTO JOBS (date_applied, position, company, location, description, id_number, link, posted_from, interest_level, notes, status, createdAt, updatedAt, UserId)
+VALUES ("2018-05-02", "Vice President", "Schafer Industries", "Charlotte, NC", "Do everything almost everything", "12345", "www.yahoo.com", "Glassdoor", 3, "You kinda run things around here.", "Active", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
 
-INSERT INTO JOBS (date_applied, position, company, location, description, id_number, link, posted_from, interest_level, notes, createdAt, updatedAt, UserId)
-VALUES ("2018-05-03", "The Man", "Schafer Incorporated", "Chapel Hill, NC", "Do whatever you want", "85676", "www.youtube.com", "Zip Recruiter", 10, "Coolest job for the coolest kid.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
+INSERT INTO JOBS (date_applied, position, company, location, description, id_number, link, posted_from, interest_level, notes, status, createdAt, updatedAt, UserId)
+VALUES ("2018-05-03", "The Man", "Schafer Incorporated", "Chapel Hill, NC", "Do whatever you want", "85676", "www.youtube.com", "Zip Recruiter", 10, "Coolest job for the coolest kid.", "Active", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
 
 
 
@@ -40,7 +40,9 @@ CREATE TABLE JOBS (
     link VARCHAR(30),
     posted_from VARCHAR(15), 
     interest_level VARCHAR(2), 
-    notes VARCHAR(80), 
+    notes MEDIUMTEXT,
+    status MEDIUMTEXT,
+    status_response MEDIUMTEXT,
     createdAt VARCHAR(70),
     updatedAt VARCHAR(70),
     UserId VARCHAR(10),

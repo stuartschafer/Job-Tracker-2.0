@@ -26,18 +26,26 @@ $(function() {
     $("#editedJob").on("click", function(event) {
         event.preventDefault();
 
-        var editedDateApplied = $("#date_applied").val();
-        var editedJobName = $("#job_name").val().trim();
-        var editedCompany = $("#company").val().trim();
-        var editedLocation = $("#location").val().trim();
-        var editedDescription = $("#description").val().trim();
-        var editedIdNumber = $("#id_number").val().trim();
-        var editedLink = $("#link").val().trim();
-        var editedPostedFrom = $("#posted_from").val().trim();
+        let editedDateApplied = $("#date_applied").val();
+        let editedJobName = $("#job_name").val().trim();
+        let editedCompany = $("#company").val().trim();
+        let editedLocation = $("#location").val().trim();
+        let editedDescription = $("#description").val().trim();
+        let editedIdNumber = $("#id_number").val().trim();
+        let editedLink = $("#link").val().trim();
+        let editedPostedFrom = $("#posted_from").val().trim();
+        let editedInterestLevel = $("input:radio[name=inlineRadioOptions2]:checked").val();
+        let editedNotes = $("#notes").val();
+        let editedStatus = $("input:radio[name=statusRadios]:checked").val();
+        let editedStatusResponse = $("#status_response").val().trim();
 
-        var editedInterestLevel = $("input:radio[name=inlineRadioOptions2]:checked").val();
-        var editedNotes = $("#notes").val();
-        var userEntered = userLoggedInId;
+        // This converts the boring characters to the special ASCII characters
+        let editedStatusResponseView = editedStatusResponse.replace(/---/g, "&#9883;");
+        //editedStatusResponseView = editedStatusResponse.replace(/&#58;&#41;/g, "&#9786;");
+        //editedStatusResponseView2 = editedStatusResponse.replace(/&#58;&#40;/g, "&#9785;");
+       
+
+        let userEntered = userLoggedInId;
 
         //Check to make sure these fields are not empty
         if (!editedDateApplied) {
@@ -74,6 +82,8 @@ $(function() {
             posted_from: editedPostedFrom,
             interest_level: editedInterestLevel,
             notes: editedNotes,
+            status: editedStatus,
+            status_response: editedStatusResponseView,
             UserId: userLoggedInId
         };
         //Capitalize the first letter after a space
@@ -87,7 +97,10 @@ $(function() {
 
     //Pull the info from sessionstorage to display existing values in edit form
     var jobBeingEdited = JSON.parse(sessionStorage.getItem("jobtoEdit"));
-    console.log(jobBeingEdited);
+    // This is to replce the special ASCII characters that displays weird
+    let status_response_view = jobBeingEdited.status_response.replace(/&#9883;/g, " --- ");
+    //status_response_view = status_response_view.replace(/&#9786;/g, " :) ");
+    //status_response_view = status_response_view.replace(/&#9785;/g, " :( ");
 
     $("#date_applied").val(moment(jobBeingEdited.date_applied).format("YYYY-MM-DD"));
     $("#job_name").val(jobBeingEdited.position);
@@ -99,4 +112,6 @@ $(function() {
     $("#posted_from").val(jobBeingEdited.posted_from);
     $("#interest_level_" + jobBeingEdited.interest_level).prop('checked', true);
     $("#notes").val(jobBeingEdited.notes);
+    $("#status_" + jobBeingEdited.status).prop('checked', true);
+    $("#status_response").val(status_response_view);
 });

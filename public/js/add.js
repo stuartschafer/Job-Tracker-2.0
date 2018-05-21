@@ -68,6 +68,7 @@ $(function(){
             posted_from: newPostedFrom,
             interest_level: newInterestLevel,
             notes: newNotes,
+            status: "Active",
             UserId: userLoggedInId
         };
        

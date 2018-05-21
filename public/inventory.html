@@ -61,8 +61,6 @@
 					<thead>
 					<tr>
 						<th></th>
-
-
 						<th>Date<br>Applied <span class="fa fa-sort" aria-hidden="true"></span></th>
 						<th>Position <span class="fa fa-sort" aria-hidden="true"></span></th>
 						<th>Company <span class="fa fa-sort" aria-hidden="true"></span></th>
@@ -94,10 +92,19 @@
 		
 				<div class="modal-content">
 					<div class="modal-header">
-						<h3 class="modal-title" id="response">Company's Response ... <span id="companyName"></span></h3>
+						<h3 class="modal-title" id="response">Response from <span id="companyName"></span></h3>
+						<h4 class="modal-title" id="response">For the position of <span id="positionName"></span></h4>
 					</div>
 			
 					<div class="modal-body">
+						<!-- Date response from comapny was -->
+						<div class="form-group">
+							<label for="input_date_applied" class="col-sm-3 control-label responseDate">Response Date</label>
+							<div class="col-sm-9">
+								<input type="date" class="form-control responseDate" id="responseDate" name="responseDate" required>
+							</div>
+						</div>
+
 						<form class="form-horizontal response" id="responseGood" name="goodnews" method="post" action="/signin">
 							<label for="goodNewsForm">GOOD NEWS</label>
 							<select class="form-control" id="responseGoodOptions">
@@ -126,21 +133,32 @@
 					<br><br><br>
 
 					<div class="form-check">
-						<label class="form-check-label">
-							<input class="form-check-input" type="radio" name="gridRadios" id="applicationStatus" value="active">
+						<label class="form-check-label active_inactive">
+							<input class="form-check-input" type="radio" name="statusRadio" id="applicationStatus" value="ACTIVE">
 							Mark application as <span id="statusActiveLabel">ACTIVE</span>
 						</label>
 						</div>
 						<div class="form-check">
 						<label class="form-check-label">
-							<input class="form-check-input" type="radio" name="gridRadios" id="applicationStatus" value="inactive">
+							<input class="form-check-input" type="radio" name="statusRadio" id="applicationStatus" value="INACTIVE">
 							Mark application as <span id="statusInactiveLabel">INACTIVE</span>
 						</label>
 					</div>
 
+					<!--Notes input-->
+					<div class="form-group">
+						<label for="input_notes" class="col-sm-3 control-label">Notes</label>
+						<div class="col-sm-9">
+							<textarea class="form-control" id="responseNotes" rows="2"></textarea>
+						</div>
+					</div>
+
+					<br><br><br>
+
 					<div class="modal-footer">
+						<span id="userError"></span>
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="submit" id="signinbutton" class="btn btn-success">Submit</button>
+						<button type="submit" id="responseButton" class="btn btn-success">Submit</button>
 					</div>
 				</div>
 			</div>

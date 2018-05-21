@@ -45,6 +45,14 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.TEXT,
             allowNull: true
         },
+        status: {
+            type: DataTypes.TEXT,
+            allowNull: true
+        },
+        status_response: {
+            type: DataTypes.TEXT,
+            allowNull: true
+        },
     },
     //JOBS TO USERS ASSOCIATION - Each Job belongs to one User
         { 
