@@ -20,6 +20,7 @@ module.exports = function(app, passport) {
 	app.get('/add', isLoggedIn, authController.add);
 	app.get('/jobs', isLoggedIn, authController.jobs);
 	app.get('/edit', isLoggedIn, authController.edit);
+	app.get('/search', isLoggedIn, authController.search);
 
 	app.get('/logout',authController.logout);
 

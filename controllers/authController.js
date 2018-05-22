@@ -30,4 +30,8 @@ exports.edit = function(req, res) {
 
 exports.jobs = function(req, res) {	
 	res.sendFile(path.join(__dirname, "../public/jobs.html"));  
-}    
+}
+
+exports.search = function(req, res) {	
+	res.sendFile(path.join(__dirname, "../public/search.html"));
+} 

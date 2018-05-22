@@ -1,7 +1,4 @@
 -- Inserting info for the Users table
--- India's pw is 123
--- Mary's pw is 1234
--- Stuart's pw is 12345
 USE Job_Tracker_db;
 
 INSERT INTO USERS (name, email, password, createdAt, updatedAt) VALUES ("Stuart", "stuart@mail.com", "$2a$08$.jrNX0mqZ56hb4q9/u9xxe.OJBS/WUQYbJ7CbWRGUpWbIc.GP8dQ6", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
