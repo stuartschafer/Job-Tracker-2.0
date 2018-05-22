@@ -185,6 +185,14 @@ tr.shown td.details-control {
 	color: green;
 }
 
+/* RESPONSIVE BACKGROUND IMAGE */
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
+
 .col-md-12 {
 	width: auto !important;
 }
@@ -268,36 +276,3 @@ tr.shown td.details-control {
 #interestLevelLabel {
 	margin-top: -.5%;
 }
-
-#h1forlandingpage {
-	margin: 0px;
-}
-
-.headerJobs {
-	margin-top: 30px;
-	margin-left: -14%;
-	font-size: 35px;
-}
-
-#jobs_wrapper {
-	margin-left: -15%;
-	width: 130%;
-}
-
-#jobs_filter {
-	margin-left: 56%;
-}
-
-.form-check-label {
-	margin-left: -3%;
-}
-
-#interest_level_0 {
-	margin-left: 30px;
-	margin-top: 16%;
-}
-
-
-
-
-

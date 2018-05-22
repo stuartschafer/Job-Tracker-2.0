@@ -1,16 +1,21 @@
-/* USED TO VERTICALLY AND HORIZONTALLY CENTER CONTENT */
-.centerContentParent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* STICKY FOOTER STYLES */
+body {
+	height: 100%;
 }
 
-/* USED TO VERTICALLY AND HORIZONTALLY CENTER CONTENT */
-.centerContentChild {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+html {
+	height: 100%;
+	position: relative;
+}
+
+h1 {
+	font-family: 'Acme', sans-serif;
+	font-size: 350%;
+}
+
+.genContainer {
+	height: auto;
+	position: relative;
 }
 
 /* RESPONSIVE BACKGROUND IMAGE */
@@ -31,77 +36,92 @@
     opacity: .5;
 }
 
-#headerlogo {
-	width: 100px;
-	height: auto;
-	margin-top: -35px;
-	z-index: -3;
-}
-
-.headLogo {
-	margin-top: -50% !important;
-}
-
-#landingPageHeader {
-	color: #3E3F47;
-	font-size: 80px;
-	text-align: center;
+/* NAVBAR STYLING */
+.fixed-nav-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	width: 100%;
+ 	height: 65px;
+ 	line-height: 65px;
 	font-family: 'Kavivanar', cursive;
-	line-height: 90px;
+	font-size: 22px;
+	background: mediumseagreen;
+	color: #E3E1DC;
 }
 
-#slogan {
-	color: green;
-	text-align: left;
-	position: relative;
-	top: -20px;
-	left: 7px;
-	font-size: 200%;
-	font-family: 'Kalam', cursive;
+.fixed-nav-bar a {
+	margin-left: 7%;
+	color: #3E3F47;
 }
 
-#menuPagelogo {
-	width: 100px;
+.fixed-nav-bar a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+#navbarlogo {
+	width: 50px;
 	height: auto;
 }
 
-.fa-user {
-	padding-left: 10px;
+#menudropdown {
+	float: right;
+	margin-right: 17%;
 }
 
-#loginButtons {
+/*TABLE STYLING*/
+#table-container {
+	padding-top: 5%;
+	padding-bottom: 170px;
+}
+
+#jobs {
+	border: 5px #EBEBEC solid;
+}
+#jobs thead, tfoot {
+	background-color: #D4D4D4; 	
+}
+/*center icons in table*/
+.center-td {
+	margin-left: 25%;
+	margin-right: 35%;
+	width: 40%;
+}
+
+.updateItem, .deleteItem {
+	color: #3E3F47;
 	text-align: center;
-	margin-top: 30px;
-	width: 110%;
 }
 
-.login {
-	height: 50px;
+th {
+	text-align: center;
 }
 
-button.login:last-child {
-    margin-left: 15px;
+/* ADD ITEM PAGE STYLING */
+#addHeader {
+	text-align: center;
 }
 
-.modal-backdrop.in {
-	opacity: .3;
+#newItemForm {
+	/* Fallback for web browsers that do not support RGBa */
+    background: rgb(207, 200, 200);
+	/* center the form on the page */
+	width: 60%;
+	/* RGBa with 0.6 opacity */
+	/* this will change opacity of the background and not the content */
+	background: rgba(207, 200, 200, .6);
 }
 
-#signinModal, #signupModal, #responseModal {
-	margin-top: 100px;
-}
-
-.modal-title {
-	font-size: 30px;
-	float: left;
-}
-
-.modal-header {
-	font-family: 'Fjalla One', sans-serif;
+.addWrapper {
+	padding-top: 90px;
+	padding-bottom: 170px; 	
+	opacity: .8;
 }
 
 .showName {
-	color: #eb9316;
+	color: green;
 	text-align: left;
 	padding: 0;
 	margin: 0;
@@ -110,24 +130,151 @@ button.login:last-child {
 	top: 15px;
 }
 
+.showNameJobs, .headerJobs {
+	color: green;
+}
+
+/* FOOTER STYLES */
+footer {
+	background: mediumseagreen;
+	color: #696969;
+	font-size: 12px;
+	line-height: 2;
+	border-top: solid 15px rgba(169,169,169, .3);
+	border-bottom: solid 60px rgba(169,169,169, .3);
+	text-align: center;
+	height: 70px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+footer a {
+	font-size: 24px;
+}
+
+footer a:hover {
+	color: #696969;
+}
+
 .alertUser {
 	text-align: right;
-	color: #eb9316;
-	font-size: 12px;
+	color: red;
+	font-size: 30px;
 }
 
-#invButton, #addButton, #inactButton, #searchButton {
-	margin: -25px 5px 45px 30px;
+.tableImage {
+	max-width: 200px;
+	height: auto;
+}
+
+td.details-control {
+    background: url('../images/expand-arrow2.png') no-repeat center center;
+	background-size: 20px;
+	width: 30px;
+}
+
+tr.shown td.details-control {
+	background: url('../images/expand-arrow2.png') no-repeat center center;
+	transform: rotate(180deg);
+	background-size: 20px;
+	width: 30px;
+}
+
+.subsection {
+	color: green;
+}
+
+/* RESPONSIVE BACKGROUND IMAGE */
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
+
+.col-md-12 {
+	width: auto !important;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+	background-color: green;
+	border-color: green;
+}
+
+.fa-github:before {
+	font-size: 50px;
+	color: green;
+}
+
+.fa-github-square {
+	color: green;
+	font-size: 200%;
+}
+
+.modal-dialog {
+	margin-top: 10%;
+}
+
+.face {
+	font-size: 150%;
+}
+
+
+.form-check {
+	margin-top: 2%;
+	margin-left: 2%;
+	margin-bottom: 2%;
+}
+
+#statusActiveLabel {
+	color: green;
+}
+
+#statusInactiveLabel {
+	color: red;
+}
+
+.response {
+	width: 48%;
+}
+
+#responseGood {
 	float: left;
-	width: 35%;
 }
 
-.fa-sign-in-alt, .fa-user-plus {
-	font-size:160%;
+#responseBad {
+	float: right;
 }
 
-#buttons {
-	margin: -10px -110px 0 20px;
+#statusSection {
+	color: red;
+}
+
+#linkSection {
+	color: green;
+}
+
+#userError {
+	color: red;
+}
+
+.responseDate {
+	margin-bottom: 2%;
+	margin-left: -3%;
+}
+
+.active_inactive {
+	margin-top: 2%;
+}
+
+#interestLevel {
+	margin: 0px;
+	margin-bottom: -.5%;
+}
+
+#interestLevelLabel {
+	margin-top: -.5%;
 }
 
 
