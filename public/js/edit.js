@@ -2,12 +2,12 @@
 // Either Active Applications, or Inactive Applications
 function viewActive() {
     sessionStorage.setItem("whichView", "Active");
-    location.href = "/inventory.html";
+    location.href = "/jobs.html";
 }
 
 function viewInactive() {
     sessionStorage.setItem("whichView", "Inactive");
-    location.href = "/inventory.html";
+    location.href = "/jobs.html";
 }
 
 $(function() {
@@ -25,11 +25,11 @@ $(function() {
         //console.log(jobChanged.UserId);
         $.ajax({
             method: "PUT",
-            url: "/api/inventory",
+            url: "/api/jobs",
             data: jobChanged
         });
-        //return user to inventory page
-        location.href = "/inventory.html";
+        //return user to the jobs page
+        location.href = "/jobs.html";
     }   
 
     /////**********EVENT LISTENERS**********/////
@@ -122,7 +122,13 @@ $(function() {
     $("#id_number").val(jobBeingEdited.id_number);
     $("#link").val(jobBeingEdited.link);
     $("#posted_from").val(jobBeingEdited.posted_from);
-    $("#interest_level_" + jobBeingEdited.interest_level).prop('checked', true);
+
+    if (jobBeingEdited.interest_level === null) {
+        $("#interest_level_0").prop('checked', true);
+    } else {
+        $("#interest_level_" + jobBeingEdited.interest_level).prop('checked', true);
+    }
+    
     $("#notes").val(jobBeingEdited.notes);
     $("#status_" + jobBeingEdited.status).prop('checked', true);
     $("#status_response").val(status_response_view);

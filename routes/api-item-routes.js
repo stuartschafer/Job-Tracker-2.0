@@ -3,7 +3,7 @@ var db = require("../models");
 
 module.exports = function(app) {
     //route for retrieving all jobs
-    app.get("/api/inventory", function(req, res) {
+    app.get("/api/jobs", function(req, res) {
         var query = {};
         if (req.query.UserId) {
             query.UserId = req.query.UserId;
@@ -18,7 +18,7 @@ module.exports = function(app) {
     });
 
     // route for retrieving a single job
-    app.get("/api/inventory/:id", function(req, res) {
+    app.get("/api/jobs/:id", function(req, res) {
         db.Job.findOne({
             where: {
             id: req.params.id
@@ -29,12 +29,12 @@ module.exports = function(app) {
     });
 
     // route for saving a new job
-    app.post("/api/inventory", function(req, res) {
+    app.post("/api/jobs", function(req, res) {
         db.Job.create(req.body)
     });
 
     // route for updating a job
-    app.put("/api/inventory", function(req, res) {
+    app.put("/api/jobs", function(req, res) {
         db.Job.update(
         req.body,
         {
@@ -45,7 +45,7 @@ module.exports = function(app) {
     });
 
     // route for deleting a job
-    app.delete("/api/inventory/:id", function(req, res) {
+    app.delete("/api/jobs/:id", function(req, res) {
         db.Job.destroy({
         where: {
             id: req.params.id

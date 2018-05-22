@@ -77,11 +77,10 @@ h1 {
 	padding-bottom: 170px;
 }
 
-#inventory {
-	
+#jobs {
 	border: 5px #EBEBEC solid;
 }
-#inventory thead, tfoot {
+#jobs thead, tfoot {
 	background-color: #D4D4D4; 	
 }
 /*center icons in table*/
@@ -131,7 +130,7 @@ th {
 	top: 15px;
 }
 
-.showNameInventory, .headerInventory {
+.showNameJobs, .headerJobs {
 	color: green;
 }
 
@@ -262,6 +261,7 @@ tr.shown td.details-control {
 
 .responseDate {
 	margin-bottom: 2%;
+	margin-left: -3%;
 }
 
 .active_inactive {

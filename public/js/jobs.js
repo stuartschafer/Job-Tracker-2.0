@@ -26,17 +26,17 @@ $(function() {
     let jobInfo = {};
     /////**********GLOBAL VARIABLES***********/////
     //Store current user data
-    var userLoggedInId;
+    let userLoggedInId;
    
     //Store objects from DB
-    var arrayofJobs = [];
+    let arrayofJobs = [];
     let arrayofInactiveJobs = [];   
     
     /////**********FUNCTIONS**********/////
 
     //Formatting function for row details //
     function format (data) {
-        var jobDetails = "<div class='row'>";
+        let jobDetails = "<div class='row'>";
         jobDetails += "<div class='col-md-12'><h5>Notes:   <span class='subsection'>" + data.notes + "</span>";
         jobDetails += "<h5>Link:   <span class='subsection'><a id='linkSection' href='https://" + data.link + "' target='_blank'>" + data.link + "</a></span>";
         jobDetails += "<p><h5>Status:   <strong><span id='statusSection' class='subsection'>" + data.status + "</span></strong></p>";
@@ -48,8 +48,8 @@ $(function() {
    //Create the array of objects
     function createDataArray(data) {
         //Display the rows of data from the database into the table
-        for (var i = 0; i < data.length; i++) {
-            //Show the inventory of the user who is logged in
+        for (let i = 0; i < data.length; i++) {
+            //Show the jobs of the user who is logged in
             if (userLoggedInId != data[i].UserId) {   
             } else {
                 //Empty the object each time the loop is run
@@ -64,7 +64,7 @@ $(function() {
                 objArray.id_number = data[i].id_number;
                 objArray.link = data[i].link;
                 objArray.posted_from = data[i].posted_from;
-                objArray.interest_level = data[i].interest_level;
+                objArray.interest_level = data[i].interest_level || 0;
                 objArray.notes = data[i].notes;
                 objArray.status = data[i].status;
                 objArray.status_response = data[i].status_response || "";
@@ -81,11 +81,11 @@ $(function() {
                 allStuff = data;
             }
         }
-        // Create the table on inventory.html page
+        // Create the table on jobs.html page
         makeTable();
     }
 
-    //Create the table and display on inventory page
+    //Create the table and display on jobs page
     function makeTable() {
         let jobs = [];
         if (view === "Active") {
@@ -94,7 +94,7 @@ $(function() {
             jobs = arrayofInactiveJobs;
         }
 
-        var table = $('#inventory').DataTable({
+        let table = $('#jobs').DataTable({
             "data": jobs,
             "columns": [
                 {
@@ -119,10 +119,10 @@ $(function() {
         });
         
         //Event listener for opening and closing job details
-        $('#inventory tbody').on('click', 'td.details-control', function () {
-            var tr = $(this).closest('tr');
+        $('#jobs tbody').on('click', 'td.details-control', function () {
+            let tr = $(this).closest('tr');
             console.log(tr);
-            var row = table.row( tr );
+            let row = table.row( tr );
     
             if (row.child.isShown()) {
                 //Close open row
@@ -139,11 +139,11 @@ $(function() {
     /////**********EVENT LISTENERS**********/////
 
     // Get the info of the job that was clicked and save to session storage for update
-    $("#inventory").on("click", ".updateJob", function() {
-        var id = $(this).attr('value');
+    $("#jobs").on("click", ".updateJob", function() {
+        let id = $(this).attr('value');
         //console.log("id = " + id);
 
-        $.get("/api/inventory", editJob);
+        $.get("/api/jobs", editJob);
 
         function editJob(data) {
             for (var x=0; x<data.length; x++) {
@@ -159,7 +159,7 @@ $(function() {
         }
     });
 
-    $("#inventory").on("click", ".fa-comment-dots", function() {
+    $("#jobs").on("click", ".fa-comment-dots", function() {
         idResponse = $(this).attr('value');
         
         //$("#responseDate").datepicker();
@@ -237,23 +237,23 @@ $(function() {
            
             $.ajax({
                 method: "PUT",
-                url: "/api/inventory",
+                url: "/api/jobs",
                 data: jobInfo
             });
             location.reload();
         }
     });
 
-     //Delete row when the trashcan icon on a line is clicked
-    $("#inventory").on("click", ".deleteJob", function() {
-        console.log($(this).attr('value'));
-        var id = $(this).attr('value');
-        $.ajax({
-            method: "DELETE",
-            url: "/api/inventory/" + id
-        });
-        location.reload();
-    });
+    //Delete row when the trashcan icon on a line is clicked
+    //$("#jobs").on("click", ".deleteJob", function() {
+        //console.log($(this).attr('value'));
+        //let id = $(this).attr('value');
+        //$.ajax({
+            //method: "DELETE",
+            //url: "/api/jobs/" + id
+        //});
+        //location.reload();
+    //});
 
     /////**********ON PAGE LOAD**********/////
   //Get user data      
@@ -261,9 +261,9 @@ $(function() {
         userLoggedInId = data.id;
         userLoggedInName = data.name;
         //Display user name on page
-        $(".showNameInventory").text(data.name + "\'s");
+        $(".showNameJobs").text(data.name + "\'s");
     });
 
-    //Get and display inventory data
-    $.get("/api/inventory", createDataArray);
+    //Get and display the jobs data
+    $.get("/api/jobs", createDataArray);
 });

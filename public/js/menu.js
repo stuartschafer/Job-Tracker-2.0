@@ -9,7 +9,7 @@ $(function() {
 
     //event listeners to route user to corresponding page
     $("#invButton").click(function () {
-        location.href = "/inventory";
+        location.href = "/jobs";
     });
 
     $("#addButton").click (function () {
@@ -18,7 +18,7 @@ $(function() {
 
     $("#inactButton").click (function () {
         sessionStorage.setItem("whichView", "Inactive");
-        location.href = "/inventory";
+        location.href = "/jobs";
     });
 
     var shine = new Shine(document.getElementById('landingPageHeader'));

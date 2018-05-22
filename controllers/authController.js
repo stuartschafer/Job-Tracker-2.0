@@ -28,6 +28,6 @@ exports.edit = function(req, res) {
 	res.sendFile(path.join(__dirname, "../public/edit.html"));  
 }    
 
-exports.inventory = function(req, res) {	
-	res.sendFile(path.join(__dirname, "../public/inventory.html"));  
+exports.jobs = function(req, res) {	
+	res.sendFile(path.join(__dirname, "../public/jobs.html"));  
 }    

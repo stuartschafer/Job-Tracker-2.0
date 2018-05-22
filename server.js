@@ -31,7 +31,7 @@ app.use(passport.session());
 // static directory
 app.use(express.static(path.join(__dirname , "public")));
 
-//*****ROUTES for inventory *****//
+//*****ROUTES for jobs *****//
 require("./routes/api-item-routes.js")(app);
 
 // ROUTES Using Passport for Authentication

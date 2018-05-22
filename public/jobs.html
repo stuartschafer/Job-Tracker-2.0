@@ -28,7 +28,7 @@
 	<!-- Link to Moment.js should go here -->
 	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 		<!-- CUSTOM JAVASCRIPT -->
-	<script src="js/inventory.js"></script>
+	<script src="js/jobs.js"></script>
 
 </head>
 <body>
@@ -57,8 +57,8 @@
 		<div class="container">
 			<!-- DATABLE -->
 			<div id="table-container">
-				<h1 class="headerInventory"><span class="showNameInventory"></span> <u><span id="whichView"></span></u> Job Applications</h1>
-				<table id="inventory" class="table table-hover table-responsive" cellspacing="0" width="100%">
+				<h1 class="headerJobs"><span class="showNameJobs"></span> <u><span id="whichView"></span></u> Job Applications</h1>
+				<table id="jobs" class="table table-hover table-responsive" cellspacing="0" width="100%">
 					<thead>
 					<tr>
 						<th></th>
@@ -77,7 +77,7 @@
 					</thead>
 
 					<tbody>
-						<!--table rows inserted here from inventory.js-->	
+						<!--table rows inserted here from jobs.js-->	
 					</tbody>
 				</table>
 			</div>
@@ -97,8 +97,8 @@
 					<div class="modal-body">
 						<!-- Date response from comapny was -->
 						<div class="form-group">
-							<label for="input_date_applied" class="col-sm-3 control-label responseDate">Response Date</label>
-							<div class="col-sm-9">
+							<label for="input_date_applied" class="col-sm-7 control-label responseDate">Response Date (leave blank for today's date)</label>
+							<div class="col-sm-5">
 								<input type="date" class="form-control responseDate" id="responseDate" name="responseDate" required>
 							</div>
 						</div>
@@ -145,8 +145,8 @@
 
 					<!--Notes input-->
 					<div class="form-group">
-						<label for="input_notes" class="col-sm-3 control-label">Notes</label>
-						<div class="col-sm-9">
+						<label for="input_notes" class="col-sm-2 control-label">Notes</label>
+						<div class="col-sm-10">
 							<textarea class="form-control" id="responseNotes" rows="2"></textarea>
 						</div>
 					</div>

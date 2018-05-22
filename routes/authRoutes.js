@@ -18,7 +18,7 @@ module.exports = function(app, passport) {
   //only authenticated users should see the other pages
 	app.get('/menu', isLoggedIn, authController.menu);
 	app.get('/add', isLoggedIn, authController.add);
-	app.get('/inventory', isLoggedIn, authController.inventory);
+	app.get('/jobs', isLoggedIn, authController.jobs);
 	app.get('/edit', isLoggedIn, authController.edit);
 
 	app.get('/logout',authController.logout);

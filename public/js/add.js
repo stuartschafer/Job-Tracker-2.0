@@ -2,12 +2,12 @@
 // Either Active Applications, or Inactive Applications
 function viewActive() {
     sessionStorage.setItem("whichView", "Active");
-    location.href = "/inventory.html";
+    location.href = "/jobs.html";
 }
 
 function viewInactive() {
     sessionStorage.setItem("whichView", "Inactive");
-    location.href = "/inventory.html";
+    location.href = "/jobs.html";
 }
 
 $(function(){ 
@@ -23,9 +23,9 @@ $(function(){
 
     // Submits new Job to the database
     function submitJob(newJob) {
-        $.post("/api/inventory", newJob, function() { 
+        $.post("/api/jobs", newJob, function() { 
         });
-        location.href = "/inventory.html";
+        location.href = "/jobs.html";
     }
         
     /////**********EVENT LISTENERS**********/////
