@@ -14,51 +14,51 @@
 	<link rel="icon" href="assets/images/jobtracker2.png" type="image/png" sizes="16x16">
 	<!-- FONT AWESOME and GOOGLE FONTS -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Kavivanar|ACME" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Acme|Kavivanar|Kalam" rel="stylesheet">
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	
+	
 </head>
 <body>	
 	<!-- BACKGROUND IMAGE -->
 	<img class="bgimage" src="./assets/images/green.jpeg">
-	
-	<div class="container">
 
-		<div class="centerContentParent">
-			<div class="centerContentChild">
-				<!-- SHOW USER NAME -->
-				<div class="row">
-					<span id="shinename" class="shine large light shine-text-color">
-						<h3 class="showUsername">
-							<span id="showName"></span>
-						</h3>
-					</span>
+	<div class="container">
+		<div class="row justify-content-md-center text-center">
+			<div class="col col-lg-12" id="topSection">
+				<span id="logoshado">
+					<img id="headerlogo2" class="logoClass" src="./assets/images/jobtracker2.png">
+				</span>
+				<span id="landingPageHeader" class="shine large light shine-text-color">
+					JOB TRACKER
+				</span>
+			</div>
+		</div>
+		<div class="row justify-content-md-center text-center">
+			<div class="col col-lg-12">
+				<h4 id="slogan">Never fear, your career is all right here.</h4>	
+			</div>
+		</div>
+		<div class="row justify-content-md-center text-center">
+			<div class="col col-lg-12">
+				<div id="menuButtons">
+					<button id="invButton" type="button" class="btn btn-success btn-lg btn-block menuButton">View ACTIVE Applications <i class="fa fa-thumbs-up"></i></button>
+					<button id="addButton" type="button" class="btn btn-warning btn-lg btn-block menuButton">Add New Job <i class="fas fa-clipboard-check"></i></button>
 				</div>
-				<!-- HEADER -->
-				<h1 id="h1forlandingpage">
-					<span id="landingPageHeader" class="shine large light shine-text-color">
-						JOB TRACKER
-					</span>
-					<span id="logoshadow"></span>
-						<img id="headerlogo" class="headLogo" src="./assets/images/jobtracker2.png">
-					</span>
-				</h1>
-				<div id="buttons">
-					<!-- ACTION BUTTONS -->
-					<button id="invButton" type="button" class="btn btn-success btn-lg btn-block">View ACTIVE Applications <i class="fa fa-thumbs-up"></i></button>
-					<button id="addButton" type="button" class="btn btn-warning btn-lg btn-block">Add New Job <i class="fas fa-clipboard-check"></i></button>
-					<br>
-					<button id="inactButton" type="button" class="btn btn-danger btn-lg btn-block">View Inactive Applications <i class="fas fa-skull"></i></button>
-					<button id="searchButton" type="button" class="btn btn-primary btn-lg btn-block">Search for Jobs <i class="fas fa-search"></i></button>
+			</div>
+			<div class="col col-lg-12">
+				<div id="menuButtons2">
+					<button id="inactButton" type="button" class="btn btn-danger btn-lg btn-block menuButton">View Inactive Applications <i class="fas fa-skull"></i></button>
+					<button id="searchButton" type="button" class="btn btn-primary btn-lg btn-block menuButton">Search for Jobs <i class="fas fa-search"></i></button>
 				</div>
 			</div>
 		</div>
 	</div>
 
-</div>
 <!-- CUSTOM JAVASCRIPT -->
 <script src="./js/menu.js"></script>
+
 </body>
 </html>

@@ -25,48 +25,23 @@ $(function() {
         location.href = "/search";
     });
 
-    var shine = new Shine(document.getElementById('landingPageHeader'));
-    var shine1 = new Shine(document.getElementById('logoshadow'));
-    var shine2 = new Shine(document.getElementById('shinename'));
-
-    var config = new shinejs.Config({
-        numSteps: 20,
-        opacity: 0.9,
-        offset: 0.5,
-        offsetPow: 1,
-        shadowRGB: new shinejs.Color(50, 205, 50)
-    });
-
-    var config2 = new shinejs.Config({
-        numSteps: 20,
-        opacity: 0.9,
-        offset: 0.5,
-        offsetPow: 1,
-        shadowRGB: new shinejs.Color(50, 205, 50)
-    });
-
-    var config3 = new shinejs.Config({
-        numSteps: 20,
-        opacity: 0.9,
-        offset: 0.5,
-        offsetPow: 1,
-        shadowRGB: new shinejs.Color(50, 205, 50)
-    });
-
-    window.addEventListener('mousemove', function(event) {
-        shine1.light.position.x = event.clientX * 1.5;
-        shine1.light.position.y = event.clientY * 1.5;
-        shine1.config = config;
-        shine1.draw();
-
-        shine2.light.position.x = event.clientX * 1.5;
-        shine2.light.position.y = event.clientY * 1.5;
-        shine2.config = config2;
-        shine2.draw();
-
-        shine.light.position.x = event.clientX * 1.5;
-        shine.light.position.y = event.clientY * 1.5;
-        shine.config = config;
-        shine.draw();
-    }, false);
 });
+
+/////**********SHINE**********/////
+var shine = new Shine(document.getElementById('landingPageHeader'));
+//var shine1 = new Shine(document.getElementById('logoshadow'));
+
+var config = new shinejs.Config({
+    numSteps: 20,
+    opacity: 0.5,
+    offset: 0.8,
+    offsetPow: 2,
+    shadowRGB: new shinejs.Color(50, 205, 50)
+});
+
+window.addEventListener('mousemove', function(event) {
+    shine.light.position.x = event.clientX * 1.5;
+    shine.light.position.y = event.clientY * 1.5;
+    shine.config = config;
+    shine.draw();
+}, false);

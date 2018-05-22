@@ -278,12 +278,64 @@ tr.shown td.details-control {
 }
 
 #slogan {
+	font-size: 200%;
 	font-family: 'Kavivanar', cursive;
 }
 
 #headerlogo {
 	width: 10%;
 }
+
+#headerlogo2 {
+	
+	width: 10%;
+	transform: scaleX(-1);
+}
+
+#landingPageHeader {
+	font-family: 'ACME', cursive;
+	font-size: 500%;
+	margin-left: -5%;
+}
+
+#topSection {
+	margin-top: 10%;
+}
+
+#loginButtons {
+	width: 45%;
+	margin-left: 30%;
+}
+
+#logintoacct {
+	margin-right: 5%;
+}
+
+.login {
+	font-size: 20px;
+	padding: 2%;
+}
+
+.menuButton {
+	width: 25%;
+	margin-right: 2%;
+}
+
+#menuButtons2 {
+	margin-top: 2%;
+}
+
+#invButton, #inactButton {
+	float: left;
+	margin-left: 24%;
+}
+
+
+
+
+
+
+
 
 
 
