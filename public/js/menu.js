@@ -30,26 +30,26 @@ $(function() {
     var shine2 = new Shine(document.getElementById('shinename'));
 
     var config = new shinejs.Config({
-        numSteps: 10,
-        opacity: 0.5,
+        numSteps: 20,
+        opacity: 0.9,
         offset: 0.5,
-        offsetPow: 2,
+        offsetPow: 1,
         shadowRGB: new shinejs.Color(50, 205, 50)
     });
 
     var config2 = new shinejs.Config({
-        numSteps: 10,
-        opacity: 0.5,
+        numSteps: 20,
+        opacity: 0.9,
         offset: 0.5,
-        offsetPow: 2,
+        offsetPow: 1,
         shadowRGB: new shinejs.Color(50, 205, 50)
     });
 
     var config3 = new shinejs.Config({
-        numSteps: 10,
-        opacity: 0.5,
+        numSteps: 20,
+        opacity: 0.9,
         offset: 0.5,
-        offsetPow: 2,
+        offsetPow: 1,
         shadowRGB: new shinejs.Color(50, 205, 50)
     });
 
