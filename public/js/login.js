@@ -5,7 +5,7 @@ var shine = new Shine(document.getElementById('landingPageHeader'));
 var config = new shinejs.Config({
     numSteps: 20,
     opacity: 0.5,
-    offset: 0.5,
+    offset: 0.8,
     offsetPow: 2,
     shadowRGB: new shinejs.Color(50, 205, 50)
 });

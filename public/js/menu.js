@@ -21,6 +21,10 @@ $(function() {
         location.href = "/jobs";
     });
 
+    $("#searchButton").click(function () {
+        location.href = "/search";
+    });
+
     var shine = new Shine(document.getElementById('landingPageHeader'));
     var shine1 = new Shine(document.getElementById('logoshadow'));
     var shine2 = new Shine(document.getElementById('shinename'));

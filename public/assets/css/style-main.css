@@ -56,7 +56,8 @@
 	position: relative;
 	top: -20px;
 	left: 7px;
-	font-size: 180%;
+	font-size: 200%;
+	font-family: 'Kalam', cursive;
 }
 
 #menuPagelogo {
@@ -115,21 +116,13 @@ button.login:last-child {
 	font-size: 12px;
 }
 
-/* RESPONSIVE BACKGROUND IMAGE */
-@media screen and (max-width: 1024px) { /* Specific to this particular image */
-  img.bg {
-    left: 50%;
-    margin-left: -512px;   /* 50% */
-  }
-}
-
-#invButton, #addButton {
-	margin: -25px 5px 0px 30px;
+#invButton, #addButton, #inactButton, #searchButton {
+	margin: -25px 5px 45px 30px;
 	float: left;
 	width: 35%;
 }
 
-.fa-sign-in, .fa-user-plus {
+.fa-sign-in-alt, .fa-user-plus {
 	font-size:160%;
 }
 
@@ -137,8 +130,29 @@ button.login:last-child {
 	margin: -10px -110px 0 20px;
 }
 
-#inactButton {
-	margin-top: 2%;
-	margin-left: 24%;
-	width: auto;
+
+
+/* MEDIA QUERIES*/
+@media screen and (max-width: 960px) { /* Specific to this particular image */
+	#landingPageHeader {
+		font-size: 60px;
+		margin-left: 60px;
+	}
+
+	#headerlogo {
+		width: 20%;
+		margin-bottom: 80px;
+		margin-left: 20px;
+	}
+
+	#invButton, #addButton, #searchButton, #inactButton {
+		font-size: 16px;
+		width: 42%;
+	}
+
+	#slogan {
+		font-size: 170%;
+	}
+
+
 }
