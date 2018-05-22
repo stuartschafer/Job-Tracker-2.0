@@ -277,6 +277,14 @@ tr.shown td.details-control {
 	margin-top: -.5%;
 }
 
+#slogan {
+	font-family: 'Kavivanar', cursive;
+}
+
+#headerlogo {
+	width: 10%;
+}
+
 
 
 /* MEDIA QUERIES*/
