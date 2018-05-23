@@ -13,7 +13,7 @@ INSERT INTO JOBS (date_applied, position, company, location, description, id_num
 VALUES ("2018-05-02", "Vice President", "Schafer Industries", "Charlotte, NC", "Do everything almost everything", "12345", "www.yahoo.com", "Glassdoor", 3, "You kinda run things around here.", "Active", "", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
 
 INSERT INTO JOBS (date_applied, position, company, location, description, id_number, link, posted_from, interest_level, notes, status, status_response, createdAt, updatedAt, UserId)
-VALUES ("2018-05-13", "The Man", "Schafer Incorporated", "Chapel Hill, NC", "Do whatever you want", "85676", "www.youtube.com", "Zip Recruiter", 10, "Coolest job for the coolest kid.", "Active", "", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
+VALUES ("2018-05-13", "The Man", "Schafer Incorporated", "Chapel Hill, NC", "Do whatever you want", "85676", "https://www.youtube.com/watch?v=Uj1ykZWtPYI", "Zip Recruiter", 10, "Coolest job for the coolest kid.", "Active", "", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
 
 INSERT INTO JOBS (date_applied, position, company, location, description, id_number, link, posted_from, interest_level, notes, status, status_response, createdAt, updatedAt, UserId)
 VALUES ("2018-04-11", "The Boss", "Bestest Company Inc", "Morrisville, NC", "Run things", "42234", "www.theonion.com", "Indeed", 8, "You are in charge", "Active", "", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);

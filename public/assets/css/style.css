@@ -339,6 +339,10 @@ tr.shown td.details-control {
 	margin-left: 10px !important;
 }
 
+#discardChanges {
+	float: right;
+}
+
 
 @media (min-width: 960px) {}
 	#containerTable {
@@ -354,6 +358,23 @@ tr.shown td.details-control {
 		margin-left: 12px !important;
 	}
 
+	.radios2 {
+		margin-left: -20px !important;
+		margin-top: 10px !important;
+	}
+
+	.radios3 {
+		margin-left: 13px !important;
+	}
+
+	#menudropdown {
+		margin-right: 15%;
+	}
+
+	.buttons-colvis, .dt-button-collection {
+		margin-left: 90px !important;
+	}
+	
 	
 
 }

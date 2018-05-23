@@ -35,7 +35,7 @@
 			  		Menu <i class="fas fa-lg fa-chevron-circle-down"></i>
 			  	</button>
 				<ul class="dropdown-menu">
-					<li><a href="/add">Add New Job</a></li>
+					<li><a href="/add">Add a NEW Job Application</a></li>
 					<li><a onclick="viewActive()">View ACTIVE Applications</a></li>
 					<li><a onclick="viewInactive()">View INACTIVE Applications</a></li>
 					<li><a href="/search">Search Jobs (coming soon!)</a></li>
@@ -126,47 +126,47 @@
 								<div class="form-check form-check-inline" id="interestLevel">
 										&nbsp
 									<label class="form-check-label">
-										<input class="form-check-input" type="radio" name="inlineRadioOptions2" id="interest_level_0" value="0"> 0
+										<input class="form-check-input radios3" type="radio" name="inlineRadioOptions2" id="interest_level_0" value="0"> 0
 									</label>
 									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 									<label class="form-check-label">
-										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_1" value="1"> 1
+										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_1" value="1"> 1
 									</label>
 									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 									<label class="form-check-label">
-										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_2" value="2"> 2
+										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_2" value="2"> 2
 									</label>
 									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 									<label class="form-check-label">
-										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_3" value="3"> 3
+										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_3" value="3"> 3
 									</label>
 									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 									<label class="form-check-label">
-										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_4" value="4"> 4
+										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_4" value="4"> 4
 									</label>
 									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 									<label class="form-check-label">
-										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_5" value="5"> 5
+										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_5" value="5"> 5
 									</label>
 									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 									<label class="form-check-label">
-										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_6" value="6"> 6
+										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_6" value="6"> 6
 									</label>
 									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 									<label class="form-check-label">
-										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_7" value="7"> 7
+										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_7" value="7"> 7
 									</label>
 									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 									<label class="form-check-label">
-										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_8" value="8"> 8
+										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_8" value="8"> 8
 									</label>
 									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 									<label class="form-check-label">
-										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_9" value="9"> 9
+										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_9" value="9"> 9
 									</label>
 									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 									<label class="form-check-label">
-										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="interest_level_10" value="10"> 10
+										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_10" value="10"> 10
 									</label>
 								</div>
 							</div>
@@ -188,6 +188,7 @@
 							<div class="form-group">
 								<div class="col-sm-offset-3 col-sm-9">
 									<button type="submit" class="btn btn-success" id="newJob">Submit</i></button>
+									<a href="/jobs.html" id="discardChanges" class="btn btn-danger" role="button" aria-pressed="true">Discard</a>
 								</div>
 							</div>
 

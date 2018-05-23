@@ -13,6 +13,9 @@ function viewInactive() {
 let view = sessionStorage.getItem("whichView");
 $(document).ready(function() {
 
+    // And number of days equal to or above this will display results in red
+    let userDateDiff = 28;
+
     if (view === "Active") {
         $("#whichView").text("Active");
     } else {
@@ -59,23 +62,51 @@ $(document).ready(function() {
                 objArray = {};
                 
                 //Set the properties of the object
-                objArray.date_applied = "<span class='columnCenter'>" + moment(data[i].date_applied).format("L") + "</span>";
-                objArray.position = data[i].position;
-                objArray.company = data[i].company;
-                objArray.location = data[i].location;
-                objArray.description = data[i].description;
-                objArray.id_number = data[i].id_number;
-                objArray.link = data[i].link;
-                objArray.posted_from = data[i].posted_from;
-                objArray.interest_level = data[i].interest_level || 0;
-                objArray.notes = data[i].notes;
-                objArray.status = data[i].status;
-                objArray.status_response = data[i].status_response || "";
-                objArray.response = "<a href='#'><i id='responseMe' class='fas fa-lg fa-comment-dots center-td icons' value='" + data[i].id + "' data-toggle='modal' data-target='#responseModal'></i></a>";
-                //objArray.rejection = "<a href='#'><i id='rejection' value='" + data[i].id + "' class='fa fa-user-slash fa-lg jobRejection center-td' aria-hidden='true'></i></a>";
-                objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob center-td icons' aria-hidden='true'></i></a>";
-                //objArray.delete = "<a href='#'><i id='deleteMe' value='" + data[i].id + "' class='fa fa-trash-alt fa-lg deleteJob center-td' aria-hidden='true'></i></a>";
 
+                // This section determines if an application is over a month
+                let yearNow = moment().format("YYYY");
+                let yearApp = moment(data[i].date_applied).format("YYYY");
+                let monthNow = moment().format("M");
+                let monthApp = moment(data[i].date_applied).format("M");
+                let dayNow = moment().format("D");
+                let dayApp = moment(data[i].date_applied).format("D");
+
+                let dateNow = moment([yearNow, monthNow, dayNow]);
+                let dateApp = moment([yearApp, monthApp, dayApp]);
+                let dateDiff = dateNow.diff(dateApp, 'days');
+
+                if (dateDiff >= userDateDiff) {
+                    objArray.date_applied = "<span class='columnCenter' style='color: red;'>" + moment(data[i].date_applied).format("L") + "</span>";
+                    objArray.position = "<span style='color: red;'>" + data[i].position + "</span>";
+                    objArray.company = "<span style='color: red;'>" + data[i].company + "</span>";
+                    objArray.location = "<span style='color: red;'>" + data[i].location + "</span>";
+                    objArray.description = "<span style='color: red;'>" + data[i].description + "</span>";
+                    objArray.id_number = "<span style='color: red;'>" + data[i].id_number + "</span>";
+                    objArray.link = data[i].link;
+                    objArray.posted_from = "<span style='color: red;'>" + data[i].posted_from + "</span>";
+                    objArray.interest_level = "<span style='color: red;'>" + data[i].interest_level + "</span>" || "<span style='color: red;'>" + 0 + "</span>";
+                    objArray.notes = data[i].notes;
+                    objArray.status = + data[i].status || "";
+                    objArray.status_response = data[i].status_response || "";
+                    objArray.response = "<a href='#'><i id='responseMe' class='fas fa-lg fa-comment-dots center-td icons' value='" + data[i].id + "' data-toggle='modal' data-target='#responseModal'></i></a>";
+                    objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob center-td icons' aria-hidden='true'></i></a>";
+                } else {
+                    objArray.date_applied = "<span class='columnCenter'>" + moment(data[i].date_applied).format("L") + "</span>";
+                    objArray.position = data[i].position;
+                    objArray.company = data[i].company;
+                    objArray.location = data[i].location;
+                    objArray.description = data[i].description;
+                    objArray.id_number = data[i].id_number;
+                    objArray.link = data[i].link;
+                    objArray.posted_from = data[i].posted_from;
+                    objArray.interest_level = data[i].interest_level || 0;
+                    objArray.notes = data[i].notes;
+                    objArray.status = data[i].status || "";
+                    objArray.status_response = data[i].status_response || "";
+                    objArray.response = "<a href='#'><i id='responseMe' class='fas fa-lg fa-comment-dots center-td icons' value='" + data[i].id + "' data-toggle='modal' data-target='#responseModal'></i></a>";
+                    objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob center-td icons' aria-hidden='true'></i></a>";
+                }
+                
                 if (view === "Active" && data[i].status === "Active") {
                     arrayofJobs.push(objArray);
                 } else if (view === "Inactive" && data[i].status === "Inactive") {
