@@ -322,7 +322,7 @@ tr.shown td.details-control {
 
 .buttons-colvis, .dt-button-collection {
 	border-right: 2px solid #ddd;
-	margin-left: 250px !important;
+	margin-left: 200px !important;
 }
 
 .buttons-print {
@@ -344,7 +344,7 @@ tr.shown td.details-control {
 }
 
 
-@media (min-width: 960px) {}
+@media (max-width: 960px) {
 	#containerTable {
     	width: 100%;
 		margin: 0;
