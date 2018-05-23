@@ -98,7 +98,7 @@ $(function() {
             UserId: userLoggedInId
         };
         //Capitalize the first letter after a space
-        jobChanged.location = (jobChanged.location).toLowerCase().replace(/(^|\s)[a-z]/g, function(letter) {
+        jobChanged.position = (jobChanged.position).toLowerCase().replace(/(^|\s)[a-z]/g, function(letter) {
             return letter.toUpperCase();
         });
         submitEditedJob(jobChanged)

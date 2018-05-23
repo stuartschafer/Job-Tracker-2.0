@@ -284,6 +284,7 @@ tr.shown td.details-control {
 
 #headerlogo {
 	width: 10%;
+	margin-left: -4%;
 }
 
 #headerlogo2 {
@@ -292,7 +293,7 @@ tr.shown td.details-control {
 	transform: scaleX(-1);
 }
 
-#landingPageHeader {
+#landingPageHeader, #landingPageHeader2 {
 	font-family: 'ACME', cursive;
 	font-size: 500%;
 	margin-left: -5%;
@@ -339,27 +340,34 @@ tr.shown td.details-control {
 
 
 
+
 /* MEDIA QUERIES*/
 @media screen and (max-width: 960px) { /* Specific to this particular image */
-	#landingPageHeader {
-		font-size: 60px;
-		margin-left: 60px;
+	#headerlogo, #headerlogo2 {
+		width: 15%;
 	}
 
 	#headerlogo {
-		width: 20%;
-		margin-bottom: 80px;
-		margin-left: 20px;
+		margin-left: 5%;
+	}
+	#loginButtons {
+    	width: 75%;
+    	margin-left: 17%;
 	}
 
-	#invButton, #addButton, #searchButton, #inactButton {
-		font-size: 16px;
-		width: 42%;
+	#landingPageHeader2 {
+		margin-left: -8%;
 	}
 
-	#slogan {
-		font-size: 170%;
+	.menuButton {
+		width: 37%;
 	}
 
+	#invButton, #inactButton {
+		margin-left: 10%;
+	}
+	
+	
 
 }
+

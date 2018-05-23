@@ -56,7 +56,7 @@ $(function() {
                 objArray = {};
                 
                 //Set the properties of the object
-                objArray.date_applied = moment(data[i].date_applied).format("L");
+                objArray.date_applied = "<span class='columnCenter'>" + moment(data[i].date_applied).format("L") + "</span>";
                 objArray.position = data[i].position;
                 objArray.company = data[i].company;
                 objArray.location = data[i].location;
@@ -121,7 +121,7 @@ $(function() {
         //Event listener for opening and closing job details
         $('#jobs tbody').on('click', 'td.details-control', function () {
             let tr = $(this).closest('tr');
-            console.log(tr);
+            //console.log(tr);
             let row = table.row( tr );
     
             if (row.child.isShown()) {

@@ -28,7 +28,7 @@ $(function() {
 });
 
 /////**********SHINE**********/////
-var shine = new Shine(document.getElementById('landingPageHeader'));
+var shine = new Shine(document.getElementById('landingPageHeader2'));
 //var shine1 = new Shine(document.getElementById('logoshadow'));
 
 var config = new shinejs.Config({
