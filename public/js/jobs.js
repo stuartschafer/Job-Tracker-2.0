@@ -11,8 +11,8 @@ function viewInactive() {
 }
 
 let view = sessionStorage.getItem("whichView");
+$(document).ready(function() {
 
-$(function() {
     if (view === "Active") {
         $("#whichView").text("Active");
     } else {
@@ -118,8 +118,19 @@ $(function() {
                 { "data": "edit" },
                 //{ "data": "delete" }
             ],
-            "order": [[8, 'des']]
+            "order": [[8, 'des']],
+            dom: 'flrtpBi',
+            name: 'primary',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print', 'colvis', 'colvisRestore'
+            ],
+            colReorder: true,
+            keys: true
         });
+
+
+
+        
         
         //Event listener for opening and closing job details
         $('#jobs tbody').on('click', 'td.details-control', function () {
@@ -270,3 +281,5 @@ $(function() {
     //Get and display the jobs data
     $.get("/api/jobs", createDataArray);
 });
+
+
