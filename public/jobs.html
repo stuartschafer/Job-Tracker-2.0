@@ -36,18 +36,18 @@
 		<!-- FIXED NAVBAR -->
 		<nav class="fixed-nav-bar">
 		  	<!-- Logo / link to main menu -->
-		  	<a href="/menu">JOB TRACKER<img id="navbarlogo" src="./assets/images/jobtracker2.png"></a>
+		  	<a id="menuWord" href="/menu">JOB TRACKER<img id="navbarlogo" src="./assets/images/jobtracker2.png"></a>
 			<!-- dropdown menu -->
 			<div class="dropdown" id="menudropdown">
 			  	<button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
-			  		Menu<span class="caret"></span>
+			  		Menu <i class="fas fa-lg fa-chevron-circle-down"></i>
 			  	</button>
 				<ul class="dropdown-menu">
-				    <li><a href="/add">Add New Job</a></li>
-					<li><a onclick="viewActive()">View ACTIVE Applications</a></li>
-					<li><a onclick="viewInactive()">View INACTIVE Applications</a></li>
-					<li><a href="/search">Search Jobs (coming soon!)</a></li>
-				    <li><a href="/logout">Logout</a></li>
+				    <li><a class="dropdownOptions" href="/add">Add New Job</a></li>
+					<li><a class="dropdownOptions" onclick="viewActive()">View ACTIVE Applications</a></li>
+					<li><a class="dropdownOptions" onclick="viewInactive()">View INACTIVE Applications</a></li>
+					<li><a class="dropdownOptions" href="/search">Search Jobs (coming soon!)</a></li>
+				    <li><a class="dropdownOptions" href="/logout">Logout</a></li>
 			  	</ul>
 			</div>
 		</nav>
@@ -148,11 +148,11 @@
 					<div class="form-group">
 						<label for="input_notes" class="col-sm-2 control-label">Notes</label>
 						<div class="col-sm-10">
-							<textarea class="form-control" id="responseNotes" rows="2"></textarea>
+							<textarea class="form-control" id="responseNotes" rows="3"></textarea>
 						</div>
 					</div>
 
-					<br><br><br>
+					<br><br><br><br>
 
 					<div class="modal-footer">
 						<span id="userError"></span>

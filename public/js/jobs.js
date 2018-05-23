@@ -36,9 +36,12 @@ $(function() {
 
     //Formatting function for row details //
     function format (data) {
+        if (data.link.includes("http") === false) {
+            data.link = "https://" + data.link;
+        }
         let jobDetails = "<div class='row'>";
         jobDetails += "<div class='col-md-12'><h5>Notes:   <span class='subsection'>" + data.notes + "</span>";
-        jobDetails += "<h5>Link:   <span class='subsection'><a id='linkSection' href='https://" + data.link + "' target='_blank'>" + data.link + "</a></span>";
+        jobDetails += "<h5>Link:   <span class='subsection'><a id='linkSection' href='" + data.link + "' target='_blank'>" + data.link + "</a></span>";
         jobDetails += "<p><h5>Status:   <strong><span id='statusSection' class='subsection'>" + data.status + "</span></strong></p>";
         jobDetails += "<p><h5>Responses:   <span class='subsection'>" + data.status_response + "</span></p></div>";
         //jobDetails += "<div class='col-md-6'>" + data.image + "</div></div>";
@@ -68,9 +71,9 @@ $(function() {
                 objArray.notes = data[i].notes;
                 objArray.status = data[i].status;
                 objArray.status_response = data[i].status_response || "";
-                objArray.response = "<a href='#'><i class='fas fa-comment-dots center-td' value='" + data[i].id + "' data-toggle='modal' data-target='#responseModal'></i></a>";
+                objArray.response = "<a href='#'><i id='responseMe' class='fas fa-lg fa-comment-dots center-td icons' value='" + data[i].id + "' data-toggle='modal' data-target='#responseModal'></i></a>";
                 //objArray.rejection = "<a href='#'><i id='rejection' value='" + data[i].id + "' class='fa fa-user-slash fa-lg jobRejection center-td' aria-hidden='true'></i></a>";
-                objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob center-td' aria-hidden='true'></i></a>";
+                objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob center-td icons' aria-hidden='true'></i></a>";
                 //objArray.delete = "<a href='#'><i id='deleteMe' value='" + data[i].id + "' class='fa fa-trash-alt fa-lg deleteJob center-td' aria-hidden='true'></i></a>";
 
                 if (view === "Active" && data[i].status === "Active") {

@@ -75,10 +75,7 @@ $(function() {
             $(".alertUser").text("Please enter a location.");
             return;
         }
-        if (!editedDescription) {
-            $(".alertUser").text("Please enter a job description.");
-            return;
-        }
+
 
         //Create a new object to go into the database
         var jobChanged = {

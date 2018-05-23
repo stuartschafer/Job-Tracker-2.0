@@ -18,6 +18,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	
+	<!-- Link to Moment.js should go here -->
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
 </head>
 
@@ -26,11 +28,11 @@
 		<!-- FIXED NAVBAR -->
 		<nav class="fixed-nav-bar">
 		  	<!-- Logo / link to main menu -->
-		  	<a href="/menu">Job Tracker<img id="navbarlogo" src="./assets/images/jobtracker2.png"></a>
+		  	<a id="menuWord" href="/menu">JOB TRACKER<img id="navbarlogo" src="./assets/images/jobtracker2.png"></a>
 			<!-- dropdown menu -->
 			<div class="dropdown" id="menudropdown">
 			  	<button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
-			  		Menu<span class="caret"></span>
+			  		Menu <i class="fas fa-lg fa-chevron-circle-down"></i>
 			  	</button>
 				<ul class="dropdown-menu">
 					<li><a href="/add">Add New Job</a></li>

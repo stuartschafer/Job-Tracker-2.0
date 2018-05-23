@@ -32,7 +32,7 @@ $(function(){
     
     $("#newJob").on("click", function(event) {
         event.preventDefault();
-        var newDateApplied = $("#date_applied").val();
+        var newDateApplied = $("#date_applied").val() || moment().format("L");
         var newJobName = $("#job_name").val().trim();
         var newCompany = $("#company").val().trim();
         var newLocation = $("#location").val().trim();
@@ -59,10 +59,6 @@ $(function(){
         }
         if (!newLocation) {
             $(".alertUser").text("Please enter a location.");
-            return;
-        }
-        if (!newDescription) {
-            $(".alertUser").text("Please enter a job description.");
             return;
         }
         
