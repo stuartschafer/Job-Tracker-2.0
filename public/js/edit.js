@@ -56,9 +56,9 @@ $(function() {
         //editedStatusResponseView2 = editedStatusResponse.replace(/&#58;&#40;/g, "&#9785;");
        
         // Changes the format so it will be put into SQL in the correct format
-        let editedAgainDateApplied = editedDateApplied[5] + editedDateApplied[6] + "-" + editedDateApplied[8] + editedDateApplied[9] + "-" + editedDateApplied[0] + editedDateApplied[1] + editedDateApplied[2] + editedDateApplied[3];
+        //let editedAgainDateApplied = editedDateApplied[5] + editedDateApplied[6] + "-" + editedDateApplied[8] + editedDateApplied[9] + "-" + editedDateApplied[0] + editedDateApplied[1] + editedDateApplied[2] + editedDateApplied[3];
 
-        
+
         let userEntered = userLoggedInId;
 
         //Check to make sure these fields are not empty
@@ -83,7 +83,7 @@ $(function() {
         //Create a new object to go into the database
         var jobChanged = {
             id: jobBeingEdited.id,
-            date_applied: editedAgainDateApplied,
+            date_applied: editedDateApplied,
             position: editedJobName,
             company: editedCompany,
             location: editedLocation,
