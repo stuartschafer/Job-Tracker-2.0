@@ -11,7 +11,6 @@ function viewInactive() {
 }
 
 let view = sessionStorage.getItem("whichView");
-$(document).ready(function() {
 
     // And number of days equal to or above this will display results in red
     let userDateDiff = 28;
@@ -310,6 +309,6 @@ $(document).ready(function() {
 
     //Get and display the jobs data
     $.get("/api/jobs", createDataArray);
-});
+
 
 
