@@ -37,13 +37,11 @@ $(function() {
     $("#editedJob").on("click", function(event) {
         event.preventDefault();
 
-        
-
         let editedDateApplied = $("#date_applied").val() || moment().format("L");
         let editedJobName = $("#job_name").val().trim();
         let editedCompany = $("#company").val().trim();
         let editedLocation = $("#location").val().trim();
-        let editedDescription = $("#description").val().trim();
+        //let editedDescription = $("#description").val().trim();
         let editedIdNumber = $("#id_number").val().trim();
         let editedLink = $("#link").val().trim() || "";
         let editedPostedFrom = $("#posted_from").val().trim();
@@ -82,7 +80,7 @@ $(function() {
             position: editedJobName,
             company: editedCompany,
             location: editedLocation,
-            description: editedDescription,
+            //description: editedDescription,
             id_number: editedIdNumber,
             link: editedLink,
             posted_from: editedPostedFrom,
@@ -109,11 +107,14 @@ $(function() {
     //status_response_view = status_response_view.replace(/&#9786;/g, " :) ");
     //status_response_view = status_response_view.replace(/&#9785;/g, " :( ");
 
-    $("#date_applied").val(moment(jobBeingEdited.date_applied).format("L"));
+    // To autopopulate the date field
+    let loadedTime = moment.parseZone(jobBeingEdited.date_applied).utc().format("YYYY-MM-DD");
+   
+    $("#date_applied").val(loadedTime);
     $("#job_name").val(jobBeingEdited.position);
     $("#company").val(jobBeingEdited.company);
     $("#location").val(jobBeingEdited.location);
-    $("#description").val(jobBeingEdited.description);
+    //$("#description").val(jobBeingEdited.description);
     $("#id_number").val(jobBeingEdited.id_number);
     $("#link").val(jobBeingEdited.link);
     $("#posted_from").val(jobBeingEdited.posted_from);
