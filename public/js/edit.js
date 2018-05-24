@@ -37,6 +37,8 @@ $(function() {
     $("#editedJob").on("click", function(event) {
         event.preventDefault();
 
+        
+
         let editedDateApplied = $("#date_applied").val();
         let editedJobName = $("#job_name").val().trim();
         let editedCompany = $("#company").val().trim();
@@ -54,10 +56,7 @@ $(function() {
         let editedStatusResponseView = editedStatusResponse.replace(/---/g, "&#9883;");
         //editedStatusResponseView = editedStatusResponse.replace(/&#58;&#41;/g, "&#9786;");
         //editedStatusResponseView2 = editedStatusResponse.replace(/&#58;&#40;/g, "&#9785;");
-       
-        // Changes the format so it will be put into SQL in the correct format
-        //let editedAgainDateApplied = editedDateApplied[5] + editedDateApplied[6] + "-" + editedDateApplied[8] + editedDateApplied[9] + "-" + editedDateApplied[0] + editedDateApplied[1] + editedDateApplied[2] + editedDateApplied[3];
-
+        
 
         let userEntered = userLoggedInId;
 

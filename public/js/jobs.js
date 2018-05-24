@@ -61,10 +61,10 @@ $( document ).ready(function() {
                 //Empty the object each time the loop is run
                 objArray = {};
 
+                console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                 console.log(data[i].date_applied);
-                console.log(moment(data[i].date_applied).format("L"));
-                console.log(new Date(data[i].date_applied));
-                console.log("~~~~~~~~~~~~~~~~");
+                console.log(moment.utc([data[i].date_applied]));
+                console.log(moment.parseZone(data[i].date_applied).utc().format());
 
 
                 // This section determines if an application is over a month
