@@ -55,6 +55,7 @@ $(function() {
         //editedStatusResponseView = editedStatusResponse.replace(/&#58;&#41;/g, "&#9786;");
         //editedStatusResponseView2 = editedStatusResponse.replace(/&#58;&#40;/g, "&#9785;");
        
+        console.log("editedDateApplied is " + editedDateApplied);
 
         let userEntered = userLoggedInId;
 
@@ -111,7 +112,7 @@ $(function() {
     //status_response_view = status_response_view.replace(/&#9786;/g, " :) ");
     //status_response_view = status_response_view.replace(/&#9785;/g, " :( ");
 
-    $("#date_applied").val(moment(jobBeingEdited.date_applied).format("YYYY-MM-DD"));
+    $("#date_applied").val(moment(jobBeingEdited.date_applied).format("DD-MM-YYYY"));
     $("#job_name").val(jobBeingEdited.position);
     $("#company").val(jobBeingEdited.company);
     $("#location").val(jobBeingEdited.location);
