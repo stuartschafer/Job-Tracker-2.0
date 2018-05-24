@@ -44,6 +44,11 @@ $(function(){
         var newNotes = $("#notes").val();
         var userEntered = userLoggedInId;
 
+        console.log("newDateApplied = " + newDateApplied);
+        console.log($("#date_applied").val());
+
+
+
         //Check to make sure these fields are not empty
         if (!newDateApplied) {
             $(".alertUser").text("Please select a date.");
@@ -84,6 +89,6 @@ $(function(){
         newJob.location = (newJob.location).toLowerCase().replace(/(^|\s)[a-z]/g, function(letter) {
             return letter.toUpperCase();
         });
-        submitJob(newJob);
+        //submitJob(newJob);
     });
 }) 

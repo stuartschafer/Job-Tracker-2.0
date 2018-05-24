@@ -53,6 +53,7 @@ $(document).ready(function() {
     
    //Create the array of objects
     function createDataArray(data) {
+        console.log(data);
         //Display the rows of data from the database into the table
         for (let i = 0; i < data.length; i++) {
             //Show the jobs of the user who is logged in
@@ -60,8 +61,6 @@ $(document).ready(function() {
             } else {
                 //Empty the object each time the loop is run
                 objArray = {};
-                
-                //Set the properties of the object
 
                 // This section determines if an application is over a month
                 let yearNow = moment().format("YYYY");
