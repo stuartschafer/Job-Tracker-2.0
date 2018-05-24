@@ -11,7 +11,7 @@ function viewInactive() {
 }
 
 let view = sessionStorage.getItem("whichView");
-
+$( document ).ready(function() {
     // And number of days equal to or above this will display results in red
     let userDateDiff = 28;
 
@@ -189,6 +189,7 @@ let view = sessionStorage.getItem("whichView");
 
     // Get the info of the job that was clicked and save to session storage for update
     $("#jobs").on("click", ".updateJob", function() {
+        console.log("CLICK!");
         let id = $(this).attr('value');
         //console.log("id = " + id);
 
@@ -204,7 +205,7 @@ let view = sessionStorage.getItem("whichView");
          }
         
         function gotoEditPage() {
-            location.href = "/edit";
+        location.href = "/edit";
         }
     });
 
@@ -316,5 +317,4 @@ let view = sessionStorage.getItem("whichView");
     //Get and display the jobs data
     $.get("/api/jobs", createDataArray);
 
-
-
+});
