@@ -44,10 +44,8 @@ $(function(){
         var newNotes = $("#notes").val();
         var userEntered = userLoggedInId;
 
-        console.log("newDateApplied = " + newDateApplied);
-        console.log($("#date_applied").val());
-
-
+        // Changes the format so it will be put into SQL in the correct format
+        let newerDateApplied = editedDateApplied[5] + editedDateApplied[6] + "-" + editedDateApplied[8] + editedDateApplied[9] + "-" + editedDateApplied[0] + editedDateApplied[1] + editedDateApplied[2] + editedDateApplied[3];
 
         //Check to make sure these fields are not empty
         if (!newDateApplied) {
@@ -70,7 +68,7 @@ $(function(){
 
         //Create a new object to go into the database
         var newJob = {
-            date_applied: newDateApplied,
+            date_applied: newerDateApplied,
             position: newJobName,
             company: newCompany,
             location: newLocation,
