@@ -32,7 +32,7 @@ $(function(){
     
     $("#newJob").on("click", function(event) {
         event.preventDefault();
-        var newDateApplied = $("#date_applied").val() || moment().format("DD-MM-YYYY");
+        var newDateApplied = $("#date_applied").val() || moment().format("MM-DD-YYYY");
         var newJobName = $("#job_name").val().trim();
         var newCompany = $("#company").val().trim();
         var newLocation = $("#location").val().trim();
@@ -89,6 +89,6 @@ $(function(){
         newJob.location = (newJob.location).toLowerCase().replace(/(^|\s)[a-z]/g, function(letter) {
             return letter.toUpperCase();
         });
-        //submitJob(newJob);
+        submitJob(newJob);
     });
 }) 

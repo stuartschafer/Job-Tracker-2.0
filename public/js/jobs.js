@@ -74,7 +74,7 @@ let view = sessionStorage.getItem("whichView");
                 let dateDiff = dateNow.diff(dateApp, 'days');
 
                 if (dateDiff >= userDateDiff) {
-                    objArray.date_applied = "<span class='columnCenter' style='color: red;'>" + moment(data[i].date_applied).format("DD-MM-YYYY") + "</span>";
+                    objArray.date_applied = "<span class='columnCenter' style='color: red;'>" + moment(data[i].date_applied).format("MM-DD-YYYY") + "</span>";
                     objArray.position = "<span style='color: red;'>" + data[i].position + "</span>";
                     objArray.company = "<span style='color: red;'>" + data[i].company + "</span>";
                     objArray.location = "<span style='color: red;'>" + data[i].location + "</span>";
@@ -89,7 +89,7 @@ let view = sessionStorage.getItem("whichView");
                     objArray.response = "<a href='#'><i id='responseMe' class='fas fa-lg fa-comment-dots center-td icons' value='" + data[i].id + "' data-toggle='modal' data-target='#responseModal'></i></a>";
                     objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob center-td icons' aria-hidden='true'></i></a>";
                 } else {
-                    objArray.date_applied = "<span class='columnCenter'>" + moment(data[i].date_applied).format("DD-MM-YYYY") + "</span>";
+                    objArray.date_applied = "<span class='columnCenter'>" + moment(data[i].date_applied).format("MM-DD-YYYY") + "</span>";
                     objArray.position = data[i].position;
                     objArray.company = data[i].company;
                     objArray.location = data[i].location;
@@ -219,7 +219,7 @@ let view = sessionStorage.getItem("whichView");
         let id = $(".fa-comment-dots").attr('value');
         let addResponseNews = "";
         let status = $("input:radio[name=statusRadio]:checked").val();
-        let status_day = moment().format("DD-MM-YYYY");
+        let status_day = moment().format("MM-DD-YYYY");
         let response = "";
         let goOn = "yes";
         $("#userError").text("");   
