@@ -82,7 +82,7 @@ $( document ).ready(function() {
                 let dateDiff = dateNow.diff(dateApp, 'days');
 
                 if (dateDiff >= userDateDiff) {
-                    objArray.date_applied = "<span class='columnCenter' style='color: red;'>" + moment(data[i].date_applied).format("L") + "</span>";
+                    objArray.date_applied = "<span class='columnCenter' style='color: red;'>" + moment.parseZone(data[i].date_applied).utc().format("L") + "</span>";
                     objArray.position = "<span style='color: red;'>" + data[i].position + "</span>";
                     objArray.company = "<span style='color: red;'>" + data[i].company + "</span>";
                     objArray.location = "<span style='color: red;'>" + data[i].location + "</span>";
@@ -97,7 +97,7 @@ $( document ).ready(function() {
                     objArray.response = "<a href='#'><i id='responseMe' class='fas fa-lg fa-comment-dots center-td icons' value='" + data[i].id + "' data-toggle='modal' data-target='#responseModal'></i></a>";
                     objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob center-td icons' aria-hidden='true'></i></a>";
                 } else {
-                    objArray.date_applied = "<span class='columnCenter'>" + moment(data[i].date_applied).format("L") + "</span>";
+                    objArray.date_applied = "<span class='columnCenter'>" + moment.parseZone(data[i].date_applied).utc().format("L") + "</span>";
                     objArray.position = data[i].position;
                     objArray.company = data[i].company;
                     objArray.location = data[i].location;
