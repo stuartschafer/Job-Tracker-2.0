@@ -32,7 +32,7 @@ $(function(){
     
     $("#newJob").on("click", function(event) {
         event.preventDefault();
-        var newDateApplied = $("#date_applied").val() || moment().format("MM-DD-YYYY");
+        var newDateApplied = $("#date_applied").val() || moment().format("L");
         var newJobName = $("#job_name").val().trim();
         var newCompany = $("#company").val().trim();
         var newLocation = $("#location").val().trim();

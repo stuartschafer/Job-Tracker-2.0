@@ -112,7 +112,7 @@ $(function() {
     //status_response_view = status_response_view.replace(/&#9786;/g, " :) ");
     //status_response_view = status_response_view.replace(/&#9785;/g, " :( ");
 
-    $("#date_applied").val(moment(jobBeingEdited.date_applied).format("DD-MM-YYYY"));
+    $("#date_applied").val(moment(jobBeingEdited.date_applied).format("L"));
     $("#job_name").val(jobBeingEdited.position);
     $("#company").val(jobBeingEdited.company);
     $("#location").val(jobBeingEdited.location);
