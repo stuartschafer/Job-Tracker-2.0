@@ -39,13 +39,13 @@ $(function() {
 
         
 
-        let editedDateApplied = $("#date_applied").val();
+        let editedDateApplied = $("#date_applied").val() || moment().format("L");
         let editedJobName = $("#job_name").val().trim();
         let editedCompany = $("#company").val().trim();
         let editedLocation = $("#location").val().trim();
         let editedDescription = $("#description").val().trim();
         let editedIdNumber = $("#id_number").val().trim();
-        let editedLink = $("#link").val().trim();
+        let editedLink = $("#link").val().trim() || "";
         let editedPostedFrom = $("#posted_from").val().trim();
         let editedInterestLevel = $("input:radio[name=inlineRadioOptions2]:checked").val();
         let editedNotes = $("#notes").val();
@@ -60,11 +60,7 @@ $(function() {
 
         let userEntered = userLoggedInId;
 
-        //Check to make sure these fields are not empty
-        if (!editedDateApplied) {
-            $(".alertUser").text("Please select a date.");
-            return;
-        } 
+        //Check to make sure these fields are not empty 
         if (!editedJobName) {
             $(".alertUser").text("Please enter a job position.");
             return;

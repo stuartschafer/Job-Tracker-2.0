@@ -38,14 +38,14 @@ $( document ).ready(function() {
 
     //Formatting function for row details //
     function format (data) {
-        if (data.link.includes("http") === false) {
+        if (data.link.includes("http") === false && data.link != "") {
             data.link = "https://" + data.link;
         }
         let jobDetails = "<div class='row'>";
         jobDetails += "<div class='col-md-12'><h5>Notes:   <span class='subsection'>" + data.notes + "</span>";
         jobDetails += "<h5>Link:   <span class='subsection'><a id='linkSection' href='" + data.link + "' target='_blank'>" + data.link + "</a></span>";
         jobDetails += "<p><h5>Status:   <strong><span id='statusSection' class='subsection'>" + data.status + "</span></strong></p>";
-        jobDetails += "<p><h5>Responses:   <span class='subsection'>" + data.status_response + "</span></p></div>";
+        jobDetails += "<p><h5>Responses from Employer:   <span class='subsection'>" + data.status_response + "</span></p></div>";
         //jobDetails += "<div class='col-md-6'>" + data.image + "</div></div>";
         return jobDetails;
     }
@@ -61,12 +61,12 @@ $( document ).ready(function() {
                 //Empty the object each time the loop is run
                 objArray = {};
 
-                console.log("~~~~~~~~~~~~~~OLD~~~~~~~~~~~~~~~~");
-                console.log(data[i].date_applied);
-                console.log(moment(data[i].date_applied).format("L"));
-                console.log("------NEWER------");
-                console.log(moment.utc([data[i].date_applied]));
-                console.log(moment.parseZone(data[i].date_applied).utc().format("L"));
+                //console.log("~~~~~~~~~~~~~~OLD~~~~~~~~~~~~~~~~");
+                //console.log(data[i].date_applied);
+                //console.log(moment(data[i].date_applied).format("L"));
+                //console.log("------NEWER------");
+                //console.log(moment.utc([data[i].date_applied]));
+                //console.log(moment.parseZone(data[i].date_applied).utc().format("L"));
 
 
                 // This section determines if an application is over a month
@@ -86,7 +86,7 @@ $( document ).ready(function() {
                     objArray.position = "<span style='color: red;'>" + data[i].position + "</span>";
                     objArray.company = "<span style='color: red;'>" + data[i].company + "</span>";
                     objArray.location = "<span style='color: red;'>" + data[i].location + "</span>";
-                    objArray.description = "<span style='color: red;'>" + data[i].description + "</span>";
+                    //objArray.description = "<span style='color: red;'>" + data[i].description + "</span>";
                     objArray.id_number = "<span style='color: red;'>" + data[i].id_number + "</span>";
                     objArray.link = data[i].link;
                     objArray.posted_from = "<span style='color: red;'>" + data[i].posted_from + "</span>";
@@ -101,11 +101,11 @@ $( document ).ready(function() {
                     objArray.position = data[i].position;
                     objArray.company = data[i].company;
                     objArray.location = data[i].location;
-                    objArray.description = data[i].description;
+                    //objArray.description = data[i].description;
                     objArray.id_number = data[i].id_number;
                     objArray.link = data[i].link;
                     objArray.posted_from = data[i].posted_from;
-                    objArray.interest_level = data[i].interest_level || 0;
+                    objArray.interest_level = "<span class='intLev'>" + data[i].interest_level + "<span>" || 0;
                     objArray.notes = data[i].notes;
                     objArray.status = data[i].status || "";
                     objArray.status_response = data[i].status_response || "";
@@ -147,7 +147,7 @@ $( document ).ready(function() {
                 { "data": "position" },
                 { "data": "company" },
                 { "data": "location" },
-                { "data": "description" },
+                //{ "data": "description" },
                 { "data": "id_number" },
                 { "data": "posted_from" },
                 { "data": "interest_level" },

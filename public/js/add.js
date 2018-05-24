@@ -38,7 +38,7 @@ $(function(){
         var newLocation = $("#location").val().trim();
         var newDescription = $("#description").val().trim();
         var newIdNumber = $("#id_number").val().trim();
-        var newLink = $("#link").val().trim();
+        var newLink = $("#link").val().trim() || "";
         var newPostedFrom = $("#posted_from").val().trim();
         var newInterestLevel = $("input:radio[name=inlineRadioOptions]:checked").val() || "0";
         var newNotes = $("#notes").val();

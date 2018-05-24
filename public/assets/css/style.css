@@ -343,6 +343,11 @@ tr.shown td.details-control {
 	float: right;
 }
 
+.intLev {
+	margin-left: 30%;
+}
+
+
 
 @media (max-width: 960px) {
 	#containerTable {
