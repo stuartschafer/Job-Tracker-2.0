@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
     var Job = sequelize.define("Job", {
         date_applied: {
-            type: DataTypes.DATEONLY,
+            type: DataTypes.STRING,
             allowNull: false
         },
         position: {
