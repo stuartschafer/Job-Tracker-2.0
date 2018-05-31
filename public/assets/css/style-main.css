@@ -342,7 +342,7 @@ tr.shown td.details-control {
 
 
 /* MEDIA QUERIES*/
-@media screen and (max-width: 1960px) {
+@media screen and (max-width: 960px) {
 	#headerlogo, #headerlogo2 {
 		width: 15%;
 	}
