@@ -399,7 +399,7 @@ tr.shown td.details-control {
 	
 	.showNameJobs, .headerJobs {
 		font-size: 125%;
-		margin-top: 12%;
+		margin-top: 15%;
 	}
 
 	#jobs_filter {
@@ -407,6 +407,6 @@ tr.shown td.details-control {
 	}
 
 	.form-control-sm {
-		width: 50% !important;
+		width: 40% !important;
 	}
 }
