@@ -412,4 +412,9 @@ tr.shown td.details-control {
 		margin-left: 10%;
 	}
 	
+	.dropdown-menu {
+		margin-left: -100% !important;
+	}
+	
+	
 }

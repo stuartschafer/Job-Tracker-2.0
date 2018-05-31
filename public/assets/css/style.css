@@ -389,6 +389,24 @@ tr.shown td.details-control {
 		margin-left: 90px !important;
 	}
 	
+	#menuWord {
+		font-size: 20px;
+	}
 	
+	.dropdown-menu {
+		margin-left: -100% !important;
+	}
+	
+	.showNameJobs, .headerJobs {
+		font-size: 125%;
+		margin-top: 12%;
+	}
 
+	#jobs_filter {
+		margin-right: -25%;
+	}
+
+	.form-control-sm {
+		width: 50% !important;
+	}
 }
