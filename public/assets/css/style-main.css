@@ -322,8 +322,13 @@ tr.shown td.details-control {
 	margin-right: 2%;
 }
 
-#menuButtons2 {
+#menuButtons2, #menuButtons3 {
 	margin-top: 2%;
+}
+
+#menuButtons3 {
+	margin-left: 38%;
+	width: 100%;
 }
 
 #invButton, #inactButton {
@@ -369,11 +374,15 @@ tr.shown td.details-control {
 		font-size: 750%;
 	}
 
-	#invButton, #addButton, #inactButton, #searchButton {
+	#invButton, #addButton, #inactButton, #searchButton, #logoutButton {
 		height: 150px;
 		font-size: 30px;
 		width: 49%;
     	margin-left: 0 !important;
+	}
+
+	#logoutButton {
+		margin-left: -12% !important;
 	}
 
 	#headerlogo {
@@ -412,9 +421,7 @@ tr.shown td.details-control {
 		margin-left: 10%;
 	}
 	
-	.dropdown-menu {
-		margin-left: -100% !important;
-	}
+	
 	
 	
 }

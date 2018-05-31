@@ -25,6 +25,10 @@ $(function() {
         location.href = "/search";
     });
 
+    $("#logoutButton").click (function () {
+        location.href = "/logout";
+    });
+
 });
 
 /////**********SHINE**********/////
