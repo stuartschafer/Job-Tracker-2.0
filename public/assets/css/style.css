@@ -397,5 +397,9 @@ tr.shown td.details-control {
 		margin-left: -100% !important;
 	}
 	
-	
+	.showNameJobs, .headerJobs {
+		font-size: 125%;
+		margin-top: 12%;
+	}
+
 }
