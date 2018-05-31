@@ -365,8 +365,15 @@ tr.shown td.details-control {
 		margin-left: 5%;
 	}
 
-	#userEmail, #userPassword {
+	#userEmail, #userPassword, .newuser {
 		height: 75px;
+		font-size: 30px;
+	}
+
+	#signinbutton, #signupbutton, #closeButton {
+		height: 70px;
+		width: 49%;
+		font-size: 40px;
 	}
 
 	.control-label, #signinModalLabel {
