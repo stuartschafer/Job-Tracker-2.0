@@ -350,6 +350,7 @@ tr.shown td.details-control {
 
 	.container {
 		margin: 0;
+		width: 100%;
 	}
 
 	.login {
@@ -359,6 +360,20 @@ tr.shown td.details-control {
 
 	#signinModal {
 		margin-top: -5%;
+	}
+	#slogan {
+		font-size: 375%;
+	}
+
+	#landingPageHeader, #landingPageHeader2 {
+		font-size: 750%;
+	}
+
+	#invButton, #addButton, #inactButton, #searchButton {
+		height: 150px;
+		font-size: 30px;
+		width: 49%;
+    	margin-left: 0 !important;
 	}
 
 	#headerlogo {
