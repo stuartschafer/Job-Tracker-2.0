@@ -357,8 +357,20 @@ tr.shown td.details-control {
 		font-size: 300%;
 	}
 
+	#signinModal {
+		margin-top: -5%;
+	}
+
 	#headerlogo {
 		margin-left: 5%;
+	}
+
+	#userEmail, #userPassword {
+		height: 75px;
+	}
+
+	.control-label, #signinModalLabel {
+		font-size: 30px;
 	}
 
 	#loginButtons {
