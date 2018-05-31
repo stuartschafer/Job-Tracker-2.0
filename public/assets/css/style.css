@@ -397,16 +397,5 @@ tr.shown td.details-control {
 		margin-left: -100% !important;
 	}
 	
-	.showNameJobs, .headerJobs {
-		font-size: 125%;
-		margin-top: 15%;
-	}
-
-	#jobs_filter {
-		margin-right: -25%;
-	}
-
-	.form-control-sm {
-		width: 40% !important;
-	}
+	
 }
