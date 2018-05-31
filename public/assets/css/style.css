@@ -349,11 +349,20 @@ tr.shown td.details-control {
 
 
 
+
+
+
+
+
+
+/* MEDIA QUERIES*/
 @media (max-width: 960px) {
 	#containerTable {
     	width: 100%;
 		margin: 0;
 	}
+
+	
 
 	.showNameJobs, .headerJobs {
 		font-size: 35px;

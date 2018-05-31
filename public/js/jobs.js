@@ -90,7 +90,7 @@ $( document ).ready(function() {
                     objArray.id_number = "<span style='color: red;'>" + data[i].id_number + "</span>";
                     objArray.link = data[i].link;
                     objArray.posted_from = "<span style='color: red;'>" + data[i].posted_from + "</span>";
-                    objArray.interest_level = "<span style='color: red;'>" + data[i].interest_level + "</span>" || "<span style='color: red;'>" + 0 + "</span>";
+                    objArray.interest_level = "<span class='intLev' style='color: red;'>" + data[i].interest_level + "</span>" || "<span style='color: red;'>" + 0 + "</span>";
                     objArray.notes = data[i].notes;
                     objArray.status = + data[i].status || "";
                     objArray.status_response = data[i].status_response || "";

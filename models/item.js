@@ -22,10 +22,6 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        description: {
-            type: DataTypes.TEXT,
-            allowNull: true
-        },
         id_number: {
             type: DataTypes.STRING,
             allowNull: true

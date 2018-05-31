@@ -342,17 +342,26 @@ tr.shown td.details-control {
 
 
 /* MEDIA QUERIES*/
-@media screen and (max-width: 960px) { /* Specific to this particular image */
+@media screen and (max-width: 960px) {
 	#headerlogo, #headerlogo2 {
 		width: 15%;
+	}
+
+	.container {
+		margin: 0;
+	}
+
+	.login {
+		height: 150px;
 	}
 
 	#headerlogo {
 		margin-left: 5%;
 	}
+
 	#loginButtons {
-    	width: 75%;
-    	margin-left: 17%;
+		width: 100%;
+    	margin-left: 0;
 	}
 
 	#landingPageHeader2 {

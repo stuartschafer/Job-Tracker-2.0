@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Job Tracker | Edit Application</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<!-- CUSTOM STYLESHEET -->
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<!-- Favicon link -->
+	<link rel="icon" href="assets/images/jobtracker2.png" type="image/png" sizes="16x16">
+	<!-- FONT AWESOME and GOOGLE FONTS -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Acme|Kavivanar" rel="stylesheet">
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	
+	<!-- Link to Moment.js should go here -->
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+	<!-- CUSTOM JAVASCRIPT -->
+ 	<script src="js/reset.js"></script> 
+</head>
+
+<body>
+	<div class="genContainer">
+		<!-- FIXED NAVBAR -->
+		<nav class="fixed-nav-bar">
+		  	<!-- Logo / link to main menu -->
+		  	<a id="menuWord" href="/menu">JOB TRACKER<img id="navbarlogo" src="./assets/images/jobtracker2.png"></a>
+			<!-- dropdown menu -->
+			<div class="dropdown" id="menudropdown">
+			  	<button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
+			  		Menu <i class="fas ffa-lg a-chevron-circle-down"></i>
+			  	</button>
+				<ul class="dropdown-menu">
+					<li><a href="/add">Add a NEW Job Application</a></li>
+					<li><a onclick="viewActive()">View ACTIVE Applications</a></li>
+					<li><a onclick="viewInactive()">View INACTIVE Applications</a></li>
+					<li><a href="/search">Search Jobs (coming soon!)</a></li>
+					<li><a href="/logout">Logout</a></li>
+			  	</ul>
+			</div>
+		</nav>
+
+		<!-- BACKGROUND IMAGE -->
+		<img class="bgimage" src="./assets/images/green.jpeg">
+
+		<div class="addWrapper">
+			<!-- FORM TO ADD A JOB -->
+			<div class="container" id="newPasswordSection">
+				<h2 id="addHeader">Forgotten/Lost Password</h2>	
+				<div class="row">
+					<div class="col-sm-10">
+						<form class="form-horizontal">
+
+							<div class="input-group col-sm-9 col-sm-offset-3 control-label">
+								<label class="col-sm-9 control-label secQ">Email</label>
+								<input type="email" class="form-control newuser" id="recoverEmail" placeholder="Please enter the email you used to sign up with." aria-describedby="basic-addon1">
+							</div>
+
+							<div id="resetSection">
+								<div class="input-group col-sm-9 col-sm-offset-3 control-label">
+									<label class="col-sm-9 control-label secQ"><span id="secQ1"></span></label>
+									<input type="text" class="form-control newuser" id="ansQ1" name="ansQ1" required>
+								</div>
+								<div class="input-group col-sm-9 col-sm-offset-3 control-label">
+									<label class="col-sm-9 control-label secQ"><span id="secQ2"></span></label>
+									<input type="text" class="form-control newuser" id="ansQ2" name="ansQ2" required>
+								</div>			
+							</div>
+
+							<div id="enterNewPassword">
+								<div class="input-group col-sm-9 col-sm-offset-3 control-label">
+									<label for="password" class="col-sm-3 control-label">New Password</label>
+									<input type="password" class="form-control newuser" id="newPassword" name="newPassword" required>
+								</div>			
+							</div>
+							
+
+							<!--alert user if required field is empty-->
+							<div>
+								<p class="alertUser"><span id="alert"></span></p>
+							</div>
+							
+							<!--submit button-->
+							<div class="form-group">
+								<div class="col-sm-offset-3 col-sm-9">
+									<button type="submit" class="btn btn-primary" id="submitEmail">Submit Email</button>
+									<button type="submit" class="btn btn-info" id="submitEmailCheck">Submit Answers</button>
+									<button type="submit" class="btn btn-success" id="submitNewPassword">Submit New Password</button>
+									<!-- 
+										<a href="/jobs.html" id="discardChanges" class="btn btn-danger" role="button" aria-pressed="true">Discard</a>
+									-->
+								</div>
+							</div>
+
+						</form>
+					</div> <!--end of col 10 div-->
+				</div> <!--end of row div-->
+			</div> <!--end of form containter-->
+		</div> <!--end of addWrapper-->
+
+		<!-- STICKY FOOTER -->
+		<footer class="footer">
+			<div class="container">
+				<p>
+					<a href="https://github.com/stuartschafer/Job-Tracker-2.0" target="_blank" >
+					<i class="fab fa-github-square"></i></a>
+				</p>
+			</div>    
+		</footer>
+	</div>
+</body>
+</html>
