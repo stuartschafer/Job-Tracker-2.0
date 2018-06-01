@@ -228,7 +228,7 @@ $( document ).ready(function() {
         let id = $(".fa-comment-dots").attr('value');
         let addResponseNews = "";
         let status = $("input:radio[name=statusRadio]:checked").val();
-        let status_day = moment().format("L");
+        let status_day = moment($("#responseDate").val()).format("L") || moment().format("L");
         let response = "";
         let goOn = "yes";
         $("#userError").text("");   
