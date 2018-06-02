@@ -336,6 +336,14 @@ tr.shown td.details-control {
 	margin-left: 24%;
 }
 
+#jobButton, #addButton, #inactButton, #searchButton, #logoutButton {
+	font-size: 150%;
+	width: 25%;
+}
+
+.menuButtonSection {
+	padding-bottom: 1.5%;
+}
 
 
 
@@ -379,15 +387,10 @@ tr.shown td.details-control {
 		font-size: 750%;
 	}
 
-	#invButton, #addButton, #inactButton, #searchButton, #logoutButton {
+	#jobButton, #addButton, #inactButton, #searchButton, #logoutButton {
 		height: 150px;
 		font-size: 30px;
-		width: 49%;
-    	margin-left: 0 !important;
-	}
-
-	#logoutButton {
-		margin-left: -12% !important;
+		width: 50%;
 	}
 
 	#headerlogo {
@@ -399,7 +402,7 @@ tr.shown td.details-control {
 		font-size: 30px;
 	}
 
-	#signinbutton, #signupbutton, #closeButton {
+	#signinbutton, #signupbutton, .closeButton {
 		height: 70px;
 		width: 49%;
 		font-size: 40px;

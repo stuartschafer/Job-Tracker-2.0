@@ -1,6 +1,3 @@
-//Default view is Active Applications
-sessionStorage.setItem("whichView", "Active");
-
 $(function() { 
     // GET request to get current user info and display name
     $.get("/api/user_data").then(function(data) {
@@ -8,21 +5,12 @@ $(function() {
     });
 
     //event listeners to route user to corresponding page
-    $("#invButton").click(function () {
+    $("#jobButton").click(function () {
         location.href = "/jobs";
     });
 
     $("#addButton").click (function () {
         location.href = "/add";
-    });
-
-    $("#inactButton").click (function () {
-        sessionStorage.setItem("whichView", "Inactive");
-        location.href = "/jobs";
-    });
-
-    $("#searchButton").click(function () {
-        location.href = "/search";
     });
 
     $("#logoutButton").click (function () {

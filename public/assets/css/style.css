@@ -78,10 +78,10 @@ h1 {
 }
 
 #jobs {
-	border: 5px #EBEBEC solid;
+	border: 5px green solid;
 }
 #jobs thead, tfoot {
-	background-color: #D4D4D4; 	
+	background-color: #5eb076; 	
 }
 /*center icons in table*/
 .center-td {
@@ -247,10 +247,6 @@ tr.shown td.details-control {
 	float: right;
 }
 
-#statusSection {
-	color: red;
-}
-
 #linkSection {
 	color: green;
 }
@@ -349,6 +345,18 @@ tr.shown td.details-control {
 
 td.highlightRed {
 	color: red;
+}
+
+tr.group, tr.group:hover {
+	background-color: silver !important;
+	font-weight: bold;
+}
+
+#customToolbar {
+	float: right;
+    font-size: 125%;
+    padding-right: 23%;
+    margin-top: 0.25%;
 }
 
 
