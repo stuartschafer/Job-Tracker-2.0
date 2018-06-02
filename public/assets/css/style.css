@@ -212,6 +212,10 @@ tr.shown td.details-control {
 	font-size: 200%;
 }
 
+.fa-comment-dots, .fa-edit {
+	color: green;
+}
+
 .modal-dialog {
 	margin-top: 10%;
 }
