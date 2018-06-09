@@ -13,6 +13,10 @@ $(function() {
         location.href = "/add";
     });
 
+    $("#settingsButton").click(function () {
+        location.href = "/settings";
+    });
+
     $("#logoutButton").click (function () {
         location.href = "/logout";
     });

@@ -18,6 +18,14 @@ h1 {
 	position: relative;
 }
 
+
+
+#landingPageHeader, #landingPageHeader2 {
+	font-family: 'ACME', cursive;
+	font-size: 500%;
+	margin-left: -5%;
+}
+
 /* RESPONSIVE BACKGROUND IMAGE */
 .bgimage {
 	z-index: -100;

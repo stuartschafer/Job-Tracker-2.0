@@ -2,203 +2,221 @@
 <html>
 <head>
 	<title>Job Tracker | Add</title>
-
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-	<!-- CUSTOM STYLESHEET -->
-	<link rel="stylesheet" href="./assets/css/style.css">
 	<!-- Favicon link -->
 	<link rel="icon" href="assets/images/jobtracker2.png" type="image/png" sizes="16x16">
 	<!-- FONT AWESOME and GOOGLE FONTS -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Acme|Kavivanar" rel="stylesheet">
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	 
+	<!--DataTables for Bootstrap-->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-colvis-1.5.1/b-flash-1.5.1/b-html5-1.5.1/b-print-1.5.1/cr-1.4.1/r-2.2.1/datatables.min.css"/>
+ 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-colvis-1.5.1/b-flash-1.5.1/b-html5-1.5.1/b-print-1.5.1/cr-1.4.1/r-2.2.1/datatables.min.js"></script>
 	<!-- Link to Moment.js should go here -->
 	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+	<!-- CUSTOM STYLESHEET -->
+	<link rel="stylesheet" href="./assets/css/add.css">
+	<!-- CUSTOM JAVASCRIPT -->
+	<script src="js/add.js"></script>
 
 </head>
 
 <body>
-	<div class="genContainer">
-		<!-- FIXED NAVBAR -->
-		<nav class="fixed-nav-bar">
-		  	<!-- Logo / link to main menu -->
-		  	<a id="menuWord" href="/menu">JOB TRACKER<img id="navbarlogo" src="./assets/images/jobtracker2.png"></a>
-			<!-- dropdown menu -->
-			<div class="dropdown" id="menudropdown">
-			  	<button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
-			  		Menu <i class="fas fa-lg fa-chevron-circle-down"></i>
-			  	</button>
-				<ul class="dropdown-menu">
-					<li><a class="dropdownOptions" href="/add">Add a NEW Job Application</a></li>
-					<li><a class="dropdownOptions" href="/jobs">View Applications</a></li>
-					<li><a class="dropdownOptions" href="/search">Search Jobs (coming soon!)</a></li>
-					<li><a class="dropdownOptions" href="/logout">Logout</a></li>
-			  	</ul>
+	<!-- FIXED NAVBAR -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid" id="navbarSection">
+			<div class="navbar-header">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/menu.html"><span id="navbarTitle">JOB TRACKER</span></a>
+					<img id="navbarlogo" src="./assets/images/jobtracker2.png">
+				</div>
 			</div>
-		</nav>
+		
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav midSection">
+					<div id="title">
+						<span class="showNameJobs"></span> Job Applications
+					</div>
+				</ul>
+			
+				<ul class="nav navbar-nav navbar-right">
+					<li><a class="navbarLinks" href="/jobs">View Applications</a></li>
+					<li><a class="navbarLinks" href="/logout">Log Out</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-		<!-- BACKGROUND IMAGE -->
-		<img class="bgimage" src="./assets/images/green.jpeg">
+	<!-- BACKGROUND IMAGE -->
+	<img class="bgimage" src="./assets/images/green.jpeg">
 
-		<div class="addWrapper">
-			<!-- FORM TO ADD AN ITEM -->
-			<div class="container" id="newJobForm">
-				<h2 id="addHeader">Add a New Job Application</h2>	
-				<div class="row">
-					<div class="col-sm-10">
-						<form class="form-horizontal">
+	<div class="addWrapper">
+		<!-- FORM TO ADD AN ITEM -->
+		<div class="container" id="newJobForm">
+			<h2 id="addHeader">Add A NEW JOB APPLICATION</h2>	
+			<div class="row">
+				<div class="col-sm-10">
+					<form class="form-horizontal">
 
-							<!--Date job was applied for-->
-							<div class="form-group">
-									<label for="input_date_applied" class="col-sm-3 control-label">Date Applied</label>
-									<div class="col-sm-9">
-										<input type="date" class="form-control" id="date_applied" name="date_applied" placeholder="01/01/2018" required>
-									</div>
-								</div>
-
-							<!--Job name input-->
-							<div class="form-group">
-								<label for="input_job_name" class="col-sm-3 control-label">Job Position</label>
+						<!--Date job was applied for-->
+						<div class="form-group">
+								<label for="input_date_applied" class="col-sm-3 control-label">Date Applied</label>
 								<div class="col-sm-9">
-									<input type="text" class="form-control" id="job_name" name="job_name" placeholder="Web Developer" required>
+									<input type="date" class="form-control" id="date_applied" name="date_applied" placeholder="01/01/2018" required>
 								</div>
 							</div>
 
-							<!--Company input-->
-							<div class="form-group">
-									<label for="input_company" class="col-sm-3 control-label">Company</label>
-									<div class="col-sm-9">
-										<input type="text" class="form-control" id="company" placeholder="The Best, Inc." required>
-									</div>
+						<!--Job name input-->
+						<div class="form-group">
+							<label for="input_job_name" class="col-sm-3 control-label">Job Position</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="job_name" name="job_name" placeholder="Web Developer" required>
+							</div>
+						</div>
+
+						<!--Company input-->
+						<div class="form-group">
+								<label for="input_company" class="col-sm-3 control-label">Company</label>
+								<div class="col-sm-9">
+									<input type="text" class="form-control" id="company" placeholder="The Best, Inc." required>
 								</div>
+							</div>
+						
+						<!--Location input-->
+						<div class="form-group">
+							<label for="input_location" class="col-sm-3 control-label">Location</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="location" placeholder="Anywhere, US" required>
+							</div>
+						</div>
+
+						<!--ID# input-->
+						<div class="form-group">
+							<label for="input_id_number" class="col-sm-3 control-label">ID Number</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="id_number" placeholder="optional">
+							</div>
+						</div>
+
+						<!--Link input-->
+						<div class="form-group">
+							<label for="input_link" class="col-sm-3 control-label">Web Link</label>
+							<div class="col-sm-9">
+								<input type="url" class="form-control" id="link" placeholder="optional">
+							</div>
+						</div>
+
+						<!--Posted From input-->
+						<div class="form-group">
+							<label for="input_posted_from" class="col-sm-3 control-label">Posted From</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="posted_from" placeholder="Monster, Glassdoor, Career Builder, etc">
+							</div>
+						</div>
+
+						<!--Interest Level input-->
+						<div class="form-group">
+							<label for="input_interest_level" class="col-sm-3 control-label">Level of Interest</label>
 							
-							<!--Location input-->
-							<div class="form-group">
-								<label for="input_location" class="col-sm-3 control-label">Location</label>
-								<div class="col-sm-9">
-									<input type="text" class="form-control" id="location" placeholder="Anywhere, US" required>
-								</div>
-							</div>
+							<div class="form-check form-check-inline" id="interestLevel">
+									&nbsp&nbsp&nbsp&nbsp&nbsp
+								<label class="form-check-label">
+									<input class="form-check-input radios3" type="radio" name="inlineRadioOptions2" id="interest_level_0" value="0"> 0
+								</label>
 
-							<!--ID# input-->
-							<div class="form-group">
-								<label for="input_id_number" class="col-sm-3 control-label">ID Number</label>
-								<div class="col-sm-9">
-									<input type="text" class="form-control" id="id_number" placeholder="optional">
-								</div>
-							</div>
-
-							<!--Link input-->
-							<div class="form-group">
-								<label for="input_link" class="col-sm-3 control-label">Web Link</label>
-								<div class="col-sm-9">
-									<input type="url" class="form-control" id="link" placeholder="optional">
-								</div>
-							</div>
-
-							<!--Posted From input-->
-							<div class="form-group">
-								<label for="input_posted_from" class="col-sm-3 control-label">Posted From</label>
-								<div class="col-sm-9">
-									<input type="text" class="form-control" id="posted_from" placeholder="Monster, Glassdoor, Career Builder, etc">
-								</div>
-							</div>
-
-							<!--Interest Level input-->
-							<div class="form-group">
-								<label for="input_interest_level" class="col-sm-3 control-label">Level of Interest</label>
+								<label class="form-check-label">
+									<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_1" value="1"> 1
+								</label>
 								
-								<div class="form-check form-check-inline" id="interestLevel">
-										&nbsp
-									<label class="form-check-label">
-										<input class="form-check-input radios3" type="radio" name="inlineRadioOptions2" id="interest_level_0" value="0"> 0
-									</label>
-									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-									<label class="form-check-label">
-										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_1" value="1"> 1
-									</label>
-									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-									<label class="form-check-label">
-										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_2" value="2"> 2
-									</label>
-									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-									<label class="form-check-label">
-										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_3" value="3"> 3
-									</label>
-									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-									<label class="form-check-label">
-										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_4" value="4"> 4
-									</label>
-									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-									<label class="form-check-label">
-										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_5" value="5"> 5
-									</label>
-									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-									<label class="form-check-label">
-										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_6" value="6"> 6
-									</label>
-									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-									<label class="form-check-label">
-										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_7" value="7"> 7
-									</label>
-									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-									<label class="form-check-label">
-										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_8" value="8"> 8
-									</label>
-									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-									<label class="form-check-label">
-										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_9" value="9"> 9
-									</label>
-									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-									<label class="form-check-label">
-										<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_10" value="10"> 10
-									</label>
-								</div>
+								<label class="form-check-label">
+									<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_2" value="2"> 2
+								</label>
+								
+								<label class="form-check-label">
+									<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_3" value="3"> 3
+								</label>
+								
+								<label class="form-check-label">
+									<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_4" value="4"> 4
+								</label>
+								
+								<label class="form-check-label">
+									<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_5" value="5"> 5
+								</label>
+								
+								<label class="form-check-label">
+									<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_6" value="6"> 6
+								</label>
+								
+								<label class="form-check-label">
+									<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_7" value="7"> 7
+								</label>
+								
+								<label class="form-check-label">
+									<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_8" value="8"> 8
+								</label>
+								
+								<label class="form-check-label">
+									<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_9" value="9"> 9
+								</label>
+								
+								<label class="form-check-label">
+									<input class="form-check-input radios2" type="radio" name="inlineRadioOptions" id="interest_level_10" value="10"> 10
+								</label>
 							</div>
+						</div>
 
-							<!--Notes input-->
-							<div class="form-group">
-								<label for="input_notes" class="col-sm-3 control-label">Notes</label>
-								<div class="col-sm-9">
-									<textarea class="form-control" id="notes" rows="3"></textarea>
-								</div>
+						<!--Notes input-->
+						<div class="form-group">
+							<label for="input_notes" class="col-sm-3 control-label">Notes</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" id="notes" rows="3"></textarea>
 							</div>
+						</div>
 
-							<!--alert user if required field is empty-->
-							<div>
-									<p class="alertUser"></p>
+						<!--alert user if required field is empty-->
+						<div>
+								<p class="alertUser"></p>
+						</div>
+
+						<!--submit button-->
+						<div class="form-group" id="buttonSection">
+							<div class="col-sm-offset-3 col-sm-9">
+								<button type="submit" class="btn btn-success" id="newJob">Submit</i></button>
+								<a href="/jobs.html" id="discardChanges" class="btn btn-danger" role="button" aria-pressed="true">Discard</a>
 							</div>
+						</div>
 
-							<!--submit button-->
-							<div class="form-group">
-								<div class="col-sm-offset-3 col-sm-9">
-									<button type="submit" class="btn btn-success" id="newJob">Submit</i></button>
-									<a href="/jobs.html" id="discardChanges" class="btn btn-danger" role="button" aria-pressed="true">Discard</a>
-								</div>
-							</div>
+					</form>
+				</div> <!--end of col 10 div-->
+			</div> <!--end of row div-->
+		</div> <!--end of form container-->
+	</div> <!--end of addWrapper-->
 
-						</form>
-					</div> <!--end of col 10 div-->
-				</div> <!--end of row div-->
-			</div> <!--end of form container-->
-		</div> <!--end of addWrapper-->
-
-		<!-- STICKY FOOTER -->
-		<footer class="footer">
-			<div class="container">
-				<p>
-					<a href="https://github.com/stuartschafer/Job-Tracker-2.0" target="_blank" >
-					<i class="fab fa-github-square"></i></a>
-				</p>
-			</div>    
-		</footer>
-	</div>
+	<!-- STICKY FOOTER -->
+	<nav class="navbar navbar-default navbar-fixed-bottom">
+		<div id="footerNavbar">
+			<div class="container text-center">
+				<a href="https://github.com/stuartschafer/Job-Tracker-2.0" target="_blank" >
+				<i class="fab fa-github-square"></i></a>
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li><a class="navbarLinks" href="/settings">Settings</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<!-- CUSTOM JAVASCRIPT -->
 	<script src="js/add.js"></script>
 </body>

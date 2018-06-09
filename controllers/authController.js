@@ -32,6 +32,6 @@ exports.jobs = function(req, res) {
 	res.sendFile(path.join(__dirname, "../public/jobs.html"));  
 }
 
-exports.search = function(req, res) {	
-	res.sendFile(path.join(__dirname, "../public/search.html"));
+exports.settings = function(req, res) {	
+	res.sendFile(path.join(__dirname, "../public/settings.html"));
 } 

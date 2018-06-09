@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Job Tracker | Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- GOOGLE FONTS -->
@@ -14,11 +16,11 @@
 	<!-- Link for shine.js script -->
 	<script src="js/shine.min.js"></script>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
 	<!-- CUSTOM STYLESHEET -->
-	<link rel="stylesheet" href="./assets/css/style-main.css">
+	<link rel="stylesheet" href="./assets/css/index.css">
 </head>
 <body>
 	<!-- BACKGROUND IMAGE -->
@@ -40,109 +42,147 @@
 				<h4 id="slogan">Never fear, your career is all right here.</h4>	
 			</div>
 		</div>
-		<div class="row justify-content-md-center text-center">
-			<div class="col col-lg-12">
-				<div id="loginButtons">
-					<button type="button" id="logintoacct" class="login btn col-sm-5 btn-warning" data-toggle="modal" data-target="#signupModal">Sign Up  <i class="fa fa-user-plus"></i></button>
-					<button type="button" class="login btn col-sm-5 btn-success" data-toggle="modal" data-target="#signinModal">Sign In  <i class="fas fa-unlock-alt"></i></button>
-				</div>
+	
+		<!-- Buttons -->
+		<div class="container">
+			<div class="row justify-content-md-center">
+				<button id="logintoacct" type="button" class="btn btn-warning btn-lg btn-block center-block" data-toggle="modal" data-target="#signupModal">Sign Up  <i class="fa fa-user-plus"></i></button>
+			</div>
+			<div class="row justify-content-md-center">
+				<button id="signintoacct" type="button" class="btn btn-success btn-lg btn-block center-block" data-toggle="modal" data-target="#signinModal">Sign In  <i class="fas fa-unlock-alt"></i></button>
+			</div>
+		</div>
+
+		
+		
+
+
+	</div>
+	<!-- =============MODALS====================== -->
+	<!-- Sign in Modal -->
+	<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<form class="form-horizontal" id="signin" name="signin" method="post" action="/signin">
+					<div class="modal-header">
+						<h5 class="modal-title" id="signinModalLabel">Sign In</h5>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="email" class="col-sm-3 control-label">Email</label>
+							<div class="col-sm-9">
+								<input type="email" name="email" class="form-control existinguser" id="userEmail" placeholder="" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">Password</label>
+							<div class="col-sm-9">
+								<input type="password" name="password" class="form-control existinguser" id="userPassword" required>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<button type="button" id="resetPW" class="btn btn-danger">Forgot/Reset Password</button>
+							</div>
+						</div>			
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default closeButton" data-dismiss="modal">Close</button>
+						<button type="submit" id="signinbutton" class="btn btn-success">Submit</button>
+					</div>
+				</form>	
 			</div>
 		</div>
 	</div>
 
-
-
-
-
-
-
-	
-<!-- =============MODALS====================== -->
-
-<!-- Sign in Modal -->
-<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-
-		<div class="modal-content">
-    		<div class="modal-header">
-        		<h5 class="modal-title" id="signinModalLabel">Sign In</h5>
-        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          			<span aria-hidden="true">&times;</span>
-        		</button>
-      		</div>
-      
-		    <div class="modal-body">
-				<form class="form-horizontal" id="signin" name="signin" method="post" action="/signin">
-					  
-					<div class="form-group">
-						<label for="email" class="col-sm-3 control-label">Email</label>
-						<div class="col-sm-9">
-							<input type="email" name="email" class="form-control existinguser" id="userEmail" placeholder="" required>
+	<!-- Sign up Modal -->
+	<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<form class="form-horizontal" id="signup" name="signup" method="post" action="/signup">
+					<div class="modal-header">
+						<h5 class="modal-title" id="signinModalLabel">Sign Up</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="name" class="col-sm-3 control-label">Name</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control newuser" id="newUserName" placeholder="" name="name" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="email" class="col-sm-3 control-label">Email</label>
+							<div class="col-sm-9">
+								<input type="email" class="form-control newuser" id="newUserEmail" placeholder="" name="email" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">Password</label>
+							<div class="col-sm-9">
+								<input type="password" class="form-control newuser" id="newUserPassword" name="password" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" id="confirmPW" class="col-sm-3 control-label">Confirm Password</label>
+							<div class="col-sm-9">
+								<input type="password" class="form-control newuser" id="newUserPasswordConfirm" name="password" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="securityQuestion1" class="col-sm-3 control-label">Question 1</label>
+							<div class="col-sm-9">
+								<select id="secQues1" class="form-control" name="ques1Choice">
+									<option></option>
+									<option value="1">What city were you born in?</option>
+									<option value="2">What is your father's middle name?</option>
+									<option value="3">What was your high school's mascot?</option>
+									<option value="4">Who was your best childhood friend?</option>
+									<option value="5">What street did you grow up on?</option>
+									<option value="6">What was the name of your very first pet?</option>
+									<option value="7">In what town or city did you meet your spouse/partner?</option>
+									<option value="8">What is the first name of the person you had your first kiss with?</option>
+									<option value="9">What is ther name of your favorite band/musician?</option>
+								</select>
+							</div>
+							<div class="col-sm-9 col-sm-offset-3">
+								<input type="text" class="form-control newuser" id="ansQues1" name="ansQues1" maxlength="27" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="securityQuestion1" class="col-sm-3 control-label">Question 2</label>
+							<div class="col-sm-9">
+								<select id="secQues2" class="form-control" name="ques2Choice">
+									<option></option>
+									<option value="1">What city were you born in?</option>
+									<option value="2">What is your father's middle name?</option>
+									<option value="3">What was your high school's mascot?</option>
+									<option value="4">Who was your best childhood friend?</option>
+									<option value="5">What street did you grow up on?</option>
+									<option value="6">What was the name of your very first pet?</option>
+									<option value="7">In what town or city did you meet your spouse/partner?</option>
+									<option value="8">What is the first name of the person you had your first kiss with?</option>
+									<option value="9">What is ther name of your favorite band/musician?</option>
+								</select>
+							</div>
+							<div class="col-sm-9 col-sm-offset-3">
+								<input type="text" class="form-control newuser" id="ansQues2" name="ansQues2" maxlength="27" required>
+							</div>
+							<div class="col-sm-12 text-center">
+								<span id="errors"></span>
+							</div>
 						</div>
 					</div>
-
-					<div class="form-group">
-						<label for="password" class="col-sm-3 control-label">Password</label>
-						<div class="col-sm-9">
-							<input type="password" name="password" class="form-control existinguser" id="userPassword" required>
-						</div>
-					</div>					
-		    </div>
-    
-		    <div class="modal-footer">
-		        <button type="button" class="btn btn-secondary closeButton" data-dismiss="modal">Close</button>
-		        <button type="submit" id="signinbutton" class="btn btn-success">Submit</button>
-		    	</form>
-		    </div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default closeButton" data-dismiss="modal">Close</button>
+						<button type="submit" id="signupbutton" value="Sign Up" class="btn btn-success">Submit</button>
+					</div>
+				</form>	
+			</div>
 		</div>
-  	</div>
-</div>
-
-<!-- Sign up Modal -->
-<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-
-		<div class="modal-content">
-			<div class="modal-header">
-        		<h5 class="modal-title" id="signinModalLabel">Sign Up</h5>
-        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          		<span aria-hidden="true">&times;</span>
-        		</button>
-      		</div>
-    	
-    	<div class="modal-body">
-			<form class="form-horizontal" id="signup" name="signup" method="post" action="/signup">
-			
-			<div class="form-group">
-			    <label for="name" class="col-sm-3 control-label">Name</label>
-			    <div class="col-sm-9">
-			    	<input type="text" class="form-control newuser" id="newUserName" placeholder="" name="name" required>
-			    </div>
-			</div>
-
-			<div class="form-group">
-			    <label for="email" class="col-sm-3 control-label">Email</label>
-			    <div class="col-sm-9">
-			    	<input type="email" class="form-control newuser" id="newUserEmail" placeholder="" name="email" required>
-			    </div>
-			</div>
-
-			<div class="form-group">
-			    <label for="password" class="col-sm-3 control-label">Password</label>
-			    <div class="col-sm-9">
-			    	<input type="password" class="form-control newuser" id="newUserPassword" name="password" required>
-			    </div>
-			</div>					
-      	</div>
-
-    	<div class="modal-footer">
-    		<button type="button" class="btn btn-secondary closeButton" data-dismiss="modal">Close</button>
-        	<button type="submit" id="signupbutton" value="Sign Up" class="btn btn-success">Submit</button>
-        	</form>
-      	</div>
-    </div>
-  </div>
-</div>			
+	</div>
 
 <!-- js for user login (needs to be after html to work properly -->
 <script type="text/javascript" src="./js/login.js"></script>

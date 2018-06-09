@@ -2,24 +2,30 @@
 <html>
 <head>
 	<title>Job Tracker | Main Menu</title>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-	<!-- CUSTOM STYLESHEET -->
-	<link rel="stylesheet" href="./assets/css/style-main.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Link for shine.js script -->
 	<script src="js/shine.min.js"></script>
 	<!-- Favicon link -->
 	<link rel="icon" href="assets/images/jobtracker2.png" type="image/png" sizes="16x16">
 	<!-- FONT AWESOME and GOOGLE FONTS -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Acme|Kavivanar|Kalam" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Acme|Kavivanar" rel="stylesheet">
+	<!--DataTables for Bootstrap-->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-colvis-1.5.1/b-flash-1.5.1/b-html5-1.5.1/b-print-1.5.1/cr-1.4.1/r-2.2.1/datatables.min.css"/>
+	<!-- Link to Moment.js should go here -->
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	
-	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- CUSTOM STYLESHEET -->
+	<link rel="stylesheet" href="./assets/css/menu.css">
 </head>
 <body>	
 	<!-- BACKGROUND IMAGE -->
@@ -43,18 +49,17 @@
 		</div>
 
 		<!-- Button section -->
-		<div class="container-fluid">
-			<div class="col-sm-12 text-center menuButtonSection">
+		<div class="container">
+			<div class="row justify-content-md-center">
 				<button id="jobButton" type="button" class="btn btn-success btn-lg btn-block center-block">View Applications <i class="fa fa-thumbs-up"></i></button>
 			</div>
-		</div>
-		<div class="container-fluid">
-			<div class="col-sm-12 text-center menuButtonSection">
+			<div class="row justify-content-md-center">
 				<button id="addButton" type="button" class="btn btn-warning btn-lg btn-block center-block">Add New Job <i class="fas fa-clipboard-check"></i></button>
 			</div>
-		</div>
-		<div class="container-fluid">
-			<div class="col-sm-12 text-center menuButtonSection">
+			<div class="row justify-content-md-center">
+				<button id="settingsButton" type="button" class="btn btn-primary btn-lg btn-block center-block">Settings <i class="fas fa-cogs"></i></button>
+			</div>
+			<div class="row justify-content-md-center">
 				<button id="logoutButton" type="button" class="btn btn-dark btn-lg btn-block center-block">Log Out <i class="fas fa-external-link-alt"></i></button>
 			</div>
 		</div>

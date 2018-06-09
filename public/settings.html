@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Job Tracker | Add</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<!-- Favicon link -->
+	<link rel="icon" href="assets/images/jobtracker2.png" type="image/png" sizes="16x16">
+	<!-- FONT AWESOME and GOOGLE FONTS -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Acme|Kavivanar" rel="stylesheet">
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	 
+	<!--DataTables for Bootstrap-->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-colvis-1.5.1/b-flash-1.5.1/b-html5-1.5.1/b-print-1.5.1/cr-1.4.1/r-2.2.1/datatables.min.css"/>
+ 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-colvis-1.5.1/b-flash-1.5.1/b-html5-1.5.1/b-print-1.5.1/cr-1.4.1/r-2.2.1/datatables.min.js"></script>
+	<!-- Link to Moment.js should go here -->
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+	<!-- CUSTOM STYLESHEET -->
+	<link rel="stylesheet" href="./assets/css/settings.css">
+	<!-- CUSTOM JAVASCRIPT -->
+	<script src="js/settings.js"></script>
+
+</head>
+
+<body>
+	<!-- FIXED NAVBAR -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid" id="navbarSection">
+			<div class="navbar-header">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/menu.html"><span id="navbarTitle">JOB TRACKER</span></a>
+					<img id="navbarlogo" src="./assets/images/jobtracker2.png">
+				</div>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav midSection">
+					<div id="title">
+						<span class="showNameJobs"></span> Settings
+					</div>
+				</ul>
+			
+				<ul class="nav navbar-nav navbar-right">
+					<li><a class="navbarLinks" href="/jobs">View Applications</a></li>
+					<li><a class="navbarLinks" href="/logout">Log Out</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- BACKGROUND IMAGE -->
+	<img class="bgimage" src="./assets/images/green.jpeg">
+
+	<div class="addWrapper">
+		<!-- FORM TO ADD A JOB -->
+		<div class="container" id="newJobForm">
+			<h2 id="addHeader">SETTINGS</h2>	
+			<div class="row">
+				<div class="col-sm-10">
+					<form class="form-horizontal">
+						<hr>
+						<!-- Sound on/off section-->
+						<div class="form-group">
+							<label for="soundSection" id="soundLabel" class="col-sm-3 col-sm-offset-4 control-label">Sound effects</label>
+							
+							<div class="form-check form-check-inline" id="soundSection">
+									&nbsp
+								<label class="form-check-label">
+									<input class="form-check-input" type="radio" name="soundSetting" id="soundOn" value="on"> ON
+								</label>
+								
+								<label class="form-check-label">
+									<input class="form-check-input" type="radio" name="soundSetting" id="soundOff" value="off"> OFF
+								</label>
+							</div>
+						</div>
+						<hr>
+						<!-- Overdue alert section-->
+						<div class="form-group">
+							<label for="overdueAlert" class="col-sm-3 col-sm-offset-4 control-label">Alert for Overdue Application</label>
+							<div class="col-sm-2">
+								<input type="number" class="form-control" id="overdueAlert" name="overdueAlert" min="1">
+							</div>
+						</div>
+						<hr>
+						<!-- Order By section-->
+						<div class="form-group">
+							<label for="orderbySection" id="orderbyLabel" class="col-sm-3 col-sm-offset-4 control-label">Order By</label>
+							
+							<div class="form-check form-check-inline" id="orderbySection">
+									&nbsp
+								<label class="form-check-label">
+									<input class="form-check-input" type="radio" name="orderBySection" id="orderbyDate" value="date"> Date
+								</label>
+								
+								<label class="form-check-label">
+									<input class="form-check-input" type="radio" name="orderBySection" id="orderbyInterestLevel" value="interest_level"> Interest Level
+								</label>
+							</div>
+						</div>
+						<hr>
+						<!-- Sort By section-->
+						<div class="form-group">
+							<label for="ascDesSection" id="soundLabel" class="col-sm-3 col-sm-offset-4 control-label">Sort By</label>
+							
+							<div class="form-check form-check-inline" id="soundSection">
+									&nbsp
+								<label class="form-check-label">
+									<input class="form-check-input" type="radio" name="sortBySection" id="ascending" value="asc"> Ascending
+								</label>
+								
+								<label class="form-check-label">
+									<input class="form-check-input" type="radio" name="sortBySection" id="descending" value="desc"> Descending
+								</label>
+							</div>
+						</div>
+						<hr>
+						<!-- Default display length section-->
+						<div class="form-group">
+							<label for="defaultDisplay" class="col-sm-3 col-sm-offset-4 control-label">Default display length</label>
+							<div class="col-sm-2">
+								<select id="defaultDisplay" class="form-control">
+									<option>5</option>
+									<option>10</option>
+									<option>25</option>
+									<option>50</option>
+									<option>All</option>
+								</select>
+							</div>
+						</div>
+						<hr>
+						<!-- Display/Hide section-->
+						<div class="form-group">
+							<label for="displayHideSection" id="soundLabel" class="col-sm-3 col-sm-offset-4 control-label">Display/Hide Columns</label>
+							<div class="row displayHide">
+								<div class="col-sm-6 form-check form-check-inline" id="IDColumn">
+									<label class="form-check-label">ID Column &nbsp
+										<input class="form-check-input" type="radio" name="IDColumnVisibility" id="displayIDColumn" value="display"> Display
+									</label>	
+									<label class="form-check-label">
+										<input class="form-check-input" type="radio" name="IDColumnVisibility" id="hideIDColumn" value="hide"> Hide
+									</label>
+								</div>
+							</div>
+							<div class="row displayHide">
+								<div class="col-sm-6 form-check form-check-inline" id="postedFromColumn">
+									<label class="form-check-label">Posted From Column &nbsp
+										<input class="form-check-input" type="radio" name="postedFromColumnVisibility" id="displayPostedFromColumn" value="display"> Display
+									</label>
+									<label class="form-check-label">
+										<input class="form-check-input" type="radio" name="postedFromColumnVisibility" id="hidePostedFromColumn" value="hide"> Hide
+									</label>
+								</div>
+							</div>
+							<div class="row displayHide">
+								<div class="col-sm-6 form-check form-check-inline" id="locationColumn">
+									<label class="form-check-label">Location Column &nbsp
+										<input class="form-check-input" type="radio" name="locationColumnVisibility" id="displayLocationColumn" value="display"> Display
+									</label>
+									<label class="form-check-label">
+										<input class="form-check-input" type="radio" name="locationColumnVisibility" id="hideLocationColumn" value="hide"> Hide
+									</label>
+								</div>
+							</div>
+						</div>
+						<hr>
+						<!-- Change name at top section-->
+						<div class="form-group">
+							<label for="displayedName" class="col-sm-4 col-sm-offset-3 control-label">Change the name displayed at Top</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="displayedName">
+							</div>
+						</div>
+						<hr>
+					
+
+						<!--alert user if required field is empty-->
+						<div>
+								<p class="alertUser"></p>
+						</div>
+						
+						<!--submit button-->
+						<div class="form-group" id="buttonSection">
+							<div class="col-sm-offset-3 col-sm-9">
+								<button type="button" class="btn btn-success" id="saveSettings">Save Changes</button>
+								<a href="/jobs.html" id="discardChanges" class="btn btn-danger" role="button" aria-pressed="true">Discard</a>
+							</div>
+						</div>
+
+					</form>
+				</div> <!--end of col 10 div-->
+			</div> <!--end of row div-->
+		</div> <!--end of form containter-->
+	</div> <!--end of addWrapper-->
+
+
+
+
+
+	<!-- STICKY FOOTER -->
+	<nav class="navbar navbar-default navbar-fixed-bottom">
+		<div id="footerNavbar">
+			<div class="container text-center">
+				<a href="https://github.com/stuartschafer/Job-Tracker-2.0" target="_blank" >
+				<i class="fab fa-github-square"></i></a>
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li><a class="navbarLinks" href="/settings">Settings</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+</body>
+</html>

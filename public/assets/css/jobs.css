@@ -1,0 +1,238 @@
+body {
+	height: 100%;
+	padding-bottom: 70px;
+}
+
+html {
+	height: 100%;
+	position: relative;
+}
+
+h1 {
+	font-family: 'Acme', sans-serif;
+	font-size: 350%;
+}
+
+h5 {
+	font-size: 100%;
+}
+
+#footerNavbar {
+	background-color: green !important;
+	height: 49px;
+}
+
+/* RESPONSIVE BACKGROUND IMAGE */
+.bgimage {
+	z-index: -100;
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+	
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+	
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: .5;
+}
+
+#menuWord {
+	font-size: 45px;
+    margin-left: 5%;
+}
+
+#navbarlogo {
+	width: 7%;
+	margin-left: -2%;
+}
+
+#navbarSection {
+	background-color: green;
+}
+
+.navbar-default, .navbar-brand, #showNameJobs{
+	color: white !important;
+	font-family: 'Acme', sans-serif;
+}
+
+#navbarTitle:hover {
+	color: #5eb076;
+}
+
+#navbarTitle {
+	font-size: 200%;
+}
+
+#title {
+	font-family: 'Acme', sans-serif;
+	font-size: 250%;
+	margin-left: -40%;
+}
+
+.navbarLinks {
+	color: white !important;
+	font-family: 'Acme', sans-serif;
+	font-size: 125%;
+	border-left: 2px solid #5eb076;
+}
+
+.navbarLinks:hover {
+	color: #5eb076 !important;
+}
+
+#table-container {
+	margin-top: 5%;
+}
+
+#customToolbar {
+	float: right;
+    font-size: 125%;
+    padding-right: 23%;
+	margin-top: 0.25%;
+	font-weight: bold;
+	color: green;
+}
+
+#jobs_filter, .pagination {
+	float: right;
+}
+
+#headerRow {
+	background-color: #5eb076;
+}
+
+#jobs {
+    border: 5px green solid;
+}
+
+tr.group {
+    background-color: silver !important;
+    font-weight: bold;
+}
+
+tr.group:hover {
+	background-color: lightgray !important;
+}
+
+th {
+	text-align: center;
+}
+
+.intLev {
+	margin-left: 30%;
+}
+
+#responseMe, #updateMe {
+	font-size: 230% !important;
+	margin-left: 30%;
+	color: green;
+}
+
+.fa-github-square:hover {
+	color: #5eb076;
+}
+
+.fa-github-square {
+	color: white;
+	font-size: 350%;
+}
+
+.buttons-html5 {
+	border-right: 2px solid #ddd;
+}
+
+.dt-button-collection {
+	display: grid;
+}
+
+.buttons-colvis, .dt-button-collection {
+	border-right: 2px solid #ddd;
+	margin-left: 200px !important;
+}
+
+.buttons-colvis {
+	border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+}
+
+.buttons-print {
+	border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+}
+
+.buttons-copy:hover, .buttons-csv:hover, .buttons-excel:hover, .buttons-pdf:hover, .buttons-print:hover, .buttons-collection:hover, .buttons-colvisRestore:hover, .previous:hover, .next:hover {
+	color: white;
+	background-color: silver;
+}
+
+td.details-control {
+    background: url('../images/expand-arrow2.png') no-repeat center center;
+	background-size: 30px;
+	width: 30px;
+}
+
+tr.shown td.details-control {
+	background: url('../images/expand-arrow2.png') no-repeat center center;
+	transform: rotate(180deg);
+	background-size: 30px;
+	width: 30px;
+}
+
+#responseGood {
+	float: left;
+	margin-left: 16%;
+	font-size: 125%;
+}
+
+#responseBad {
+	float: right;
+	margin-right: 19%;
+	font-size: 125%;
+}
+
+.responseDate {
+	font-size: 125%;
+	padding: 1%;
+}
+
+#responseGoodOptions, #responseBadOptions {
+	width: 45%;
+	float: left;
+	margin-left: 3%;
+}
+
+#statusActiveLabel {
+	color: green;
+}
+
+#statusInactiveLabel {
+	color: red;
+}
+
+.responseButtons, #notesSection, .form-check-label {
+	font-size: 125%;
+}
+
+.subsection {
+	color: green;
+}
+
+.midSection {
+	width: 35%;
+}
+
+#lowerSection {
+	padding-bottom: 70px;
+}
+
+.dropdown-item {
+	margin-left: 10%;
+}
+
+.highlightRed {
+	color: red;
+}

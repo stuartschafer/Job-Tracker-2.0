@@ -1,0 +1,99 @@
+body {
+    height: 100%;
+    font-family: 'Acme', sans-serif;
+}
+
+html {
+	height: 100%;
+	position: relative;
+}
+
+h1 {
+	font-family: 'Acme', sans-serif;
+	font-size: 350%;
+}
+
+/* RESPONSIVE BACKGROUND IMAGE */
+.bgimage {
+	z-index: -100;
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+	
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+	
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: .5;
+}
+
+#landingPageHeader {
+	font-family: 'ACME', cursive;
+	font-size: 500%;
+	margin-left: -5%;
+}
+
+#headerlogo {
+	width: 10%;
+	margin-left: -4%;
+}
+
+#topSection {
+	margin-top: 10%;
+}
+
+#logintoacct, #signintoacct {
+	font-size: 150%;
+	width: 30%;
+	margin-bottom: 1%;
+	font-family: 'ACME', cursive;
+}
+
+#slogan {
+	font-size: 200%;
+	font-family: 'Kavivanar', cursive;
+}
+
+#signinModalLabel {
+    font-size: 200%;
+}
+
+.control-label {
+    font-size: 125%;
+}
+
+#confirmPW {
+    font-size: 110%;
+}
+
+#signinbutton, #signupbutton, .closeButton {
+    width: 25%;
+    font-size: 150%;
+}
+
+#errors {
+    font-size: 150%;
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width : 992px) {
+    #signinbutton, #signupbutton, .closeButton {
+        height: 70px;
+        width: 49%;
+        font-size: 40px;
+    }
+}

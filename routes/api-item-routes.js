@@ -1,5 +1,5 @@
 // Requiring our models
-var db = require("../models");
+let db = require("../models");
 
 module.exports = function(app) {
     //route for retrieving all jobs

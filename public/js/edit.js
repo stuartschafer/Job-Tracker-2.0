@@ -2,8 +2,21 @@ $(function() {
     var userLoggedInId = "";
     // This gets the id and name of the user
     $.get("/api/user_data").then(function(data) {
-      userLoggedInId = data.id;
-      userLoggedInName = data.name;
+        userLoggedInId = data.id;
+        userLoggedInName = data.name;
+        // This is the name that will be displayed in the navbar
+        let userSettings = JSON.parse(data.settings);
+        displayName = userSettings.name || data.name;
+        $(".showNameJobs").text(displayName + "\'s");
+
+        // This section will change the navbar area for longer names to be shown correctly
+        if (displayName.length > 20 && displayName.length <= 25) {
+            $(".midSection").css({"margin-left":"-5%", "width":"40%"});
+        } else if (displayName.length > 25 && displayName.length <= 30) {
+            $(".midSection").css({"margin-left":"-8%", "width":"43%"});
+        } else if (displayName.length > 30) {
+            $(".midSection").css({"margin-left":"-7%", "width":"42%", "font-size":"75%"});
+        }
     });;
 
     /////**********FUNCTIONS**********/////
@@ -87,7 +100,15 @@ $(function() {
     /////**********ON PAGE LOAD**********/////
 
     //Pull the info from sessionstorage to display existing values in edit form
-    var jobBeingEdited = JSON.parse(sessionStorage.getItem("jobtoEdit"));
+    let jobBeingEdited = JSON.parse(sessionStorage.getItem("jobtoEdit"));
+
+    // This checks to make sure a job is loaded into sessionStorage.  If not, the user is redirected to the jobs page
+    if (jobBeingEdited == null) {
+        location.href = "/jobs.html";
+    }
+
+    // This empties out the job so the system will check to see if the user accessed this page without selecting a job to edit
+    //sessionStorage.clear();
     
     // This is to replce the special ASCII characters that displays weird
     let status_response_view = jobBeingEdited.status_response.replace(/&#9883;/g, " --- ");

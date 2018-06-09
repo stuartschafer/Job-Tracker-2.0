@@ -1,0 +1,128 @@
+body {
+	height: 100%;
+	padding-bottom: 70px;
+}
+
+html {
+	height: 100%;
+	position: relative;
+}
+
+h1 {
+	font-family: 'Acme', sans-serif;
+	font-size: 350%;
+}
+
+h5 {
+	font-size: 100%;
+}
+
+#footerNavbar {
+	background-color: green !important;
+	height: 49px;
+}
+
+/* RESPONSIVE BACKGROUND IMAGE */
+.bgimage {
+	z-index: -100;
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+	
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+	
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: .5;
+}
+
+#menuWord {
+	font-size: 45px;
+    margin-left: 5%;
+}
+
+#navbarlogo {
+	width: 7%;
+	margin-left: -2%;
+}
+
+#navbarSection {
+	background-color: green;
+}
+
+.navbar-default, .navbar-brand, #showNameJobs{
+	color: white !important;
+	font-family: 'Acme', sans-serif;
+}
+
+#navbarTitle:hover {
+	color: #5eb076;
+}
+
+#navbarTitle {
+	font-size: 200%;
+}
+
+#title {
+	font-family: 'Acme', sans-serif;
+	font-size: 250%;
+	margin-left: -40%;
+}
+
+.navbarLinks {
+	color: white !important;
+	font-family: 'Acme', sans-serif;
+	font-size: 125%;
+	border-left: 2px solid #5eb076;
+}
+
+.navbarLinks:hover {
+	color: #5eb076 !important;
+}
+
+.fa-github-square:hover {
+	color: #5eb076;
+}
+
+.fa-github-square {
+	color: white;
+	font-size: 350%;
+}
+
+.radios2 {
+	margin-left: 38px !important;
+}
+
+#interestLevel {
+	margin-top: 0.5%;
+}
+
+#interestLevelLabel {
+	margin-top: -.5%;
+}
+
+#intLabel {
+    margin-left: 1%;
+}
+
+#newJobForm {
+	margin-top: 3%;
+}
+
+#addHeader {
+	text-align: center;
+	font-family: 'Acme', sans-serif;
+	color: green;
+}
+
+#buttonSection {
+	padding-bottom: 70px;
+}
+
+.midSection {
+	width: 35%;
+}

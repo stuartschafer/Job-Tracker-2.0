@@ -287,20 +287,10 @@ tr.shown td.details-control {
 	margin-left: -4%;
 }
 
-#headerlogo2 {
-	
-	width: 10%;
-	transform: scaleX(-1);
-}
 
-#landingPageHeader, #landingPageHeader2 {
-	font-family: 'ACME', cursive;
-	font-size: 500%;
-	margin-left: -5%;
-}
 
 #topSection {
-	margin-top: 10%;
+	margin-top: 5%;
 }
 
 #loginButtons {

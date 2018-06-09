@@ -8,8 +8,23 @@ $(function() {
     let userLoggedInName = "";
     
     $.get("/api/user_data").then(function(data) {
-      userLoggedInId = data.id;
-      userLoggedInName = data.name;
+        userLoggedInId = data.id;
+        userLoggedInName = data.name;
+
+        // This is the name that will be displayed in the navbar
+        let userSettings = JSON.parse(data.settings);
+        displayName = userSettings.name || data.name;
+        $(".showNameJobs").text(displayName + "\'s");
+
+        // This section will change the navbar area for longer names to be shown correctly
+        if (displayName.length > 20 && displayName.length <= 25) {
+            $(".midSection").css({"margin-left":"-5%", "width":"40%"});
+        } else if (displayName.length > 25 && displayName.length <= 30) {
+            $(".midSection").css({"margin-left":"-8%", "width":"43%"});
+        } else if (displayName.length > 30) {
+            $(".midSection").css({"margin-left":"-7%", "width":"42%", "font-size":"75%"});
+        }
+
     });
 
     /////**********FUNCTIONS**********/////

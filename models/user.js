@@ -20,6 +20,12 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        settings: {
+            type: DataTypes.STRING,
+        },
+        security_questions: {
+            type: DataTypes.STRING,
+        },
         status: {
             type: DataTypes.ENUM('active', 'inactive'),
             defaultValue: 'active'

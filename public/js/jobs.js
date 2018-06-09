@@ -1,21 +1,14 @@
 $( document ).ready(function() {
     /////**********GLOBAL VARIABLES***********/////
-
-    // And number of days equal to or above this will display results in red
-    let userDateDiff = 28;
-    let currentDate = new Date();
-    currentDate.setDate(currentDate.getDate() - userDateDiff);
-    let dd = currentDate.getDate();
-    let mm = currentDate.getMonth() + 1;
-    let y = currentDate.getFullYear();
-    let oldDate = mm + '/' + dd + '/' + y;
-
     let objArray = {};
     let allStuff;
     let idResponse;
     let jobInfo = {};
     let activeApp = 0;
     let inactiveApp = 0;
+    let chaching = new Audio("assets/sounds/chaching.mp3");
+    let sadtrombone = new Audio("assets/sounds/sadtrombone.mp3");
+    let youCanDoIt = new Audio("assets/sounds/youcandoit.mp3");
     
     //Store current user data
     let userLoggedInId;
@@ -28,6 +21,9 @@ $( document ).ready(function() {
     //For the Employer Response modal
     let loadedTime = moment.parseZone().utc().format("YYYY-MM-DD");
     $("#dateResponded").val(loadedTime);
+
+    
+    
     
     /////**********FUNCTIONS**********/////
 
@@ -36,8 +32,17 @@ $( document ).ready(function() {
         if (data.link.includes("http") === false && data.link != "") {
             data.link = "https://" + data.link;
         }
-        let jobDetails = "<div class='row'>";
-        jobDetails += "<div class='col-md-12'><h5>Notes:   <span class='subsection'>" + data.notes + "</span>";
+        let jobDetails = "<div class='row'><div class='col-md-12'>";
+        if (location_column === "hide") {
+            jobDetails += "<h5>Location:   <span class='subsection'>" + data.location + "</span>";
+        }
+        if (posted_from_column === "hide") {
+            jobDetails += "<h5>Posted From:   <span class='subsection'>" + data.posted_from + "</span>";
+        }
+        if (id_column === "hide") {
+            jobDetails += "<h5>ID:   <span class='subsection'>" + data.id_number + "</span>";
+        }
+        jobDetails += "<h5>Notes:   <span class='subsection'>" + data.notes + "</span>";
         jobDetails += "<h5>Link:   <span class='subsection'><a id='linkSection' href='" + data.link + "' target='_blank'>" + data.link + "</a></span>";
         jobDetails += "<p><h5>Status:   <strong><span class='subsection'>" + data.status + "</span></strong></p>";
         jobDetails += "<p><h5>Responses from Employer:   <span class='subsection'>" + data.status_response + "</span></p></div>";
@@ -46,7 +51,6 @@ $( document ).ready(function() {
     
    //Create the array of objects
     function createDataArray(data) {
-        console.log(data);
         //Display the rows of data from the database into the table
         for (let i = 0; i < data.length; i++) {
             //Show the jobs of the user who is logged in
@@ -68,7 +72,7 @@ $( document ).ready(function() {
                 objArray.status = data[i].status;
                 objArray.link = data[i].link;
                 objArray.posted_from = data[i].posted_from;
-                objArray.interest_level = data[i].interest_level || 0;
+                objArray.interest_level = "<span class='intLev'>" + data[i].interest_level + "<span>" || 0;
                 objArray.notes = data[i].notes;
                 objArray.status = data[i].status || "";
                 objArray.status_response = data[i].status_response || "";
@@ -80,15 +84,6 @@ $( document ).ready(function() {
             }
         }
 
-        // This sorts the array based on highest interest level (asecending)
-        sortedArrayofJobs = arrayofJobs.sort(function(obj1, obj2) {return obj2.interest_level - obj1.interest_level});
-
-        //Changes characteristics of the array
-        for (var x=0; x<sortedArrayofJobs.length; x++) {
-            sortedArrayofJobs[x].interest_level = "<span class='intLev'>" + sortedArrayofJobs[x].interest_level + "<span>" || 0;
-            sortedArrayofJobs[x].status = (sortedArrayofJobs[x].status).toUpperCase();
-        }
-
         // Create the table on jobs.html page
         makeTable();
     }
@@ -96,9 +91,9 @@ $( document ).ready(function() {
     //Create the table and display on jobs page
     function makeTable() {
         let jobs = [];
-        jobs = sortedArrayofJobs;
+        jobs = arrayofJobs;
 
-        let table = $('#jobs').DataTable({
+        let tableOptions = {
             "data": jobs,
             "columns": [
                 {
@@ -117,10 +112,9 @@ $( document ).ready(function() {
                 { "data": "status" },
                 { "data": "response" },
                 { "data": "edit" },
-                //{ "data": "delete" }
             ],
-            "order": [[8, 'asc']],
-            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            "order": [[ 8, 'asc' ], [ 7, 'desc' ]],
+            "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
             "createdRow": function ( row, data, index ) {
                 // Changes the text to RED if the date is older than the set date
                 if ( new Date(data.date_applied) < new Date(oldDate) ) {
@@ -144,7 +138,7 @@ $( document ).ready(function() {
             "columnDefs": [
                 { "visible": false, "targets": 8 }
             ],
-            "displayLength": 25,
+            "displayLength": 10,
             "drawCallback": function ( settings ) {
                 var api = this.api();
                 var rows = api.rows( {page:'current'} ).nodes();
@@ -157,9 +151,60 @@ $( document ).ready(function() {
                         );
                         last = group;
                     }
-                } );
+                });
             }
-        });
+        };
+
+        // This will show/hide columns based on the user's saved settings
+        let columnsHidden = 0;
+        if (posted_from_column === "hide") {
+            $("#row_posted_from").remove();
+            (tableOptions.columns).splice(6, 1);
+            columnsHidden++;
+        }
+        if (id_column === "hide") {
+            $("#row_id").remove();
+            (tableOptions.columns).splice(5, 1);
+            columnsHidden++;
+        }
+        if (location_column === "hide") {
+            $("#row_location").remove();
+            (tableOptions.columns).splice(4, 1);
+            columnsHidden++;
+        }
+
+        tableOptions.order[0][0] = 8 - columnsHidden;
+        tableOptions.order[1][0] = 7 - columnsHidden;
+        tableOptions.columnDefs[0].targets = 8 - columnsHidden;
+
+        tableOptions.drawCallback = function ( settings ) {
+            var api = this.api();
+            var rows = api.rows( {page:'current'} ).nodes();
+            var last=null;
+ 
+            api.column(8 - columnsHidden, {page:'current'} ).data().each( function ( group, i ) {
+                if ( last !== group ) {
+                    $(rows).eq( i ).before(
+                        '<tr class="group"><td colspan="10">'+group+'</td></tr>'
+                    );
+                    last = group;
+                }
+            });
+        }
+
+        // This chages the second sorting method (first is Active/Inactive) per the user's saved settings
+        if (orderBy === "interest_level") {
+            tableOptions.order[1][0] = 7 - columnsHidden;
+        } else if (orderBy === "date") {
+            tableOptions.order[1][0] = 1;
+        }
+        
+        tableOptions.order[1][1] = sortBy;
+
+        // This sets the default length to show per page per the user's saved setting
+        tableOptions.displayLength = displayLength;
+       
+        let table = $('#jobs').DataTable(tableOptions);
 
         // For the custom toolbar.  This displays the totals
         $("div.toolbar").html('<span id="customToolbar">(' + activeApp + ' Active, ' + inactiveApp + ' Inactive)</span>');
@@ -167,11 +212,11 @@ $( document ).ready(function() {
         // This gropus rows together in sections depending if they are ACTIVE or INACTIVE
         $('#jobs tbody').on( 'click', 'tr.group', function () {
             var currentOrder = table.order()[0];
-            if ( currentOrder[0] === 8 && currentOrder[1] === 'asc' ) {
-                table.order( [ 8, 'desc' ] ).draw();
+            if ( currentOrder[0] === (8 - columnsHidden) && currentOrder[1] === 'asc' ) {
+                table.order( [ (8 - columnsHidden), 'desc' ] ).draw();
             }
             else {
-                table.order( [ 8, 'asc' ] ).draw();
+                table.order( [ (8 - columnsHidden), 'asc' ] ).draw();
             }
         });
 
@@ -250,9 +295,17 @@ $( document ).ready(function() {
         }
 
         let status_response = "";
-        
+        let goodOrBad = "";
         // If there are notes, then this adds a dash between the notes and date
         if (goOn === "yes") {
+            if ($("#responseGoodOptions").val() != "") {
+                goodOrBad = "good";
+            } else {
+                goodOrBad = "bad";
+            }
+
+            sessionStorage.setItem("goodOrBad", goodOrBad);
+       
             if (responseNotes != "") {
                 responseNotes = " - " + responseNotes;
             }
@@ -307,12 +360,63 @@ $( document ).ready(function() {
     //});
 
     /////**********ON PAGE LOAD**********/////
-  //Get user data      
-    $.get("/api/user_data").then(function(data) {
+    //Get user data
+    $.get("/api/user_data").then(function(data) {        
+        let userSettings = JSON.parse(data.settings);
+        if (userSettings === null) {
+            userSettings = {};
+            userSettings.sound = "on";
+            userSettings.alert = 28;
+            userSettings.order_by = 7;
+            userSettings.sort_by = "desc";
+            userSettings.id_column = "show";
+            userSettings.posted_from_column = "show";
+            userSettings.location_column = "show";
+            userSettings.display_length = 10;
+        }
+ 
+        // This plays the good or bad sound after the page is reloaded.
+        let soundOption = sessionStorage.getItem("goodOrBad");
+        if (soundOption === "good" && userSettings.sound === "on") {
+            chaching.play();
+        } else if (soundOption === "bad" && userSettings.sound === "on") {
+            sadtrombone.play();
+        }
+        sessionStorage.clear();
+
+        // Number of days equal to or above this will display results in red
+        let userDateDiff = userSettings.alert;
+        let currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() - userDateDiff);
+        let dd = currentDate.getDate();
+        let mm = currentDate.getMonth() + 1;
+        let y = currentDate.getFullYear();
+        oldDate = mm + '/' + dd + '/' + y;
+
         userLoggedInId = data.id;
         userLoggedInName = data.name;
-        //Display user name on page
-        $(".showNameJobs").text(data.name + "\'s");
+
+        orderBy = userSettings.order_by;
+        sortBy = userSettings.sort_by;
+        displayLength = userSettings.display_length;
+
+        // This is the name that will be displayed in the navbar
+        displayName = userSettings.name || data.name;
+        $(".showNameJobs").text(displayName + "\'s");
+
+        // This section will change the navbar area for longer names to be shown correctly
+        if (displayName.length > 20 && displayName.length <= 25) {
+            $(".midSection").css({"margin-left":"-5%", "width":"40%"});
+        } else if (displayName.length > 25 && displayName.length <= 30) {
+            $(".midSection").css({"margin-left":"-8%", "width":"43%"});
+        } else if (displayName.length > 30) {
+            $(".midSection").css({"margin-left":"-7%", "width":"42%", "font-size":"75%"});
+        }
+        
+        id_column = userSettings.id_column;
+        posted_from_column = userSettings.posted_from_column;
+        location_column = userSettings.location_column;
+        
     });
 
     //Get and display the jobs data
