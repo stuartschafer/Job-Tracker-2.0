@@ -69,7 +69,7 @@ $( document ).ready(function() {
                 }
                 hashedAnswer = hashedAnswer + allChars[char + num];
             }
-            console.log(hashedAnswer);
+        
             //getAnswer(hashedAnswer);
             //return hashedAnswer;
         }

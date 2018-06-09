@@ -58,8 +58,12 @@ module.exports = function(app, passport) {
 
     // route for updating a User
     app.put("/api/user", function(req, res) {
+
         // This hashes the password of the user to the database
-        req.body.password = bCrypt.hashSync(req.body.password, bCrypt.genSaltSync(8), null);
+        if (req.body.password != null) {
+            req.body.password = bCrypt.hashSync(req.body.password, bCrypt.genSaltSync(8), null);
+        }
+        
         
         db.User.update(
         req.body,
