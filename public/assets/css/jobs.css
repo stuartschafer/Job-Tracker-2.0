@@ -236,3 +236,34 @@ tr.shown td.details-control {
 .highlightRed {
 	color: red;
 }
+
+
+
+
+/* RESPONSIVE QUERIES */
+@media screen and (max-width: 992px) {
+	#navbarlogo {
+		width: 3%;
+	}
+
+	#navbarTitle {
+		font-size: 
+	}
+
+	#table-container {
+		margin-top: 50px;
+	}
+	
+	.pagination {
+		float: left;
+	}
+
+	.buttons-colvis {
+		margin-left: 50px !important;
+	}    
+
+	#jobs_filter {
+		margin-top: 25px;
+	}
+
+}
