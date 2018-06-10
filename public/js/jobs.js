@@ -363,17 +363,6 @@ $( document ).ready(function() {
     //Get user data
     $.get("/api/user_data").then(function(data) {        
         let userSettings = JSON.parse(data.settings);
-        if (userSettings === null) {
-            userSettings = {};
-            userSettings.sound = "on";
-            userSettings.alert = 28;
-            userSettings.order_by = 7;
-            userSettings.sort_by = "desc";
-            userSettings.id_column = "show";
-            userSettings.posted_from_column = "show";
-            userSettings.location_column = "show";
-            userSettings.display_length = 10;
-        }
  
         // This plays the good or bad sound after the page is reloaded.
         let soundOption = sessionStorage.getItem("goodOrBad");

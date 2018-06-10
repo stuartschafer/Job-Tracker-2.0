@@ -36,18 +36,7 @@ $( document ).ready(function() {
     
     function readFromDB(data, userName) {
         let readSettings = JSON.parse(data.settings);
-        if (readSettings === null) {
-            readSettings = {};
-            readSettings.sound = "on";
-            readSettings.alert = 28;
-            readSettings.order_by = "interest_level";
-            readSettings.sort_by = "desc";
-            readSettings.display_length = 10;
-            readSettings.id_column = "display";
-            readSettings.posted_from_column = "display";
-            readSettings.location_column = "display";
-            readSettings.name = userName;
-        }
+
         // This loads the presets into the form
         if (readSettings.sound === "on") {
             $("#soundOn").prop('checked', true);
