@@ -20,6 +20,8 @@ module.exports = function(passport, user) {
 		function(req, email, password, done) {
 			console.log("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 			console.log(req.body);
+			req.body.settings = JSON.stringify({"sound":"on","alert":"28","order_by":"interest_level","sort_by":"desc","display_length":"25","id_column":"display","posted_from_column":"display","location_column":"display","name":"Stuart Schafer"});
+			console.log(req.body);
 			console.log("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 			let generateHash = function(password) {
 				return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
@@ -38,7 +40,6 @@ module.exports = function(passport, user) {
 					});
 				} else {
 					let userPassword = generateHash(password);
-					//console.log(req.body);
 					let questionNumber = 1;
 					let question1 = req.body.ques1Choice;
 					let answer1 = req.body.ansQues1;
@@ -72,20 +73,22 @@ module.exports = function(passport, user) {
 							}
 							hashedSec = hashedSec + allChars[char + num];
 						}
-						//console.log(hashedSecQ1);
+
 						if (questionNumber == 1) {
 							securityInfo.q1 = hashedSec;
 						} else {
 							securityInfo.q2 = hashedSec;
 						}
-						
 					}
 					
+					let initSettings = {"sound":"on","alert":"28","order_by":"interest_level","sort_by":"desc","display_length":"25","id_column":"display","posted_from_column":"display","location_column":"display","name":"Stuart Schafer"};
 					let convertedSecurityInfo = JSON.stringify(securityInfo);
+					//let convertedInitSettings = JSON.stringify(initSettings);
 					
 					let data = {
 						email: email,
 						password: userPassword,
+						settings: req.body.settings,
 						security_questions: convertedSecurityInfo,
 						name: req.body.name
 					};

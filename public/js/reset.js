@@ -72,16 +72,12 @@ $( document ).ready(function() {
             $("#securityAnswers").text("Correct. Now please enter a new password.");
             $("#submitSecurityAnswers").hide();
         } else {
-            $("#securityAnswers").text("Those answers do not match. Please make sure you spelled them correctly. This is not case sensitive.");
+            $("#securityAnswers").html("Those answers do not match. Please make sure you spelled them correctly.<br>They are not case sensitive.");
         }
-    
     });
 
 
     $("#submitNewPassword").on("click", function() {
-        //let id = userInfo.id;
-        
-        
         let newPW = $("#newPassword").val().trim();
         let newPWConfirm = $("#newPasswordConfirm").val().trim();
 
@@ -138,6 +134,5 @@ $( document ).ready(function() {
             userAnswer2 = answer;
         }
     }
-
 
 });
