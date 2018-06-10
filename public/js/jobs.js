@@ -21,7 +21,6 @@ $( document ).ready(function() {
     //For the Employer Response modal
     let loadedTime = moment.parseZone().utc().format("YYYY-MM-DD");
     $("#dateResponded").val(loadedTime);
-
     
     
     
@@ -370,6 +369,8 @@ $( document ).ready(function() {
             chaching.play();
         } else if (soundOption === "bad" && userSettings.sound === "on") {
             sadtrombone.play();
+        } else if (soundOption === "new" && userSettings.sound === "on") {
+            youCanDoIt.play();
         }
         sessionStorage.clear();
 

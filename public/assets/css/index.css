@@ -95,6 +95,14 @@ h1 {
 
 
 @media only screen and (max-width : 992px) {
+    #landingPageHeader {
+        font-size: 300%;
+    }
+
+    #logintoacct, #signintoacct {
+        width: 50%;
+    }
+
     #signinbutton, #signupbutton, .closeButton {
         height: 70px;
         width: 49%;

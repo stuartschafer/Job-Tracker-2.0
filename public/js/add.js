@@ -95,6 +95,8 @@ $(function() {
             status_response: "",
             UserId: userLoggedInId
         };
+
+        sessionStorage.setItem("goodOrBad", "new");
        
         //Capitalize the first letter after a space, and lowercase all others
         newJob.position = (newJob.position).toLowerCase().replace(/(^|\s)[a-z]/g, function(letter) {
