@@ -55,15 +55,18 @@
 /* RESPONSIVE QUERIES */
 @media screen and (max-width: 992px) {
 	#landingPageHeader2 {
-        font-size: 300%;
+        font-size: 200%;
     }
 
     #headerlogo2 {
         width: 35%;
 	}
 	
+	#slogan {
+		font-size: 100%;
+	}
 	.buttonStuff {
-        width: 75% !important;
+        width: 100% !important;
         font-size: 150% !important;
     }
 }
