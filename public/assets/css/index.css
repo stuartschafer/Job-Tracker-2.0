@@ -93,7 +93,7 @@ h1 {
 
 
 
-
+/* RESPONSIVE QUERIES */
 @media only screen and (max-width : 992px) {
     #landingPageHeader {
         font-size: 300%;
@@ -104,8 +104,14 @@ h1 {
         margin-top: -20%;
     }
 
-    #logintoacct, #signintoacct {
-        width: 50%;
+    .buttonStuff {
+        width: 25% !important;
+        height: 60% !important;
+        font-size: 100% !important;
+    }
+
+    #resetPW {
+        font-size: 100% !important;
     }
 
     #signinbutton, #signupbutton, .closeButton {

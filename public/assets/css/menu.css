@@ -32,7 +32,7 @@
 	font-family: 'Kavivanar', cursive;
 }
 
-#jobButton, #addButton, #settingsButton, #logoutButton {
+.buttonStuff {
 	font-size: 150%;
 	width: 30%;
 	margin-bottom: 1%;
@@ -52,10 +52,18 @@
 
 
 
-/* RESPONSIVE BACKGROUND IMAGE */
-@media screen and (max-width: 1024px) { /* Specific to this particular image */
-		img.bg {
-			left: 50%;
-			margin-left: -512px;   /* 50% */
-		}
-  	}
+/* RESPONSIVE QUERIES */
+@media screen and (max-width: 992px) {
+	#landingPageHeader2 {
+        font-size: 300%;
+    }
+
+    #headerlogo2 {
+        width: 35%;
+	}
+	
+	.buttonStuff {
+        width: 100% !important;
+        font-size: 150% !important;
+    }
+}
