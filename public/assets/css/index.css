@@ -70,7 +70,7 @@ h1 {
     font-size: 110%;
 }
 
-#signinbutton, #signupbutton, .closeButton {
+#signinbutton, #signupbutton, .closeButton, #submitButton {
     width: 25%;
     font-size: 150%;
 }

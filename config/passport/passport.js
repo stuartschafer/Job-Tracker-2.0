@@ -18,7 +18,9 @@ module.exports = function(passport, user) {
 		},
 		// handle storing a user's details
 		function(req, email, password, done) {
-			
+			console.log("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+			console.log(req.body);
+			console.log("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 			let generateHash = function(password) {
 				return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
 			};
@@ -29,9 +31,7 @@ module.exports = function(passport, user) {
 					email: email
 				}
 			}).then(function(user){
-				//if ((req.body.name).length > 10) {
-					//return done(null, false, { message: 'Name is too long. It must be under 40 characters.' });
-				//}
+				
 				if (user) {
 					return done(null, false, {
 						message: "That email is already taken."
@@ -39,71 +39,47 @@ module.exports = function(passport, user) {
 				} else {
 					let userPassword = generateHash(password);
 					//console.log(req.body);
-					//req.body.ques1Choice
-					//req.body.ansQues1
-					//req.body.ques2Choice
-					//req.body.ansQues2
+					let questionNumber = 1;
+					let question1 = req.body.ques1Choice;
+					let answer1 = req.body.ansQues1;
+					let question2 = req.body.ques2Choice;
+					let answer2 = req.body.ansQues2;
+
 					let securityInfo = {};
-					hashSecurityQ1();
-					hashSecurityQ2();
-					//generateHash(req.body.ques2Choice, req.body.ansQues2);
+					hashSecurity(question1, answer1);
+					questionNumber = 2;
+					hashSecurity(question2, answer2);
 
-
-
-
-					function hashSecurityQ1() {
+					function hashSecurity(question, answer) {
 						let allChars = ["%", "J", "V", "(", "O", "f", "N", "z", "r", "y", "1", "R", "l", "Z", "0", "H", "u", " ", "T", "@", "v", "e", ">", "k", "]", "2", "n", "C", "g", "`", "5", "L", "{", "?", "~", "d", "x", "4", "j", "&", "<", "o", "c", "Q", "B", "K", "E", "w", "h", "i", "b", "Y", "3", "W", "U", "7", ")", "F", "p", "}", "$", "*", "#", "M", "9", "m", "a", "8", "X", "i", "A", "q", "S", "t", "s", "I", "6", "[", "P", "^", ":", ";", "G", "D", ",", "%", "J", "V", "(", "O", "f", "N", "z", "r", "y", "1", "R", "l", "Z", "0", "H", "u", "T", "@", "v", "e", ">", "k", "]", "2", "n", "C", "g", "`", "5", "L", "{", "?", "~", "d", "x", "4", "j", "&", "<", "o", "c", "Q", "B", "K", "E", "w", "h", "i", "b", "Y", "3", "W", "U", "7", ")", "F", "p", "}", "$", "*", "#", "M", "9", "m", "a", "8", "X", "i", "A", "q", "S", "t", "s", "I", "6", "[", "P", "^", ":", ";", "G", "D", ","];
 						let hashedAnswer = "";
 						let num = Math.floor(Math.random() * 9) + 1;
 						let count = "";
-						if ((req.body.ansQues1).length < 10) {
-							count = String(req.body.ques1Choice) + "0" + String((req.body.ansQues1).length);
+						if (question.length < 10) {
+							count = String(question) + "0" + String(answer.length);
 						} else {
-							count = String(req.body.ques1Choice) + String((req.body.ansQues1).length);
+							count = String(question) + String(answer.length);
 						}
 						// Some random char
-						hashedSecQ1 = allChars[Math.floor(Math.random() * 82) + 1] + String(num) + count;
+						hashedSec = allChars[Math.floor(Math.random() * 82) + 1] + String(num) + count;
 			
 						for (var x=0; x<30; x++) {
 							let char;
-							if (x > (req.body.ansQues1).length) {
+							if (x > question.length) {
 								char = Math.floor(Math.random() * 75) + 1
 							} else {
-								char = allChars.indexOf(req.body.ansQues1[x]);
+								char = allChars.indexOf(answer[x]);
 							}
-							hashedSecQ1 = hashedSecQ1 + allChars[char + num];
+							hashedSec = hashedSec + allChars[char + num];
 						}
-						console.log(hashedSecQ1);
-						securityInfo.q1 = hashedSecQ1;
-					}
-
-					function hashSecurityQ2() {
-						let allChars = ["%", "J", "V", "(", "O", "f", "N", "z", "r", "y", "1", "R", "l", "Z", "0", "H", "u", " ", "T", "@", "v", "e", ">", "k", "]", "2", "n", "C", "g", "`", "5", "L", "{", "?", "~", "d", "x", "4", "j", "&", "<", "o", "c", "Q", "B", "K", "E", "w", "h", "i", "b", "Y", "3", "W", "U", "7", ")", "F", "p", "}", "$", "*", "#", "M", "9", "m", "a", "8", "X", "i", "A", "q", "S", "t", "s", "I", "6", "[", "P", "^", ":", ";", "G", "D", ",", "%", "J", "V", "(", "O", "f", "N", "z", "r", "y", "1", "R", "l", "Z", "0", "H", "u", "T", "@", "v", "e", ">", "k", "]", "2", "n", "C", "g", "`", "5", "L", "{", "?", "~", "d", "x", "4", "j", "&", "<", "o", "c", "Q", "B", "K", "E", "w", "h", "i", "b", "Y", "3", "W", "U", "7", ")", "F", "p", "}", "$", "*", "#", "M", "9", "m", "a", "8", "X", "i", "A", "q", "S", "t", "s", "I", "6", "[", "P", "^", ":", ";", "G", "D", ","];
-						let hashedAnswer = "";
-						let num = Math.floor(Math.random() * 9) + 1;
-						let count = "";
-						if ((req.body.ansQues2).length < 10) {
-							count = String(req.body.ques2Choice) + "0" + String((req.body.ansQues2).length);
+						//console.log(hashedSecQ1);
+						if (questionNumber == 1) {
+							securityInfo.q1 = hashedSec;
 						} else {
-							count = String(req.body.ques2Choice) + String((req.body.ansQues2).length);
+							securityInfo.q2 = hashedSec;
 						}
-						// Some random char
-						hashedSecQ2 = allChars[Math.floor(Math.random() * 82) + 1] + String(num) + count;
-			
-						for (var x=0; x<30; x++) {
-							let char;
-							if (x > (req.body.ansQues2).length) {
-								char = Math.floor(Math.random() * 75) + 1
-							} else {
-								char = allChars.indexOf(req.body.ansQues2[x]);
-							}
-							hashedSecQ2 = hashedSecQ2 + allChars[char + num];
-						}
-						console.log(hashedSecQ2);
 						
-						securityInfo.q2 = hashedSecQ2;
 					}
-
 					
 					let convertedSecurityInfo = JSON.stringify(securityInfo);
 					

@@ -58,7 +58,7 @@ module.exports = function(app, passport) {
 
     // route for updating a User
     app.put("/api/user", function(req, res) {
-
+        
         // This hashes the password of the user to the database
         if (req.body.password != null) {
             req.body.password = bCrypt.hashSync(req.body.password, bCrypt.genSaltSync(8), null);
@@ -72,6 +72,15 @@ module.exports = function(app, passport) {
                 id: req.body.id
             }
         });
+    });
+
+     // route for saving a new job
+     app.post("/api/new_user", function(req, res) {
+        console.log("_________________________________________");
+        console.log(req.body);
+        console.log("_________________________________________");
+        req.body.password = bCrypt.hashSync(req.body.password, bCrypt.genSaltSync(8), null);
+        db.User.create(req.body)
     });
 
     // This routes gets all the users for selecting 1 user to reset their password

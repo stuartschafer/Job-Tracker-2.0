@@ -13,7 +13,12 @@ $(function() {
 
         // This is the name that will be displayed in the navbar
         let userSettings = JSON.parse(data.settings);
-        displayName = userSettings.name || data.name;
+        if (userSettings === null) {
+            displayName = data.name;
+        } else {
+            displayName = userSettings.name;
+        }
+
         $(".showNameJobs").text(displayName + "\'s");
 
         // This section will change the navbar area for longer names to be shown correctly
@@ -75,7 +80,7 @@ $(function() {
         
 
         //Create a new object to go into the database
-        var newJob = {
+        let newJob = {
             date_applied: newDateApplied,
             position: newJobName,
             company: newCompany,

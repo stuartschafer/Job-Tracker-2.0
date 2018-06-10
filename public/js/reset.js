@@ -21,9 +21,18 @@ $( document ).ready(function() {
 
     
     $("#submitEmail").on("click", function() {
-        $.get("/api/users", findUser);
+        $("#emailMessage").html("");
+        $("#securityAnswers").text("");
+        $("#ansQ1").val("");
+        $("#ansQ2").val("");
+        $("#secQ1").html("");
+        $("#secQ2").html("");
+        $("#newPassword").val("");
+        $("#newPasswordConfirm").val("");
+        $("#submitNewPassword").hide();
+        $("#enterNewPassword").hide();
 
-        //$("#enterNewPassword").show();
+        $.get("/api/users", findUser);
 
         userEmail = $("#recoverEmail").val().trim();
         
@@ -104,7 +113,8 @@ $( document ).ready(function() {
 
     function getAnswer(hashedAnswer) {
         let allChars = ["%", "J", "V", "(", "O", "f", "N", "z", "r", "y", "1", "R", "l", "Z", "0", "H", "u", " ", "T", "@", "v", "e", ">", "k", "]", "2", "n", "C", "g", "`", "5", "L", "{", "?", "~", "d", "x", "4", "j", "&", "<", "o", "c", "Q", "B", "K", "E", "w", "h", "i", "b", "Y", "3", "W", "U", "7", ")", "F", "p", "}", "$", "*", "#", "M", "9", "m", "a", "8", "X", "i", "A", "q", "S", "t", "s", "I", "6", "[", "P", "^", ":", ";", "G", "D", ",", "%", "J", "V", "(", "O", "f", "N", "z", "r", "y", "1", "R", "l", "Z", "0", "H", "u", "T", "@", "v", "e", ">", "k", "]", "2", "n", "C", "g", "`", "5", "L", "{", "?", "~", "d", "x", "4", "j", "&", "<", "o", "c", "Q", "B", "K", "E", "w", "h", "i", "b", "Y", "3", "W", "U", "7", ")", "F", "p", "}", "$", "*", "#", "M", "9", "m", "a", "8", "X", "i", "A", "q", "S", "t", "s", "I", "6", "[", "P", "^", ":", ";", "G", "D", ","];
-        let questions = ["", "What city were you born in?", "What is your father's middle name?", "What was your high school's mascot?", "Who was your best childhood friend?", "What street did you grow up on?", "What was the name of your very first pet?"];
+        let questions = ["", "What city were you born in?", "What is your father's middle name?", "What was your high school's mascot?", "Who was your best childhood friend?", "What street did you grow up on?", "What was the name of your very first pet?", "In what town or city did you meet your spouse/partner?", "What is the first name of the person you had your first kiss with?", "What is ther name of your favorite band/musician?"];
+        "In what town or city did you meet your spouse/partner?", "What is the first name of the person you had your first kiss with?", "What is ther name of your favorite band/musician?"
         let key = hashedAnswer[1];
         let qNum = hashedAnswer[2];
         if (hashedAnswer[3] = 0) {
