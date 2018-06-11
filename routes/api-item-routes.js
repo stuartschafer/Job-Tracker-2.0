@@ -4,6 +4,7 @@ let db = require("../models");
 module.exports = function(app) {
     //route for retrieving all jobs
     app.get("/api/jobs", function(req, res) {
+        console.log("3-3-3-3-3-3-3-3-3-3-3-3-3-3");
         var query = {};
         if (req.query.UserId) {
             query.UserId = req.query.UserId;
@@ -19,6 +20,7 @@ module.exports = function(app) {
 
     // route for retrieving a single job
     app.get("/api/jobs/:id", function(req, res) {
+        console.log("2-2-2-2-2-2-2-2-2-2-2-2-2-2");
         db.Job.findOne({
             where: {
             id: req.params.id
@@ -30,6 +32,7 @@ module.exports = function(app) {
 
     // route for saving a new job
     app.post("/api/jobs", function(req, res) {
+        console.log("1-1-1-1-1-1-1-1-1-1-1-1-1-1");
         db.Job.create(req.body)
     });
 
