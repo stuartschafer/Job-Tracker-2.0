@@ -84,4 +84,5 @@ Make sure to **SAVE** :floppy_disk: the changes.  These are remembered every tim
 
 ## ##
 **THANK YOU** :thumbsup: for using this application, and please let me know any feedback or  problems/bugs you might encounter.  Of course positive comments are welcomed as well.  Enjoy and GOOD LUCK!
+
 **https://job-tracker-career.herokuapp.com/**
