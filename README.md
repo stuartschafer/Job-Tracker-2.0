@@ -64,23 +64,23 @@ Here you can fill out what you want to about a job application.  The date, title
 ## Settings ##
 Here you can customize your experience further.
 
-**Sound Effects**:sound::mute: - Turn Off or On.  (Currently the only sounds happen when you submit a new application, get a good response from an employer, or get a bad response from them)
+**Sound Effects** :sound::mute: - Turn Off or On.  (Currently the only sounds happen when you submit a new application, get a good response from an employer, or get a bad response from them)
 
-**Alert for Overdue Application**:exclamation: - These are the number of days past the date you entered an application.  When an application goes past this, it will turn red, alerting you it's an older appliction.  Number must be from 1 - infinity.
+**Alert for Overdue Application** :exclamation: - These are the number of days past the date you entered an application.  When an application goes past this, it will turn red, alerting you it's an older appliction.  Number must be from 1 - infinity.
 
-**Order By**:arrow_double_down::arrow_double_up: - Each time you view the Applications page, it will be ordered by either Date or Interest Level.
+**Order By** :arrow_double_down::arrow_double_up: - Each time you view the Applications page, it will be ordered by either Date or Interest Level.
 
-**Sort By**:twisted_rightwards_arrows: - Each time you view the Applications page, the column chosen above (Date or Interest Level), will be sorted by Ascending order or Descending order.
+**Sort By** :twisted_rightwards_arrows: - Each time you view the Applications page, the column chosen above (Date or Interest Level), will be sorted by Ascending order or Descending order.
 I.E. - To view them by the oldest to the newest date, select Date (order by), and Ascending.
 I.E. - To view by your highes interest level, select Interest level (order by), and Descending.
 
-**Default display length**:arrow_up_down: - Each time you view the Applications page, it wil displey the first 5, 10, 15, 25, or all.
+**Default display length** :arrow_up_down: - Each time you view the Applications page, it wil displey the first 5, 10, 15, 25, or all.
 
-**Display/Hide Columns**:dizzy_face::flushed: - When you Hide a column, it makes it easier to view on a mobile device.  NOTE: Any column hidden, the information can still be viewed by clicking on the arrow button on the corresponding row.
+**Display/Hide Columns** :dizzy_face::flushed: - When you Hide a column, it makes it easier to view on a mobile device.  NOTE: Any column hidden, the information can still be viewed by clicking on the arrow button on the corresponding row.
 
-**Change the name displayed at Top**:stuck_out_tongue_winking_eye: - This will change your name as it is shown at the top.  Change it to something Funny to make you smile each time you load up the application.
+**Change the name displayed at Top** :stuck_out_tongue_winking_eye: - This will change your name as it is shown at the top.  Change it to something Funny to make you smile each time you load up the application.
 
-Make sure to **SAVE**:floppy_disk: the changes.  These are remembered every time going forward.
+Make sure to **SAVE** :floppy_disk: the changes.  These are remembered every time going forward.
 
 
-**THANK YOU**:thumbsup: for using this application, and please let me know any feedback or  problems/bugs you might encounter.  Of course positive comments are welcomed as well.  Enjoy and GOOD LUCK!
+**THANK YOU** :thumbsup: for using this application, and please let me know any feedback or  problems/bugs you might encounter.  Of course positive comments are welcomed as well.  Enjoy and GOOD LUCK!
