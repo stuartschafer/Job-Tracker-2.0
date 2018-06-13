@@ -1,7 +1,20 @@
 # Job-Tracker-2.0 #
 
+**Table of Contents**
+- [Intro / About Job Tracker](/intro)
+- [Sign Up](/signup)
+- [Sign In](/signin)
+- [Menu](/menu)
+- [Viewing all Entered Applications](/jobs)
+- [Entering a New Application](/new)
+- [Settings](/settings)
+- [Thank You!](/thankyou)
+
+
 To start tracking your career, please click on **https://job-tracker-career.herokuapp.com/**
 
+<a name="intro"></a>
+##Introduction / About Job Tracker##
 Have you ever wondered how, why, of if you should keep track of the job applications you've filled out?  If you have ever filled out a lot, or sent in a lot, then this app can most certainly help you.
 
 Just imagine these scenarios: :anguished:
@@ -21,16 +34,19 @@ Also, you can export all of your data to a pdf, csv, excel, copy it to the clipb
 
 But first, you must sign up to get started.
 
+<a name="signup"></a>
 ## Sign Up ##
 ![](public/assets/images/signup.gif)
 
 Filling out this information will allow you access to the full site, allowing you to save and export data.  Your password is fully encrpyted using ![Passport.js](http://www.passportjs.org/).
 
+<a name="signin"></a>
 ## Sign In ##
 Forget your password?  No worries, just answer the security questions, and you can easily reset your password and get back in.
 
 ![](public/assets/images/signin2.gif)
 
+<a name="menu"></a>
 ## Menu ##
 Here you can go directly to your [:page_facing_up: Applications](#jobs), enter a [:card_index: New Application](#new), [:link: Adjust Settings](#settings), or log out.
 
@@ -83,6 +99,7 @@ I.E. - To view by your highes interest level, select Interest level (order by), 
 Make sure to **SAVE** :floppy_disk: the changes.  These are remembered every time going forward.
 
 ## ##
+<a name="thankyou"></a>
 **THANK YOU** :thumbsup: for using this application, and please let me know any feedback or  problems/bugs you might encounter.  Of course positive comments are welcomed as well.  Enjoy and GOOD LUCK!
 
 **https://job-tracker-career.herokuapp.com/**
