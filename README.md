@@ -41,6 +41,7 @@ But first, you must [sign up :clipboard:](#signup) to get started.
 ![](public/assets/images/signup.gif)
 
 Filling out this information will allow you access to the full site, allowing you to save and export data.  Your password is fully encrpyted using ![Passport.js](www.passportjs.org/).
+[Stuart Schafer](https://github.com/stuartschafer)
 
 <a name="signin"></a>
 ## Sign In ##
