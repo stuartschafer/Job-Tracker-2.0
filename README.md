@@ -1,14 +1,14 @@
 # Job-Tracker-2.0 #
 
 **Table of Contents**
-- [Intro / About Job Tracker](/intro)
-- [Sign Up](/signup)
-- [Sign In](/signin)
-- [Menu](/menu)
-- [Viewing all Entered Applications](/jobs)
-- [Entering a New Application](/new)
-- [Settings](/settings)
-- [Thank You!](/thankyou)
+- [Intro / About Job Tracker](#intro)
+- [Sign Up](#signup)
+- [Sign In](#signin)
+- [Menu](#menu)
+- [Viewing all Entered Applications](#jobs)
+- [Entering a New Application](#new)
+- [Settings](#settings)
+- [Thank You!](#thankyou)
 
 
 To start tracking your career, please click on **https://job-tracker-career.herokuapp.com/**
