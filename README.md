@@ -40,7 +40,7 @@ But first, you must [sign up :clipboard:](#signup) to get started.
 ## Sign Up ##
 ![](public/assets/images/signup.gif)
 
-Filling out this information will allow you access to the full site, allowing you to save and export data.  Your password is fully encrpyted using ![Passport.js](https://www.passportjs.org/).
+Filling out this information will allow you access to the full site, allowing you to save and export data.  Your password is fully encrpyted using ![Passport.js](www.passportjs.org/).
 
 <a name="signin"></a>
 ## Sign In ##
