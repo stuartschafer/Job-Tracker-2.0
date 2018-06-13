@@ -34,13 +34,13 @@ Not only does Job Tracker remember your applications, it stores any notes you wa
 
 Also, you can :rocket: export all of your data to a pdf, csv, excel, copy it to the clipboard, or print it directly from the site.
 
-But first, you must sign up :clipboard: to get started.
+But first, you must [sign up :clipboard:](#signup) to get started.
 
 <a name="signup"></a>
 ## Sign Up ##
 ![](public/assets/images/signup.gif)
 
-Filling out this information will allow you access to the full site, allowing you to save and export data.  Your password is fully encrpyted using ![Passport.js](http://www.passportjs.org/).
+Filling out this information will allow you access to the full site, allowing you to save and export data.  Your password is fully encrpyted using ![Passport.js](https://www.passportjs.org/).
 
 <a name="signin"></a>
 ## Sign In ##
