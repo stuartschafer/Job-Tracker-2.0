@@ -32,11 +32,11 @@ Filling out this information will allow you access to the full site, allowing yo
 Forget your password?  No worries, just answer the security questions, and you can easily reset your password and get back in.
 
 ## Menu ##
-Here you can go directly to your [:movie_camera: Applications](#jobs), enter a [:movie_camera: New Application](#new), [:movie_camera: Adjust Settings](#settings), or log out.
+Here you can go directly to your [:page_facing_up: Applications](#jobs), enter a [:card_index: New Application](#new), [:link: Adjust Settings](#settings), or log out.
 
 <a name="jobs"></a>
 ## All of Your Applications ##
-![](public/assets/images/jobs.gif)
+![](public/assets/images/job2.gif)
 
 Here you will find a complete list of every application you have applied for.  The columns are sortable by simply clicking on one. Click on the same column again to sort in the opposite direction (ascending/descending).
 
