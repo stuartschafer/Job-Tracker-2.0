@@ -132,13 +132,17 @@ th {
 	color: green;
 }
 
-.fa-github-square:hover {
+.navIcon:hover {
 	color: #5eb076;
 }
 
-.fa-github-square {
+.navIcon {
 	color: white;
 	font-size: 350%;
+}
+
+.fa-github-square {
+	margin-right: 1%;
 }
 
 .buttons-html5 {
@@ -235,6 +239,22 @@ tr.shown td.details-control {
 
 .highlightRed {
 	color: red;
+}
+
+#emailModalLabel {
+	font-size: 200%;
+	font-family: 'Acme', sans-serif;
+}
+
+.control-label {
+	font-size: 125%;
+	font-family: 'Acme', sans-serif;
+}
+
+#note {
+	font-size: 115%;
+	text-align: center;
+	font-family: 'Acme', sans-serif;
 }
 
 

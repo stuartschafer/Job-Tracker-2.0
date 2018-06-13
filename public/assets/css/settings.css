@@ -100,13 +100,17 @@ h5 {
     margin-left: 40px;
 }
 
-.fa-github-square:hover {
+.navIcon:hover {
 	color: #5eb076;
 }
 
-.fa-github-square {
+.navIcon {
 	color: white;
 	font-size: 350%;
+}
+
+.fa-github-square {
+	margin-right: 1%;
 }
 
 #buttonSection {
@@ -145,4 +149,17 @@ h5 {
 hr {
 	width: 57%;
 	margin-left: 32%;
+}
+
+#emailModalLabel {
+	font-size: 200%;
+}
+
+.control-label {
+    font-size: 125%;
+}
+
+#note {
+	font-size: 115%;
+	text-align: center;
 }

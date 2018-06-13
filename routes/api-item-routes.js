@@ -31,28 +31,27 @@ module.exports = function(app) {
 
     // This will send emails
     app.post("/send", function(req, res) {
-
-
-
-
-
-        
-
+        console.log(req.body);
         let transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
                 user: 'jobtrackercareer@gmail.com',
-                pass: 'jobtrackercareer2018'
+                pass: 'JobTrackerCareer2018'
             }
         });
-          
+        
+        let userIssue = "EMAIL FROM: " + req.body.email + "\n\nPRIORITY: " + (req.body.priority).toUpperCase() + "\n\nIssue:\n" + req.body.issue;
+        
         let mailOptions = {
-            from: 'jobtrackercareer@gmail.com',
+            headers: {
+                priority: (req.body.priority).toLowerCase()
+            },
+            from: req.body.email,
             to: 'jobtrackercareer@gmail.com',
-            subject: 'Sending Email using Node.js',
-            text: 'That was easy!'
+            subject: req.body.subject,
+            text: userIssue
         };
-          
+        
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {
                 console.log(error);
@@ -60,6 +59,8 @@ module.exports = function(app) {
                 console.log('Email sent: ' + info.response);
             }
         });
+
+        res.redirect('/menu');
         
     });
 

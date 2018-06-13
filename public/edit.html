@@ -222,17 +222,75 @@
 						</div>
 
 					</form>
-				</div> <!--end of col 10 div-->
-			</div> <!--end of row div-->
-		</div> <!--end of form containter-->
-	</div> <!--end of addWrapper-->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Email modal -->
+	<div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<form class="form-horizontal" id="email" name="email" method="post" action="/send">
+					<div class="modal-header">
+						<h5 class="modal-title" id="emailModalLabel">Send Me an Email</h5>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="email" class="col-sm-3 control-label">Your Email</label>
+							<div class="col-sm-9">
+								<input type="text" name="email" class="form-control existinguser" id="userEmail" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="defaultDisplay" class="col-sm-3 control-label">Priority</label>
+							<div class="col-sm-9">
+								<select name="priority" id="priorityDisplay" class="form-control col-sm-9">
+									<option>Normal</option>
+									<option>Low</option>
+									<option>High</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="subject" class="col-sm-3 control-label">Subject</label>
+							<div class="col-sm-9">
+								<input type="text" name="subject" class="form-control existinguser" id="userSubject" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="issue" class="col-sm-3 control-label">Issue</label>
+							<div class="col-sm-9">
+								<textarea name="issue" class="form-control existinguser" id="userIssue" rows="5"></textarea>
+							</div>
+						</div>
+						<div id="note" class="col-sm-12">
+							Please note that it may take me a day or two to respond.
+							<br>
+							If you need me sooner, please reach out to my via Slack: 
+							<a href="https://adult-jr-devs-forum.slack.com/team/U7PEH50E6" target="_blank" >
+								<i class="fab fa-slack"></i>
+							</a>
+						</div>
+						<br><br>			
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default buttonStuff" data-dismiss="modal">Close</button>
+						<button type="submit" id="emailButton" class="btn btn-success buttonStuff">Send Email</button>
+					</div>
+				</form>	
+			</div>
+		</div>
+	</div>
 
 	<!-- STICKY FOOTER -->
 	<nav class="navbar navbar-default navbar-fixed-bottom">
 		<div id="footerNavbar">
 			<div class="container text-center">
 				<a href="https://github.com/stuartschafer/Job-Tracker-2.0" target="_blank" >
-				<i class="fab fa-github-square"></i></a>
+				<i class="fab fa-github-square navIcon"></i></a>
+
+				<i class="fas fa-envelope-square navIcon" data-toggle="modal" data-target="#emailModal"></i>
 				
 				<ul class="nav navbar-nav navbar-right">
 					<li><a class="navbarLinks" href="/settings">Settings</a></li>
