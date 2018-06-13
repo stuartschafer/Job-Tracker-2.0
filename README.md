@@ -24,9 +24,9 @@ Just imagine these scenarios: :anguished:
 - You have to report places you've applied to while on Unemployment.  How to I gather all that information?
 - You want to do more with your favorite applications, but wish there was a way to keep track of your favorite places.
 
-**YIKES** :scream:
+:scream_cat: **YIKES** :scream:
 
-Well, now with Job Tracker, you won't have to worry about any of these situations.  Not only does it make you look bad :poop:, but it also can hurt your chances of landing that job.
+Well, now with Job Tracker, you won't have to worry about any of these situations.  Not only does it make you look :poop: bad, but it also can hurt your chances of landing that job.
 
 Not only does Job Tracker remember your applications, it stores any notes you want.  It keeps the links of places you've applied, and you can easily sort through all applications with a simple click.
 
