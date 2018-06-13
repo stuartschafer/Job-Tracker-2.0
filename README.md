@@ -23,10 +23,12 @@ But first, you must sign up to get started.
 
 ## Sign Up ##
 ![](public/assets/images/signup.gif)
+
 Filling out this information will allow you access to the full site, allowing you to save and export data.  Your password is fully encrpyted using ![Passport.js](http://www.passportjs.org/).
 
 ## Sign In ##
 ![](public/assets/images/signin.gif)
+
 Forget your password?  No worries, just answer the security questions, and you can easily reset your password and get back in.
 
 ## Menu ##
@@ -35,6 +37,7 @@ Here you can go directly to your [:movie_camera: Applications](#jobs), enter a [
 <a name="jobs"></a>
 ## All of Your Applications ##
 ![](public/assets/images/jobs.gif)
+
 Here you will find a complete list of every application you have applied for.  The columns are sortable by simply clicking on one. Click on the same column again to sort in the opposite direction (ascending/descending).
 
 To edit a row, click on the Edit icon on that row.
@@ -54,6 +57,7 @@ You can hide/show columns at your leisure.
 <a name="new"></a>
 ## Enter a New Application ##
 ![](public/assets/images/new.png)
+
 Here you can fill out what you want to about a job application.  The date, title, company, location, and interest level are required fields.  Everything else is left to your discretion.
 
 <a name="settings"></a>
