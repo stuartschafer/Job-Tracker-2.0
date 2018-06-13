@@ -82,5 +82,5 @@ I.E. - To view by your highes interest level, select Interest level (order by), 
 
 Make sure to **SAVE** :floppy_disk: the changes.  These are remembered every time going forward.
 
-
+## ##
 **THANK YOU** :thumbsup: for using this application, and please let me know any feedback or  problems/bugs you might encounter.  Of course positive comments are welcomed as well.  Enjoy and GOOD LUCK!
