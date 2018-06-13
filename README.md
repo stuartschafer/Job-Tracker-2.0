@@ -4,14 +4,14 @@ To start tracking your career, please click on **https://job-tracker-career.hero
 
 Have you ever wondered how, why, of if you should keep track of the job applications you've filled out?  If you have ever filled out a lot, or sent in a lot, then this app can most certainly help you.
 
-Just imagine these scenarios::anguished:
+Just imagine these scenarios: :anguished:
 - You wonder, have I already applied here before?  If so, when?  And what happened?
 - You get a call about an application you've sent out, but cannot remember applying.
 - You applied to a job, and had a friend recommend you, but you aren't sure which friend it was.
 - You have to report places you've applied to while on Unemployment.  How to I gather all that information?
 - You want to do more with your favorite applications, but wish there was a way to keep track of your favorite places.
 
-**YIKES**:tired_face:
+**YIKES** :tired_face:
 
 Well, now with Job Tracker, you won't have to worry about any of these situations.  Not only does it make you look bad, but it also can hurt your chances of landing that job.
 
@@ -84,3 +84,4 @@ Make sure to **SAVE** :floppy_disk: the changes.  These are remembered every tim
 
 ## ##
 **THANK YOU** :thumbsup: for using this application, and please let me know any feedback or  problems/bugs you might encounter.  Of course positive comments are welcomed as well.  Enjoy and GOOD LUCK!
+**https://job-tracker-career.herokuapp.com/**
