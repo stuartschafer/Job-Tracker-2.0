@@ -14,7 +14,7 @@
 To start tracking your career, please click on **https://job-tracker-career.herokuapp.com/**
 
 <a name="intro"></a>
-##Introduction / About Job Tracker##
+## Introduction / About Job Tracker ##
 Have you ever wondered how, why, of if you should keep track of the job applications you've filled out?  If you have ever filled out a lot, or sent in a lot, then this app can most certainly help you.
 
 Just imagine these scenarios: :anguished:
