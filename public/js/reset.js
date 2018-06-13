@@ -5,17 +5,14 @@ $( document ).ready(function() {
     $("#submitNewPassword").hide();
     
     let idNum = 0;
-    let securityQuestions = "";
     let questionNumber = 1;
-    let security1;
-    let security2;
     let userEmail = "";
     let answer1 = "";
     let answer2 = "";
     let userAnswer1 = "";
     let userAnswer2 = "";
-    let userInfo;
-
+    let allChars = ["%", "J", "V", "(", "O", "f", "N", "z", "r", "y", "1", "R", "l", "Z", "0", "H", "u", " ", "T", "@", "v", "e", ">", "k", "]", "2", "n", "C", "g", "`", "5", "L", "{", "?", "~", "d", "x", "4", "j", "&", "<", "o", "c", "Q", "B", "K", "E", "w", "h", "i", "b", "Y", "3", "W", "U", "7", ")", "F", "p", "}", "$", "*", "#", "M", "9", "m", "a", "8", "X", "i", "A", "q", "S", "t", "s", "I", "6", "[", "P", "^", ":", ";", "G", "D", ",", "%", "J", "V", "(", "O", "f", "N", "z", "r", "y", "1", "R", "l", "Z", "0", "H", "u", "T", "@", "v", "e", ">", "k", "]", "2", "n", "C", "g", "`", "5", "L", "{", "?", "~", "d", "x", "4", "j", "&", "<", "o", "c", "Q", "B", "K", "E", "w", "h", "i", "b", "Y", "3", "W", "U", "7", ")", "F", "p", "}", "$", "*", "#", "M", "9", "m", "a", "8", "X", "i", "A", "q", "S", "t", "s", "I", "6", "[", "P", "^", ":", ";", "G", "D", ","];
+    
     
     $(".showNameJobs").text("Reset password");
 
@@ -108,7 +105,6 @@ $( document ).ready(function() {
 
 
     function getAnswer(hashedAnswer) {
-        let allChars = ["%", "J", "V", "(", "O", "f", "N", "z", "r", "y", "1", "R", "l", "Z", "0", "H", "u", " ", "T", "@", "v", "e", ">", "k", "]", "2", "n", "C", "g", "`", "5", "L", "{", "?", "~", "d", "x", "4", "j", "&", "<", "o", "c", "Q", "B", "K", "E", "w", "h", "i", "b", "Y", "3", "W", "U", "7", ")", "F", "p", "}", "$", "*", "#", "M", "9", "m", "a", "8", "X", "i", "A", "q", "S", "t", "s", "I", "6", "[", "P", "^", ":", ";", "G", "D", ",", "%", "J", "V", "(", "O", "f", "N", "z", "r", "y", "1", "R", "l", "Z", "0", "H", "u", "T", "@", "v", "e", ">", "k", "]", "2", "n", "C", "g", "`", "5", "L", "{", "?", "~", "d", "x", "4", "j", "&", "<", "o", "c", "Q", "B", "K", "E", "w", "h", "i", "b", "Y", "3", "W", "U", "7", ")", "F", "p", "}", "$", "*", "#", "M", "9", "m", "a", "8", "X", "i", "A", "q", "S", "t", "s", "I", "6", "[", "P", "^", ":", ";", "G", "D", ","];
         let questions = ["", "What city were you born in?", "What is your father's middle name?", "What was your high school's mascot?", "Who was your best childhood friend?", "What street did you grow up on?", "What was the name of your very first pet?", "In what town or city did you meet your spouse/partner?", "What is the first name of the person you had your first kiss with?", "What is ther name of your favorite band/musician?"];
         "In what town or city did you meet your spouse/partner?", "What is the first name of the person you had your first kiss with?", "What is ther name of your favorite band/musician?"
         let key = hashedAnswer[1];
@@ -133,6 +129,20 @@ $( document ).ready(function() {
             $("#secQ2").html(questions[qNum]);
             userAnswer2 = answer;
         }
+    }
+
+    $("#testButton").on("click", function() {
+        emailUser = {};
+        generateSecretNumber();
+        
+        emailUser.email = userEmail
+        console.log(emailUser);
+        //$.post("/send", emailUser, function() { });
+    });
+
+    function generateSecretNumber(question, answer) {
+        let randNum = Math.floor(Math.random() * 99999) + 10000;
+        emailUser.randNum = randNum;
     }
 
 });

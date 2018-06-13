@@ -1,10 +1,10 @@
 // Requiring our models
 let db = require("../models");
+const nodemailer = require('nodemailer');
 
 module.exports = function(app) {
     //route for retrieving all jobs
     app.get("/api/jobs", function(req, res) {
-        console.log("3-3-3-3-3-3-3-3-3-3-3-3-3-3");
         var query = {};
         if (req.query.UserId) {
             query.UserId = req.query.UserId;
@@ -20,7 +20,6 @@ module.exports = function(app) {
 
     // route for retrieving a single job
     app.get("/api/jobs/:id", function(req, res) {
-        console.log("2-2-2-2-2-2-2-2-2-2-2-2-2-2");
         db.Job.findOne({
             where: {
             id: req.params.id
@@ -30,11 +29,42 @@ module.exports = function(app) {
         });
     });
 
-   
+    // This will send emails
+    app.post("/send", function(req, res) {
+
+
+
+
+
+        
+
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'jobtrackercareer@gmail.com',
+                pass: 'jobtrackercareer2018'
+            }
+        });
+          
+        let mailOptions = {
+            from: 'jobtrackercareer@gmail.com',
+            to: 'jobtrackercareer@gmail.com',
+            subject: 'Sending Email using Node.js',
+            text: 'That was easy!'
+        };
+          
+        transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+        
+    });
 
     // route for saving a new job
     app.post("/api/jobs", function(req, res) {
-        console.log("1-1-1-1-1-1-1-1-1-1-1-1-1-1");
         db.Job.create(req.body)
     });
 

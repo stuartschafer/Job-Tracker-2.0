@@ -18,11 +18,7 @@ module.exports = function(passport, user) {
 		},
 		// handle storing a user's details
 		function(req, email, password, done) {
-			console.log("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-			console.log(req.body);
 			req.body.settings = JSON.stringify({"sound":"on","alert":"28","order_by":"interest_level","sort_by":"desc","display_length":"25","id_column":"display","posted_from_column":"display","location_column":"display","name":"Stuart Schafer"});
-			console.log(req.body);
-			console.log("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 			let generateHash = function(password) {
 				return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
 			};
@@ -53,7 +49,6 @@ module.exports = function(passport, user) {
 
 					function hashSecurity(question, answer) {
 						let allChars = ["%", "J", "V", "(", "O", "f", "N", "z", "r", "y", "1", "R", "l", "Z", "0", "H", "u", " ", "T", "@", "v", "e", ">", "k", "]", "2", "n", "C", "g", "`", "5", "L", "{", "?", "~", "d", "x", "4", "j", "&", "<", "o", "c", "Q", "B", "K", "E", "w", "h", "i", "b", "Y", "3", "W", "U", "7", ")", "F", "p", "}", "$", "*", "#", "M", "9", "m", "a", "8", "X", "i", "A", "q", "S", "t", "s", "I", "6", "[", "P", "^", ":", ";", "G", "D", ",", "%", "J", "V", "(", "O", "f", "N", "z", "r", "y", "1", "R", "l", "Z", "0", "H", "u", "T", "@", "v", "e", ">", "k", "]", "2", "n", "C", "g", "`", "5", "L", "{", "?", "~", "d", "x", "4", "j", "&", "<", "o", "c", "Q", "B", "K", "E", "w", "h", "i", "b", "Y", "3", "W", "U", "7", ")", "F", "p", "}", "$", "*", "#", "M", "9", "m", "a", "8", "X", "i", "A", "q", "S", "t", "s", "I", "6", "[", "P", "^", ":", ";", "G", "D", ","];
-						let hashedAnswer = "";
 						let num = Math.floor(Math.random() * 9) + 1;
 						let count = "";
 						if (question.length < 10) {
@@ -81,7 +76,6 @@ module.exports = function(passport, user) {
 						}
 					}
 					
-					let initSettings = {"sound":"on","alert":"28","order_by":"interest_level","sort_by":"desc","display_length":"25","id_column":"display","posted_from_column":"display","location_column":"display","name":"Stuart Schafer"};
 					let convertedSecurityInfo = JSON.stringify(securityInfo);
 					//let convertedInitSettings = JSON.stringify(initSettings);
 					
