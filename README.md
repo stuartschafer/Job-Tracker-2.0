@@ -24,15 +24,17 @@ Just imagine these scenarios: :anguished:
 - You have to report places you've applied to while on Unemployment.  How to I gather all that information?
 - You want to do more with your favorite applications, but wish there was a way to keep track of your favorite places.
 
-**YIKES** :tired_face:
+**YIKES** :scream:
 
-Well, now with Job Tracker, you won't have to worry about any of these situations.  Not only does it make you look bad, but it also can hurt your chances of landing that job.
+Well, now with Job Tracker, you won't have to worry about any of these situations.  Not only does it make you look bad :poop:, but it also can hurt your chances of landing that job.
 
 Not only does Job Tracker remember your applications, it stores any notes you want.  It keeps the links of places you've applied, and you can easily sort through all applications with a simple click.
 
-Also, you can export all of your data to a pdf, csv, excel, copy it to the clipboard, or print it directly from the site.
+:collision: Insider Knowledge :collision: - If you get called out of the blue about an application, ask if you can call them right back.  Then, log into Job Tracker, view the application, look at any notes you have, and click on the link to refresh you about the applicaion.  Then call the person back, and you will sound like a champ with all the knowledge you gained through the app. :clap:
 
-But first, you must sign up to get started.
+Also, you can :rocket: export all of your data to a pdf, csv, excel, copy it to the clipboard, or print it directly from the site.
+
+But first, you must sign up :clipboard: to get started.
 
 <a name="signup"></a>
 ## Sign Up ##
