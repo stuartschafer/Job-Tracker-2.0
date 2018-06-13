@@ -22,11 +22,11 @@ Also, you can export all of your data to a pdf, csv, excel, copy it to the clipb
 But first, you must sign up to get started.
 
 ## Sign Up ##
-![](assets/images/signup.gif)
+![](public/assets/images/signup.gif)
 Filling out this information will allow you access to the full site, allowing you to save and export data.  Your password is fully encrpyted using ![Passport.js](http://www.passportjs.org/).
 
 ## Sign In ##
-![](assets/images/signin.gif)
+![](public/assets/images/signin.gif)
 Forget your password?  No worries, just answer the security questions, and you can easily reset your password and get back in.
 
 ## Menu ##
@@ -34,7 +34,7 @@ Here you can go directly to your [:movie_camera: Applications](#jobs), enter a [
 
 <a name="jobs"></a>
 ## All of Your Applications ##
-![](assets/images/jobs.gif)
+![](public/assets/images/jobs.gif)
 Here you will find a complete list of every application you have applied for.  The columns are sortable by simply clicking on one. Click on the same column again to sort in the opposite direction (ascending/descending).
 
 To edit a row, click on the Edit icon on that row.
@@ -53,30 +53,30 @@ You can hide/show columns at your leisure.
 
 <a name="new"></a>
 ## Enter a New Application ##
-![](assets/images/new.png)
+![](public/assets/images/new.png)
 Here you can fill out what you want to about a job application.  The date, title, company, location, and interest level are required fields.  Everything else is left to your discretion.
 
 <a name="settings"></a>
 ## Settings ##
 Here you can customize your experience further.
 
-*Sound Effects* - Turn Off or On.  (Currently the only sounds happen when you submit a new application, get a good response from an employer, or get a bad response from them)
+**Sound Effects** - Turn Off or On.  (Currently the only sounds happen when you submit a new application, get a good response from an employer, or get a bad response from them)
 
-*Alert for Overdue Application* - These are the number of days past the date you entered an application.  When an application goes past this, it will turn red, alerting you it's an older appliction.  Number must be from 1 - infinity.
+**Alert for Overdue Application** - These are the number of days past the date you entered an application.  When an application goes past this, it will turn red, alerting you it's an older appliction.  Number must be from 1 - infinity.
 
-*Order By* - Each time you view the Applications page, it will be ordered by either Date or Interest Level.
+**Order By** - Each time you view the Applications page, it will be ordered by either Date or Interest Level.
 
-*Sort By* - Each time you view the Applications page, the column chosen above (Date or Interest Level), will be sorted by Ascending order or Descending order.
+**Sort By** - Each time you view the Applications page, the column chosen above (Date or Interest Level), will be sorted by Ascending order or Descending order.
 I.E. - To view them by the oldest to the newest date, select Date (order by), and Ascending.
 I.E. - To view by your highes interest level, select Interest level (order by), and Descending.
 
-*Default display length* - Each time you view the Applications page, it wil displey the first 5, 10, 15, 25, or all.
+**Default display length** - Each time you view the Applications page, it wil displey the first 5, 10, 15, 25, or all.
 
-*Display/Hide Columns* - When you Hide a column, it makes it easier to view on a mobile device.  NOTE: Any column hidden, the information can still be viewed by clicking on the arrow button on the corresponding row.
+**Display/Hide Columns** - When you Hide a column, it makes it easier to view on a mobile device.  NOTE: Any column hidden, the information can still be viewed by clicking on the arrow button on the corresponding row.
 
-*Change the name displayed at Top* - This will change your name as it is shown at the top.  Change it to something Funny to make you smile each time you load up the application.
+**Change the name displayed at Top** - This will change your name as it is shown at the top.  Change it to something Funny to make you smile each time you load up the application.
 
-Make sure to *SAVE* the changes.  These are remembered every time going forward.
+Make sure to **SAVE** the changes.  These are remembered every time going forward.
 
 
 **THANK YOU** for using this application, and please let me know any feedback or  problems/bugs you might encounter.  Of course positive comments are welcomed as well.  Enjoy and GOOD LUCK!
