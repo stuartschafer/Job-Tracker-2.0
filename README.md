@@ -28,9 +28,9 @@ Just imagine these scenarios: :anguished:
 
 Well, now with Job Tracker, you won't have to worry about any of these situations.  Not only does it make you look :poop: bad, but it also can hurt your chances of landing that job.
 
-Not only does Job Tracker remember your applications, it stores any notes you want.  It keeps the links of places you've applied, and you can easily sort through all applications with a simple click.
+Job Tracker can do it all.  It will remember your applications and store any notes you want.  It keeps the links of places you've applied, and you can easily sort through all applications with a simple click.
 
-:collision: Insider Knowledge :collision: - If you get called out of the blue about an application, ask if you can call them right back.  Then, log into Job Tracker, view the application, look at any notes you have, and click on the link to refresh you about the applicaion.  Then call the person back, and you will sound like a champ with all the knowledge you gained through the app. :clap:
+:collision: **Insider Knowledge** :collision: - If you get called out of the blue about an application, ask if you can call them right back.  Then, log into Job Tracker, view the application, look at any notes you have, and click on the link to refresh you about the applicaion.  Then call the person back, and you will sound like a champ with all the knowledge you gained through the app. :clap:
 
 Also, you can :rocket: export all of your data to a pdf, csv, excel, copy it to the clipboard, or print it directly from the site.
 
