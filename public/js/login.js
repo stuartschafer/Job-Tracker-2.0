@@ -1,6 +1,5 @@
-/////**********SHINE**********/////
+// Shine.js for the Job Tracker word
 var shine = new Shine(document.getElementById('landingPageHeader'));
-//var shine1 = new Shine(document.getElementById('logoshadow'));
 
 var config = new shinejs.Config({
     numSteps: 20,

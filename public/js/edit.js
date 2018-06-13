@@ -90,10 +90,7 @@ $(function() {
             status_response: editedStatusResponseView,
             UserId: userLoggedInId
         };
-        //Capitalize the first letter after a space
-        jobChanged.position = (jobChanged.position).toLowerCase().replace(/(^|\s)[a-z]/g, function(letter) {
-            return letter.toUpperCase();
-        });
+       
         submitEditedJob(jobChanged)
     });
 

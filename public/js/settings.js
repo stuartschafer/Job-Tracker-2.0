@@ -92,8 +92,6 @@ $( document ).ready(function() {
         let savedLoactionCol = $("input:radio[name=locationColumnVisibility]:checked").val();
         let savedName = $("#displayedName").val() || userName;
 
-        console.log(savedSound);
-
         if (savedAlert < 1) {
             savedAlert = 1;
         }
@@ -108,8 +106,6 @@ $( document ).ready(function() {
             newSettings.posted_from_column = savedPostedFromCol;
             newSettings.location_column = savedLoactionCol;
             newSettings.name = savedName;
-
-            console.log(newSettings.sound);
 
         let convertedNewSettings = JSON.stringify(newSettings);
 

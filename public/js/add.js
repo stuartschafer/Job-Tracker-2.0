@@ -32,16 +32,12 @@ $( document ).ready(function() {
 
     });
 
-    /////**********FUNCTIONS**********/////
-
-    // Submits new Job to the database
+    // Submits a new Job to the database
     function submitJob(newJob) {
         $.post("/api/jobs", newJob, function() { 
         });
         location.href = "/jobs.html";
     }
-        
-    /////**********EVENT LISTENERS**********/////
     
     $("#submitNewJob").on("click", function(event) {
         let newDateApplied = $("#date_applied").val() || moment().format("L");
@@ -53,9 +49,6 @@ $( document ).ready(function() {
         let newPostedFrom = $("#posted_from").val().trim();
         let newInterestLevel = $("input:radio[name=inlineRadioOptions]:checked").val() || "0";
         let newNotes = $("#notes").val();
-
-        // Changes the format so it will be put into SQL in the correct format
-        //let newerDateApplied = editedDateApplied[5] + editedDateApplied[6] + "-" + editedDateApplied[8] + editedDateApplied[9] + "-" + editedDateApplied[0] + editedDateApplied[1] + editedDateApplied[2] + editedDateApplied[3];
 
         //Check to make sure these fields are not empty
         if (!newDateApplied) {
@@ -75,8 +68,7 @@ $( document ).ready(function() {
             return;
         }
         
-
-        //Create a new object to go into the database
+        // Create a new object to go into the database
         let newJob = {
             date_applied: newDateApplied,
             position: newJobName,
@@ -94,10 +86,6 @@ $( document ).ready(function() {
 
         sessionStorage.setItem("goodOrBad", "new");
        
-        //Capitalize the first letter after a space, and lowercase all others
-        newJob.position = (newJob.position).toLowerCase().replace(/(^|\s)[a-z]/g, function(letter) {
-            return letter.toUpperCase();
-        });
         submitJob(newJob);
     });
 }) 

@@ -99,7 +99,7 @@ $( document ).ready(function() {
             url: "/api/user",
             data: userChanged
         });
-        //return user to the login page so they can login using the new password
+        // Return user to the login page so they can login using the new password
         location.href = "/index.html";
     }
 
@@ -129,20 +129,6 @@ $( document ).ready(function() {
             $("#secQ2").html(questions[qNum]);
             userAnswer2 = answer;
         }
-    }
-
-    $("#testButton").on("click", function() {
-        emailUser = {};
-        generateSecretNumber();
-        
-        emailUser.email = userEmail
-        console.log(emailUser);
-        //$.post("/send", emailUser, function() { });
-    });
-
-    function generateSecretNumber(question, answer) {
-        let randNum = Math.floor(Math.random() * 99999) + 10000;
-        emailUser.randNum = randNum;
     }
 
 });

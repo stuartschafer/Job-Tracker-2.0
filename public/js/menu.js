@@ -4,7 +4,7 @@ $(function() {
         $(".showName").text(data.name + "\'s");
     });
 
-    //event listeners to route user to corresponding page
+    // Event listeners to route user to corresponding page
     $("#jobButton").click(function () {
         location.href = "/jobs";
     });
@@ -23,9 +23,8 @@ $(function() {
 
 });
 
-/////**********SHINE**********/////
+// Shine.js for the Job Tracker word
 var shine = new Shine(document.getElementById('landingPageHeader2'));
-//var shine1 = new Shine(document.getElementById('logoshadow'));
 
 var config = new shinejs.Config({
     numSteps: 20,

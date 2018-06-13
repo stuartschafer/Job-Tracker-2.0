@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-    /////**********GLOBAL VARIABLES***********/////
     let objArray = {};
     let allStuff;
     let idResponse;
@@ -15,18 +14,13 @@ $( document ).ready(function() {
    
     //Store objects from DB
     let arrayofJobs = [];
-    let sortedArrayofJobs = [];
     
     // To autopopulate the date field with the current date
-    //For the Employer Response modal
+    // For the Employer Response modal
     let loadedTime = moment.parseZone().utc().format("YYYY-MM-DD");
     $("#dateResponded").val(loadedTime);
-    
-    
-    
-    /////**********FUNCTIONS**********/////
 
-    //Formatting function for row details //
+    //Formatting function for row details
     function format (data) {
         if (data.link.includes("http") === false && data.link != "") {
             data.link = "https://" + data.link;
@@ -48,11 +42,11 @@ $( document ).ready(function() {
         return jobDetails;
     }
     
-   //Create the array of objects
+   // Create the array of objects
     function createDataArray(data) {
-        //Display the rows of data from the database into the table
+        // Display the rows of data from the database into the table
         for (let i = 0; i < data.length; i++) {
-            //Show the jobs of the user who is logged in
+            // Show the jobs of the user who is logged in
             if (userLoggedInId != data[i].UserId) {   
             } else {
                 if (data[i].status === "Active") {
@@ -60,7 +54,7 @@ $( document ).ready(function() {
                 } else {
                     inactiveApp++;
                 }
-                //Empty the object each time the loop is run
+                // Empty the object each time the loop is run
                 objArray = {};
 
                 objArray.date_applied = moment.parseZone(data[i].date_applied).utc().format("L");
@@ -87,7 +81,7 @@ $( document ).ready(function() {
         makeTable();
     }
 
-    //Create the table and display on jobs page
+    // Create the table and display on jobs page
     function makeTable() {
         let jobs = [];
         jobs = arrayofJobs;
@@ -219,7 +213,7 @@ $( document ).ready(function() {
             }
         });
 
-        //Event listener for opening and closing job details
+        // This runs each time the arrow is clicked.  It shows/hides more information
         $('#jobs tbody').on('click', 'td.details-control', function () {
             let tr = $(this).closest('tr');
             //console.log(tr);
@@ -281,7 +275,7 @@ $( document ).ready(function() {
         $("#userError").text("");   
         let responseNotes = $("#responseNotes").val().trim() || "";
 
-        //This checks to make sure the user makes 1 selection and not 0 or 2
+        // This checks to make sure the user makes 1 selection and not 0 or 2
         if (!$("#responseGoodOptions").val() && !$("#responseBadOptions").val()) {
             $("#userError").text("Please make a selection from the Good or Bad to proceed.");
             goOn = "no";
@@ -409,7 +403,7 @@ $( document ).ready(function() {
         
     });
 
-    //Get and display the jobs data
+    // Get and display the jobs data
     $.get("/api/jobs", createDataArray);
 
 });
