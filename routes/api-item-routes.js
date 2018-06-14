@@ -3,16 +3,13 @@ let db = require("../models");
 const nodemailer = require('nodemailer');
 
 module.exports = function(app) {
-    //route for retrieving all jobs
-    app.get("/api/jobs", function(req, res) {
-        var query = {};
-        if (req.query.UserId) {
-            query.UserId = req.query.UserId;
-        }
 
+    //route for retrieving all jobs for the user logged in
+    app.get("/api/jobs", function(req, res) {
         db.Job.findAll({
-            where: query,
-            include: [db.User]
+            where: {
+                Userid: req.user.id
+            }
         }).then(function(results) { 
             res.json(results);
         });
@@ -81,6 +78,7 @@ module.exports = function(app) {
     });
 
     // route for deleting a job
+    // Not used now, but might later on
     app.delete("/api/jobs/:id", function(req, res) {
         db.Job.destroy({
         where: {
