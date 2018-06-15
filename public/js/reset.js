@@ -6,7 +6,6 @@ $(document).ready(function() {
     
     let idNum = 0;
     let questionNumber = 1;
-    let userEmail = "";
     let answer1 = "";
     let answer2 = "";
     let userAnswer1 = "";
