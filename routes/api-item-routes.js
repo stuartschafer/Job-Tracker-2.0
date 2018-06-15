@@ -28,7 +28,6 @@ module.exports = function(app) {
 
     // This will send emails
     app.post("/send", function(req, res) {
-        console.log(req.body);
         let transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {

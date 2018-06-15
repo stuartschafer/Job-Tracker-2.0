@@ -42,6 +42,11 @@ $(document).ready(function() {
             return;
         }
 
+        if (($("#newUserName").val().trim()).length > 40) {
+            $("#errors").html("Your name may not be longer than 40 characters");
+            return;
+        }
+
         if ($("#newUserEmail").val().trim() === "") {
             $("#errors").html("Please enter your email.");
             return;
