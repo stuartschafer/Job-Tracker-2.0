@@ -2,7 +2,7 @@
 USE Job_Tracker_db;
 
 -- Email: stu@mail.com
--- PW: 123
+-- PW: 12345
 INSERT INTO USERS (name, email, password, createdAt, updatedAt) VALUES ("Stuart", "stu@mail.com", "$2a$08$.jrNX0mqZ56hb4q9/u9xxe.OJBS/WUQYbJ7CbWRGUpWbIc.GP8dQ6", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 -- Inserting info for the Jobs table for UserId 1

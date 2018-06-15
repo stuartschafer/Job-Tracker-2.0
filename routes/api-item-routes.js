@@ -16,10 +16,10 @@ module.exports = function(app) {
     });
 
     // route for retrieving a single job
-    app.get("/api/jobs/:id", function(req, res) {
+    app.get("/api/get_one_job", function(req, res) {
         db.Job.findOne({
             where: {
-            id: req.params.id
+            id: req.query.id
         }
         }).then(function(result) {
             res.json(result);
@@ -78,7 +78,7 @@ module.exports = function(app) {
     });
 
     // route for deleting a job
-    // Not used now, but might later on
+    // Not used now, but might later
     app.delete("/api/jobs/:id", function(req, res) {
         db.Job.destroy({
         where: {

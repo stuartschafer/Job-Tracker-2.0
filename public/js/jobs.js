@@ -12,7 +12,7 @@ $( document ).ready(function() {
     //Store current user data
     let userLoggedInId;
    
-    //Store objects from DB
+    // Store objects from DB
     let arrayofJobs = [];
     
     // To autopopulate the date field with the current date
@@ -20,7 +20,7 @@ $( document ).ready(function() {
     let loadedTime = moment.parseZone().utc().format("YYYY-MM-DD");
     $("#dateResponded").val(loadedTime);
 
-    //Formatting function for row details
+    // Formatting function for row details
     function format (data) {
         if (data.link.includes("http") === false && data.link != "") {
             data.link = "https://" + data.link;
@@ -216,42 +216,34 @@ $( document ).ready(function() {
         // This runs each time the arrow is clicked.  It shows/hides more information
         $('#jobs tbody').on('click', 'td.details-control', function () {
             let tr = $(this).closest('tr');
-            //console.log(tr);
+            // console.log(tr);
             let row = table.row( tr );
     
             if (row.child.isShown()) {
-                //Close open row
+                // This will close the open row
                 row.child.hide();
                 tr.removeClass('shown');
             } else {
-                //Open closed row
+                // This will show more details about the row
                 row.child(format(row.data())).show();
                 tr.addClass('shown');
             }
         });
     }
 
-    /////**********EVENT LISTENERS**********/////
+
+
 
     // Get the info of the job that was clicked and save to session storage for update
     $("#jobs").on("click", ".updateJob", function() {
         let id = $(this).attr('value');
-        //console.log("id = " + id);
 
-        $.get("/api/jobs", editJob);
+        $.get("/api/get_one_job", {id: id}, editJob);
 
         function editJob(data) {
-            for (var x=0; x<data.length; x++) {
-                if (data[x].id == id) {
-                    sessionStorage.setItem("jobtoEdit", JSON.stringify(data[x]));
-                }
-            }
-            gotoEditPage();
+            sessionStorage.setItem("jobtoEdit", JSON.stringify(data));
+            location.href = "/edit";
          }
-        
-        function gotoEditPage() {
-        location.href = "/edit";
-        }
     });
 
     $("#jobs").on("click", ".fa-comment-dots", function() {
@@ -341,7 +333,7 @@ $( document ).ready(function() {
         }
     });
 
-    //Delete row when the trashcan icon on a line is clicked
+    // Delete row when the trashcan icon on a line is clicked
     //$("#jobs").on("click", ".deleteJob", function() {
         //console.log($(this).attr('value'));
         //let id = $(this).attr('value');
@@ -353,7 +345,7 @@ $( document ).ready(function() {
     //});
 
     /////**********ON PAGE LOAD**********/////
-    //Get user data
+    // Get user data
     $.get("/api/user_data").then(function(data) {        
         let userSettings = JSON.parse(data.settings);
  

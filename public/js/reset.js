@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function() {
     $("#resetSection").hide();
     $("#enterNewPassword").hide();
     $("#submitEmailCheck").hide();
@@ -29,29 +29,30 @@ $( document ).ready(function() {
         $("#submitNewPassword").hide();
         $("#enterNewPassword").hide();
 
-        $.get("/api/users", findUser);
-
         userEmail = $("#recoverEmail").val().trim();
-        
-        function findUser(data) {
-            for (var x=0; x<data.length; x++) {
-                if (data[x].email == userEmail) {
-                    idNum = data[x].id;
-                    $("#emailMessage").html("Email found.  Please answer the security questions below to reset your password.");
-                    $("#resetSection").show();
-                    $("#submitEmailCheck").show();
 
-                    let securityQuestions = JSON.parse(data[x].security_questions);
-                    getAnswer(securityQuestions.q1);
-                    questionNumber = 2;
-                    getAnswer(securityQuestions.q2);
-                    return;
-                } else {
-                    $("#emailMessage").html("That email was not used to sign up with, or it was mis-typed. Please try again.");
-                    $("#resetSection").hide();
-                    $("#submitEmailCheck").hide();
-                }
-            }
+        let enteredEmail = $("#recoverEmail").val().trim();
+
+        // This calls the server and gets the info for that user, if an email matches with one in the db
+        $.get("/api/users", {email: enteredEmail}, findUser);
+
+        function findUser(data) {
+            if (data[0] != undefined) {
+                idNum = data[0].id;
+                $("#emailMessage").html("Email found.  Please answer the security questions below to reset your password.");
+                $("#resetSection").show();
+                $("#submitEmailCheck").show();
+
+                let securityQuestions = JSON.parse(data[0].security_questions);
+                getAnswer(securityQuestions.q1);
+                questionNumber = 2;
+                getAnswer(securityQuestions.q2);
+                return;
+            } else {
+                $("#emailMessage").html("That email was not used to sign up with, or it was mis-typed. Please try again.");
+                $("#resetSection").hide();
+                $("#submitEmailCheck").hide();
+            } 
         }
     });
 

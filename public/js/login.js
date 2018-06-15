@@ -20,17 +20,18 @@ $("#resetPW").on("click", function() {
     location.href = "/reset.html";
 });
 
-$( document ).ready(function() {
+$(document).ready(function() {
     $("#submitButton").hide();
 
     $("#signupbutton").on("click", function() {
 
+        let checkEmail = $("#newUserEmail").val().trim();
         // This checks to make sure the email isn't already being used
-        $.get("/api/users", findUser);
+        $.get("/api/users", {email: checkEmail}, findUser);
         function findUser(data) {
-            for (var x=0; x<data.length; x++) {
-                if (data[x].email == $("#newUserEmail").val().trim()) {
-                    $("#errors").html("That email is already being used. Please sign in using that one or enter a new email.");
+            if (data != "") {
+                if (data[0].email == $("#newUserEmail").val().trim()) {
+                    $("#errors").html("That email is already being used. Please try a new one, or log in using that email.");
                     return;
                 }
             }
