@@ -3,7 +3,7 @@ USE Job_Tracker_db;
 
 -- Email: stu@mail.com
 -- PW: 12345
-INSERT INTO USERS (name, email, password, createdAt, updatedAt) VALUES ("Stuart", "stu@mail.com", "$2a$08$.jrNX0mqZ56hb4q9/u9xxe.OJBS/WUQYbJ7CbWRGUpWbIc.GP8dQ6", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO USERS (name, email, password, settings, security_questions, createdAt, updatedAt) VALUES ('Stuart', 'stu@mail.com', '$2a$08$.jrNX0mqZ56hb4q9/u9xxe.OJBS/WUQYbJ7CbWRGUpWbIc.GP8dQ6', '{"sound":"on","alert":"28","order_by":"interest_level","sort_by":"desc","display_length":"25","id_column":"display","posted_from_column":"display","location_column":"display","name":"Stuart Schafer"}', '{"q1":"J7101PN`0HApi~&yCa?X)3I7Ydv]Q&2cPs2","q2":"W9201)rg7xR:>aIlGx~eagGmB2{wi`>wi0X"}', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 -- Inserting info for the Jobs table for UserId 1
 INSERT INTO JOBS (date_applied, position, company, location, id_number, link, posted_from, interest_level, notes, status, status_response, createdAt, updatedAt, UserId)
