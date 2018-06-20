@@ -4,7 +4,7 @@
   "description": "When you want to keep up with the applications you've sent",
   "main": "server.js",
   "scripts": {
-    "start": "npm server.js"
+   
   },
   "repository": {
     "type": "git",
