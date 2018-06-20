@@ -1,7 +1,7 @@
 // Requiring our models
 let db = require("../models");
 const nodemailer = require('nodemailer');
-let emailPassword = require('../config2.js');
+let emailPassword = require('../hushed.js');
 
 module.exports = function(app) {
     //route for retrieving all jobs for the user logged in
