@@ -6,9 +6,6 @@ const nodemailer = require('nodemailer');
 module.exports = function(app) {
     //route for retrieving all jobs for the user logged in
     app.get("/api/jobs", function(req, res) {
-        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        console.log(process.env.emailPW);
-        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         db.Job.findAll({
             where: {
                 Userid: req.user.id
@@ -35,8 +32,8 @@ module.exports = function(app) {
             service: 'gmail',
             auth: {
                 user: 'jobtrackercareer@gmail.com',
-                pass: process.env.emailPW
-                //pass: 'JobTrackerCareer2018'
+                //pass: process.env.emailPW
+                pass: 'JobTrackerCareer2018'
             }
         });
         
