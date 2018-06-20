@@ -1,6 +1,6 @@
 //import bcrypt (which we need to secure passwords)
 let bCrypt = require('bcrypt-nodejs');
-let hashing = require('../../config.js');
+//let hashing = require('../../config.js');
 
 // initialize the passport-local strategy, and the user model,
 // which will be passed as an argument
@@ -49,21 +49,21 @@ module.exports = function(passport, user) {
 					hashSecurity(question2, answer2);
 
 					function hashSecurity(question, answer) {
-						let num = hashing.num;
-						let allChars = hashing.allChars;
+						let num = hMath.floor(Math.random() * 9) + 1;
+						let allChars = ["%", "J", "V", "(", "O", "f", "N", "z", "r", "y", "1", "R", "l", "Z", "0", "H", "u", " ", "T", "@", "v", "e", ">", "k", "]", "2", "n", "C", "g", "`", "5", "L", "{", "?", "~", "d", "x", "4", "j", "&", "<", "o", "c", "Q", "B", "K", "E", "w", "h", "i", "b", "Y", "3", "W", "U", "7", ")", "F", "p", "}", "$", "*", "#", "M", "9", "m", "a", "8", "X", "i", "A", "q", "S", "t", "s", "I", "6", "[", "P", "^", ":", ";", "G", "D", ",", "%", "J", "V", "(", "O", "f", "N", "z", "r", "y", "1", "R", "l", "Z", "0", "H", "u", "T", "@", "v", "e", ">", "k", "]", "2", "n", "C", "g", "`", "5", "L", "{", "?", "~", "d", "x", "4", "j", "&", "<", "o", "c", "Q", "B", "K", "E", "w", "h", "i", "b", "Y", "3", "W", "U", "7", ")", "F", "p", "}", "$", "*", "#", "M", "9", "m", "a", "8", "X", "i", "A", "q", "S", "t", "s", "I", "6", "[", "P", "^", ":", ";", "G", "D", ","];
 						let count = "";
-						if (question.length < hashing.questLength) {
+						if (question.length < 10) {
 							count = String(question) + "0" + String(answer.length);
 						} else {
 							count = String(question) + String(answer.length);
 						}
 						// Some random char
-						hashedSec = allChars[Math.floor(Math.random() * hashing.randLength1) + 1] + String(num) + count;
+						hashedSec = allChars[Math.floor(Math.random() * 82) + 1] + String(num) + count;
 			
-						for (var x=0; x<hashing.xLength; x++) {
+						for (var x=0; x<30; x++) {
 							let char;
 							if (x > question.length) {
-								char = Math.floor(Math.random() * hashing.randLength2) + 1
+								char = Math.floor(Math.random() * 75) + 1
 							} else {
 								char = allChars.indexOf(answer[x]);
 							}
