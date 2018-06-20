@@ -1,6 +1,5 @@
 //import bcrypt (which we need to secure passwords)
 let bCrypt = require('bcrypt-nodejs');
-//let hashing = require('../../config.js');
 
 // initialize the passport-local strategy, and the user model,
 // which will be passed as an argument
@@ -50,7 +49,11 @@ module.exports = function(passport, user) {
 
 					function hashSecurity(question, answer) {
 						let num = Math.floor(Math.random() * 9) + 1;
-						let allChars = ["%", "J", "V", "(", "O", "f", "N", "z", "r", "y", "1", "R", "l", "Z", "0", "H", "u", " ", "T", "@", "v", "e", ">", "k", "]", "2", "n", "C", "g", "`", "5", "L", "{", "?", "~", "d", "x", "4", "j", "&", "<", "o", "c", "Q", "B", "K", "E", "w", "h", "i", "b", "Y", "3", "W", "U", "7", ")", "F", "p", "}", "$", "*", "#", "M", "9", "m", "a", "8", "X", "i", "A", "q", "S", "t", "s", "I", "6", "[", "P", "^", ":", ";", "G", "D", ",", "%", "J", "V", "(", "O", "f", "N", "z", "r", "y", "1", "R", "l", "Z", "0", "H", "u", "T", "@", "v", "e", ">", "k", "]", "2", "n", "C", "g", "`", "5", "L", "{", "?", "~", "d", "x", "4", "j", "&", "<", "o", "c", "Q", "B", "K", "E", "w", "h", "i", "b", "Y", "3", "W", "U", "7", ")", "F", "p", "}", "$", "*", "#", "M", "9", "m", "a", "8", "X", "i", "A", "q", "S", "t", "s", "I", "6", "[", "P", "^", ":", ";", "G", "D", ","];
+
+						// This config var is set in Heroku
+						// To view it, go to the settings in the Heroku app
+						let allChars = process.env.allChars;
+						
 						let count = "";
 						if (question.length < 10) {
 							count = String(question) + "0" + String(answer.length);

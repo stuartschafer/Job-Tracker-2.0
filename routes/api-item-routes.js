@@ -1,7 +1,6 @@
 // Requiring our models
 let db = require("../models");
 const nodemailer = require('nodemailer');
-//let emailPassword = require('../config2.js');
 
 module.exports = function(app) {
     //route for retrieving all jobs for the user logged in
@@ -26,6 +25,8 @@ module.exports = function(app) {
         });
     });
 
+    // This config var is set in Heroku
+    // To view it, go to the settings in the Heroku app
     let emailPW = process.env.emailPW;
 
     // This will send emails
@@ -35,7 +36,6 @@ module.exports = function(app) {
             auth: {
                 user: 'jobtrackercareer@gmail.com',
                 pass: emailPW
-                //pass: 'JobTrackerCareer2018'
             }
         });
         
