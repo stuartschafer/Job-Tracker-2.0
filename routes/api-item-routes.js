@@ -1,7 +1,7 @@
 // Requiring our models
 let db = require("../models");
 const nodemailer = require('nodemailer');
-let emailPassword = require('../hushed.js');
+//let emailPassword = require('../config2.js');
 
 module.exports = function(app) {
     //route for retrieving all jobs for the user logged in
@@ -32,12 +32,10 @@ module.exports = function(app) {
             service: 'gmail',
             auth: {
                 user: 'jobtrackercareer@gmail.com',
-                pass: emailPassword.emailPW
+                pass: process.env.emailPW
                 //pass: 'JobTrackerCareer2018'
             }
         });
-
-        console.log(emailPassword);
         
         let userIssue = "EMAIL FROM: " + req.body.email + "\n\nPRIORITY: " + (req.body.priority).toUpperCase() + "\n\nIssue:\n" + req.body.issue;
         
