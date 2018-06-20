@@ -109,15 +109,16 @@ $( document ).ready(function() {
             "order": [[ 8, 'asc' ], [ 7, 'desc' ]],
             "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
             "createdRow": function ( row, data, index ) {
-                // Changes the text to RED if the date is older than the set date
-                if ( new Date(data.date_applied) < new Date(oldDate) ) {
-                    $('td', row).eq(1).addClass('highlightRed');
-                    $('td', row).eq(2).addClass('highlightRed');
-                    $('td', row).eq(3).addClass('highlightRed');
-                    $('td', row).eq(4).addClass('highlightRed');
-                    $('td', row).eq(5).addClass('highlightRed');
-                    $('td', row).eq(6).addClass('highlightRed');
-                    $('td', row).eq(7).addClass('highlightRed');
+                
+                for (var x=1; x<8; x++) {
+                    // Changes the text to RED if the date is older than the set date AND if the job is Active
+                    if ( new Date(data.date_applied) < new Date(oldDate) && data.status === "Active" ) {
+                        $('td', row).eq(x).addClass('highlightRed');
+                    } else if (data.status === "Inactive") {
+                        $('td', row).eq(x).addClass('highlightGrey');
+                    } else {
+                        $('td', row).eq(x).addClass('highlightGreen');
+                    }
                 }
             },
             dom: 'f<"toolbar">lrtpBi',
@@ -258,8 +259,7 @@ $( document ).ready(function() {
     });
 
     $("#responseButton").on("click", function() {
-        let id = $(".fa-comment-dots").attr('value');
-        let addResponseNews = "";
+        //let id = $(".fa-comment-dots").attr('value');
         let status = $("input:radio[name=statusRadio]:checked").val();
         let status_day = moment($("#dateResponded").val()).format("L") || moment().format("L");
         let response = "";
