@@ -6,6 +6,9 @@ const nodemailer = require('nodemailer');
 module.exports = function(app) {
     //route for retrieving all jobs for the user logged in
     app.get("/api/jobs", function(req, res) {
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log(process.env.emailPW);
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         db.Job.findAll({
             where: {
                 Userid: req.user.id
