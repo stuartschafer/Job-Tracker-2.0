@@ -1,6 +1,10 @@
 {
   "name": "Job_Tracker",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.1.4",
+    "npm": "6.0.1"
+  },
   "description": "When you want to keep up with the applications you've sent",
   "main": "server.js",
   "scripts": {
