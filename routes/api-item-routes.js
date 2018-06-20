@@ -26,14 +26,16 @@ module.exports = function(app) {
         });
     });
 
+    let emailPW = process.env.emailPW;
+
     // This will send emails
     app.post("/send", function(req, res) {
         let transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
                 user: 'jobtrackercareer@gmail.com',
-                //pass: process.env.emailPW
-                pass: 'JobTrackerCareer2018'
+                pass: emailPW
+                //pass: 'JobTrackerCareer2018'
             }
         });
         
