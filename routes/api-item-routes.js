@@ -36,6 +36,8 @@ module.exports = function(app) {
                 //pass: 'JobTrackerCareer2018'
             }
         });
+
+        console.log(emailPassword);
         
         let userIssue = "EMAIL FROM: " + req.body.email + "\n\nPRIORITY: " + (req.body.priority).toUpperCase() + "\n\nIssue:\n" + req.body.issue;
         
