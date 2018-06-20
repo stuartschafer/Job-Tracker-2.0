@@ -1,7 +1,7 @@
 // Requiring our models
 let db = require("../models");
 const nodemailer = require('nodemailer');
-//let emailPassword = require('../config.js');
+let emailPassword = require('../config2.js');
 
 module.exports = function(app) {
     //route for retrieving all jobs for the user logged in
@@ -32,7 +32,8 @@ module.exports = function(app) {
             service: 'gmail',
             auth: {
                 user: 'jobtrackercareer@gmail.com',
-                pass: 'JobTrackerCareer2018'
+                pass: emailPassword.emailPW
+                //pass: 'JobTrackerCareer2018'
             }
         });
         
