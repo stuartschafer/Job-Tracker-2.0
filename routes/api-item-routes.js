@@ -35,8 +35,6 @@ module.exports = function(app) {
                 pass: emailPassword.emailPW
             }
         });
-
-        console.log("here");
         
         let userIssue = "EMAIL FROM: " + req.body.email + "\n\nPRIORITY: " + (req.body.priority).toUpperCase() + "\n\nIssue:\n" + req.body.issue;
         
