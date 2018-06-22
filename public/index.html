@@ -51,6 +51,9 @@
 			<div class="row justify-content-md-center">
 				<button id="signintoacct" type="button" class="btn btn-success btn-lg btn-block center-block mainButtons" data-toggle="modal" data-target="#signinModal">Sign In  <i class="fas fa-unlock-alt"></i></button>
 			</div>
+			<div class="row justify-content-md-center">
+				<button id="emailMe" type="button" class="btn btn-info btn-lg btn-block center-block mainButtons" data-toggle="modal" data-target="#emailModal"><i class="fas fa-smile"></i> Comments / Concerns  <i class="fas fa-frown"></i></button>
+			</div>
 		</div>
 	</div>
 
@@ -173,6 +176,62 @@
 						<button type="button" class="btn btn-default buttonStuff" data-dismiss="modal">Close</button>
 						<button type="button" id="signupbutton" value="Check Info" class="btn btn-primary buttonStuff">Check Info</button>
 						<button type="submit" id="submitButton" value="Sign Up" class="btn btn-success buttonStuff">Submit</button>
+					</div>
+				</form>	
+			</div>
+		</div>
+	</div>
+
+	<!-- Email modal -->
+	<div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<form class="form-horizontal" id="email" name="email" method="post" action="/send">
+					<div class="modal-header">
+						<h5 class="modal-title" id="emailModalLabel">Send Me an Email</h5>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="email" class="col-sm-3 control-label">Your Email</label>
+							<div class="col-sm-9">
+								<input type="text" name="email" class="form-control existinguser" id="userEmail" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="defaultDisplay" class="col-sm-3 control-label">Priority</label>
+							<div class="col-sm-9">
+								<select name="priority" id="priorityDisplay" class="form-control col-sm-9">
+									<option>Normal</option>
+									<option>Low</option>
+									<option>High</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="subject" class="col-sm-3 control-label">Subject</label>
+							<div class="col-sm-9">
+								<input type="text" name="subject" class="form-control existinguser" id="userSubject" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="issue" class="col-sm-3 control-label">Issue</label>
+							<div class="col-sm-9">
+								<textarea name="issue" class="form-control existinguser" id="userIssue" rows="5"></textarea>
+							</div>
+						</div>
+						<div id="note" class="col-sm-12">
+							Please note that it may take me a day or two to respond.
+							<br>
+							If you need me sooner, please reach out to my via Slack: 
+							<a href="https://adult-jr-devs-forum.slack.com/team/U7PEH50E6" target="_blank" >
+								<i class="fab fa-slack"></i>
+							</a>
+						</div>
+						<br><br>			
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default buttonStuff" data-dismiss="modal">Close</button>
+						<button type="submit" id="emailButton" class="btn btn-success buttonStuff">Send Email</button>
 					</div>
 				</form>	
 			</div>

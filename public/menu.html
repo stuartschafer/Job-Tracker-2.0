@@ -19,9 +19,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- CUSTOM STYLESHEET -->
@@ -62,7 +60,67 @@
 			<div class="row justify-content-md-center">
 				<button id="logoutButton" type="button" class="btn btn-dark btn-lg btn-block center-block buttonStuff">Log Out <i class="fas fa-external-link-alt"></i></button>
 			</div>
+			<div class="row justify-content-md-center">
+				<button id="emailMe" type="button" class="btn btn-info btn-lg btn-block center-block buttonStuff"data-toggle="modal" data-target="#emailModal"><i class="fas fa-smile"></i> Comments / Concerns  <i class="fas fa-frown"></i></button>
+			</div>
 		</div>
+		
+
+	<!-- Email modal -->
+	<div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<form class="form-horizontal" id="email" name="email" method="post" action="/send">
+					<div class="modal-header">
+						<h5 class="modal-title" id="emailModalLabel">Send Me an Email</h5>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="email" class="col-sm-3 control-label">Your Email</label>
+							<div class="col-sm-9">
+								<input type="text" name="email" class="form-control existinguser" id="userEmail" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="defaultDisplay" class="col-sm-3 control-label">Priority</label>
+							<div class="col-sm-9">
+								<select name="priority" id="priorityDisplay" class="form-control col-sm-9">
+									<option>Normal</option>
+									<option>Low</option>
+									<option>High</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="subject" class="col-sm-3 control-label">Subject</label>
+							<div class="col-sm-9">
+								<input type="text" name="subject" class="form-control existinguser" id="userSubject" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="issue" class="col-sm-3 control-label">Issue</label>
+							<div class="col-sm-9">
+								<textarea name="issue" class="form-control existinguser" id="userIssue" rows="5"></textarea>
+							</div>
+						</div>
+						<div id="note" class="col-sm-12">
+							Please note that it may take me a day or two to respond.
+							<br>
+							If you need me sooner, please reach out to my via Slack: 
+							<a href="https://adult-jr-devs-forum.slack.com/team/U7PEH50E6" target="_blank" >
+								<i class="fab fa-slack"></i>
+							</a>
+						</div>
+						<br><br>			
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default buttonStuff" data-dismiss="modal">Close</button>
+						<button type="submit" id="emailButton" class="btn btn-success buttonStuff">Send Email</button>
+					</div>
+				</form>	
+			</div>
+		</div>
+	</div>
 
 <!-- CUSTOM JAVASCRIPT -->
 <script src="./js/menu.js"></script>
