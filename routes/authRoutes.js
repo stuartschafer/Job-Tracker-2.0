@@ -81,6 +81,10 @@ module.exports = function(app, passport) {
             } 
 
         }).then(function(results) {
+            // This config var is set in Heroku
+			// To view it, go to the settings in the Heroku app         
+            results[0].dataValues.allChars = process.env.allChars || "blah";
+            
             res.json(results);
         });
     });

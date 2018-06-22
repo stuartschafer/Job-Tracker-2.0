@@ -69,8 +69,15 @@ $( document ).ready(function() {
                 objArray.notes = data[i].notes;
                 objArray.status = data[i].status || "";
                 objArray.status_response = data[i].status_response || "";
-                objArray.response = "<a href='#'><i id='responseMe' class='fas fa-lg fa-comment-dots center-td icons' value='" + data[i].id + "' data-toggle='modal' data-target='#responseModal'></i></a>";
-                objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob center-td icons' aria-hidden='true'></i></a>";
+                if (data[i].status === "Active") {
+                    objArray.response = "<a href='#'><i id='responseMe' class='fas fa-lg fa-comment-dots center-td icons' value='" + data[i].id + "' data-toggle='modal' data-target='#responseModal'></i></a>";
+                    objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob center-td icons' aria-hidden='true'></i></a>";
+                } else {
+                    objArray.response = "<a href='#'><i id='responseMe' class='fas fa-lg fa-comment-dots highlightGrey center-td icons' value='" + data[i].id + "' data-toggle='modal' data-target='#responseModal'></i></a>";
+                    objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob highlightGrey center-td icons' aria-hidden='true'></i></a>";
+                }
+                
+                
                 
                 arrayofJobs.push(objArray);
                 allStuff = data;
@@ -259,7 +266,6 @@ $( document ).ready(function() {
     });
 
     $("#responseButton").on("click", function() {
-        //let id = $(".fa-comment-dots").attr('value');
         let status = $("input:radio[name=statusRadio]:checked").val();
         let status_day = moment($("#dateResponded").val()).format("L") || moment().format("L");
         let response = "";

@@ -9,7 +9,7 @@ module.exports = function(app) {
             where: {
                 Userid: req.user.id
             }
-        }).then(function(results) { 
+        }).then(function(results) {
             res.json(results);
         });
     });

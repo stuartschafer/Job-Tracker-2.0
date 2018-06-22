@@ -242,7 +242,7 @@ tr.shown td.details-control {
 }
 
 .highlightGrey {
-	color: grey;
+	color: grey !important;
 }
 
 .highlightGreen {
