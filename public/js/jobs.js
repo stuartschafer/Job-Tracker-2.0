@@ -377,6 +377,7 @@ $( document ).ready(function() {
 
         userLoggedInId = data.id;
         userLoggedInName = data.name;
+        userEmail = data.email;
 
         orderBy = userSettings.order_by;
         sortBy = userSettings.sort_by;
@@ -403,5 +404,10 @@ $( document ).ready(function() {
 
     // Get and display the jobs data
     $.get("/api/jobs", createDataArray);
+
+    // This auto-populates the user's email when they click on the "Send Me an Email" button at the bottom of the page
+    $("#sendEmail").on("click", function(event) {
+        $("#userEmail").val(userEmail);
+    });
 
 });

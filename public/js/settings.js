@@ -1,10 +1,11 @@
 $( document ).ready(function() {
     let userName;
-    let userInfo = {};
+    let userEmail;
     let userID;
 
     $.get("/api/user_data").then(function(data) {
         userName = data.name;
+        userEmail = data.email;
         userInfo = {
             id: data.id
         }
@@ -122,6 +123,11 @@ $( document ).ready(function() {
         });
         
         location.href = "/jobs.html";
+    });
+
+    // This auto-populates the user's email when they click on the "Send Me an Email" button at the bottom of the page
+    $("#sendEmail").on("click", function(event) {
+        $("#userEmail").val(userEmail);
     });
     
 });

@@ -137,6 +137,11 @@ h5 {
 	font-family: 'Acme', sans-serif;
 }
 
+#activeInactiveLabel {
+	font-size: 150%;
+	margin-left: 5px;
+}
+
 /* For the tooltip pop-up for the Github and Email buttons at the bottom of the page*/
 .fa-envelope-square,  {
     position: relative;

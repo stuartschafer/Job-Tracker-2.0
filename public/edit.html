@@ -191,11 +191,13 @@
 							<div class="form-check form-check-inline" id="interestLevel">
 									&nbsp
 								<label class="form-check-label">
-									<input class="form-check-input" type="radio" name="statusRadios" id="status_Active" value="Active"> Active
+									<input class="form-check-input" type="radio" name="statusRadios" id="status_Active" value="Active">
+									<span id="activeInactiveLabel">Active</span>
 								</label>
 								
 								<label class="form-check-label">
-									<input class="form-check-input" type="radio" name="statusRadios" id="status_Inactive" value="Inactive"> Inactive
+									<input class="form-check-input" type="radio" name="statusRadios" id="status_Inactive" value="Inactive">
+									<span id="activeInactiveLabel">Inactive</span>
 								</label>
 							</div>
 						</div>
@@ -293,7 +295,7 @@
 					</i>
 				</a>
 
-				<i class="fas fa-envelope-square navIcon" data-toggle="modal" data-target="#emailModal">
+				<i id="sendEmail" class="fas fa-envelope-square navIcon" data-toggle="modal" data-target="#emailModal">
 					<span class="tooltiptext">Contact Me  <i class="fas fa-bullhorn"></i></span>
 				</i>
 				

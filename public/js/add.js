@@ -5,11 +5,12 @@ $( document ).ready(function() {
     $("#date_applied").val(loadedTime);
 
     let userLoggedInId = "";
-    let userLoggedInName = "";
+    let userEmail;
     
     $.get("/api/user_data").then(function(data) {
         userLoggedInId = data.id;
         userLoggedInName = data.name;
+        userEmail = data.email;
 
         // This is the name that will be displayed in the navbar
         let userSettings = JSON.parse(data.settings);
@@ -88,4 +89,10 @@ $( document ).ready(function() {
        
         submitJob(newJob);
     });
+
+    // This auto-populates the user's email when they click on the "Send Me an Email" button at the bottom of the page
+    $("#sendEmail").on("click", function(event) {
+        $("#userEmail").val(userEmail);
+    });
+
 }) 

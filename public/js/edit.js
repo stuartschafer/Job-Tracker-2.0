@@ -1,9 +1,11 @@
 $(function() {
-    var userLoggedInId = "";
+    let userLoggedInId = "";
+
     // This gets the id and name of the user
     $.get("/api/user_data").then(function(data) {
         userLoggedInId = data.id;
         userLoggedInName = data.name;
+        userEmail = data.email;
         // This is the name that will be displayed in the navbar
         let userSettings = JSON.parse(data.settings);
         displayName = userSettings.name || data.name;
@@ -133,4 +135,10 @@ $(function() {
     $("#notes").val(jobBeingEdited.notes);
     $("#status_" + jobBeingEdited.status).prop('checked', true);
     $("#status_response").val(status_response_view);
+
+    // This auto-populates the user's email when they click on the "Send Me an Email" button at the bottom of the page
+    $("#sendEmail").on("click", function(event) {
+        $("#userEmail").val(userEmail);
+    });
+
 });
