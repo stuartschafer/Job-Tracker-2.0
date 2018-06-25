@@ -100,6 +100,11 @@ h1 {
 	font-family: 'Acme', sans-serif;
 }
 
+#copyright {
+    font-size: 150%;
+    margin-top: 3%;
+}
+
 #emailMe {
     margin-top: 3%;
 }
