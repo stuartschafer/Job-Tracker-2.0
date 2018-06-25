@@ -115,15 +115,14 @@ $(document).ready(function() {
         "In what town or city did you meet your spouse/partner?", "What is the first name of the person you had your first kiss with?", "What is ther name of your favorite band/musician?"
         let key = hashedAnswer[1];
         let qNum = hashedAnswer[2];
-        if (hashedAnswer[3] = 0) {
-            number = Number(hashedAnswer[4]);
-        } else {
-            number = Number(hashedAnswer[3] + hashedAnswer[4]);
-        }
+        var direction = x < 200 ? 1 : -1;
+
+        let number = (hashedAnswer[3] = 0) ? Number(hashedAnswer[4]) : Number(hashedAnswer[3] + hashedAnswer[4]);
         
         let answer = "";
-
+        
         for (var x=5; x<number + 5; x++) {
+            // This won't work on local, and will result in 'undefined'. The allChars string is stored in Heroku
             let ansChar = allChars.indexOf(hashedAnswer[x]);
             answer = answer + allChars[ansChar - key];
         }

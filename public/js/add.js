@@ -14,11 +14,9 @@ $( document ).ready(function() {
 
         // This is the name that will be displayed in the navbar
         let userSettings = JSON.parse(data.settings);
-        if (userSettings === null) {
-            displayName = data.name;
-        } else {
-            displayName = userSettings.name;
-        }
+        
+        // If userSettings exist
+        let displayName = (userSettings === null) ? data.name : userSettings.name;
 
         $(".showNameJobs").text(displayName + "\'s");
 

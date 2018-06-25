@@ -16,11 +16,10 @@ $( document ).ready(function() {
 
         // This is the name that will be displayed in the navbar
         let userSettings = JSON.parse(data.settings);
-        if (userSettings === null) {
-            displayName = data.name;
-        } else {
-            displayName = userSettings.name;
-        }
+
+        // If userSettings exist
+        let displayName = (userSettings === null) ? data.name : userSettings.name;
+
         $(".showNameJobs").text(displayName + "\'s");
 
         // This section will change the navbar area for longer names to be shown correctly
@@ -93,9 +92,8 @@ $( document ).ready(function() {
         let savedLoactionCol = $("input:radio[name=locationColumnVisibility]:checked").val();
         let savedName = $("#displayedName").val() || userName;
 
-        if (savedAlert < 1) {
-            savedAlert = 1;
-        }
+        // This makes sure the # of days alert is at least 1 day
+        savedAlert = savedAlert < 1 ? 1 : savedAlert;
 
         let newSettings = {};
             newSettings.sound = savedSound;

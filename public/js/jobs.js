@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function() {
     let objArray = {};
     let allStuff;
     let idResponse;
@@ -140,14 +140,14 @@ $( document ).ready(function() {
                 { "visible": false, "targets": 8 }
             ],
             "displayLength": 10,
-            "drawCallback": function ( settings ) {
+            "drawCallback": function (settings) {
                 var api = this.api();
                 var rows = api.rows( {page:'current'} ).nodes();
                 var last=null;
      
                 api.column(8, {page:'current'} ).data().each( function ( group, i ) {
                     if ( last !== group ) {
-                        $(rows).eq( i ).before(
+                        $(rows).eq(i).before(
                             '<tr class="group"><td colspan="10">'+group+'</td></tr>'
                         );
                         last = group;
@@ -178,14 +178,14 @@ $( document ).ready(function() {
         tableOptions.order[1][0] = 7 - columnsHidden;
         tableOptions.columnDefs[0].targets = 8 - columnsHidden;
 
-        tableOptions.drawCallback = function ( settings ) {
+        tableOptions.drawCallback = function (settings) {
             var api = this.api();
             var rows = api.rows( {page:'current'} ).nodes();
             var last=null;
  
             api.column(8 - columnsHidden, {page:'current'} ).data().each( function ( group, i ) {
                 if ( last !== group ) {
-                    $(rows).eq( i ).before(
+                    $(rows).eq(i).before(
                         '<tr class="group"><td colspan="10">'+group+'</td></tr>'
                     );
                     last = group;
@@ -238,8 +238,6 @@ $( document ).ready(function() {
             }
         });
     }
-
-
 
 
     // Get the info of the job that was clicked and save to session storage for update
