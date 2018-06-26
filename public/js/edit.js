@@ -131,9 +131,16 @@ $(function() {
     } else {
         $("#interest_level_" + jobBeingEdited.interest_level).prop('checked', true);
     }
+
+    
     
     $("#notes").val(jobBeingEdited.notes);
-    $("#status_" + jobBeingEdited.status).prop('checked', true);
+    if (jobBeingEdited.status === "Moving Forward") {
+        $("#status_MovingForward").prop('checked', true);
+    } else {
+        $("#status_" + jobBeingEdited.status).prop('checked', true);
+    }
+    
     $("#status_response").val(status_response_view);
 
     // This auto-populates the user's email when they click on the "Send Me an Email" button at the bottom of the page

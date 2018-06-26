@@ -5,6 +5,7 @@ $(document).ready(function() {
     let jobInfo = {};
     let activeApp = 0;
     let inactiveApp = 0;
+    let movingForward = 0;
     let chaching = new Audio("assets/sounds/chaching.mp3");
     let sadtrombone = new Audio("assets/sounds/sadtrombone.mp3");
     let youCanDoIt = new Audio("assets/sounds/youcandoit.mp3");
@@ -51,6 +52,8 @@ $(document).ready(function() {
             } else {
                 if (data[i].status === "Active") {
                     activeApp++;
+                } else if (data[i].status === "Moving Forward") {
+                    movingForward++;
                 } else {
                     inactiveApp++;
                 }
@@ -69,7 +72,7 @@ $(document).ready(function() {
                 objArray.notes = data[i].notes;
                 objArray.status = data[i].status || "";
                 objArray.status_response = data[i].status_response || "";
-                if (data[i].status === "Active") {
+                if (data[i].status === "Active" || data[i].status === "Moving Forward") {
                     objArray.response = "<a href='#'><i id='responseMe' class='fas fa-lg fa-comment-dots center-td icons' value='" + data[i].id + "' data-toggle='modal' data-target='#responseModal'></i></a>";
                     objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob center-td icons' aria-hidden='true'></i></a>";
                 } else {
@@ -77,7 +80,9 @@ $(document).ready(function() {
                     objArray.edit = "<a href='#'><i id='updateMe' value='" + data[i].id + "' class='fa fa-edit fa-lg updateJob highlightGrey center-td icons' aria-hidden='true'></i></a>";
                 }
                 
-                
+                if (objArray.status === "Moving Forward") {
+                    objArray.status = "<- MOVING FORWARD ->";
+                }
                 
                 arrayofJobs.push(objArray);
                 allStuff = data;
@@ -119,7 +124,7 @@ $(document).ready(function() {
                 
                 for (var x=1; x<8; x++) {
                     // Changes the text to RED if the date is older than the set date AND if the job is Active
-                    if ( new Date(data.date_applied) < new Date(oldDate) && data.status === "Active" ) {
+                    if ( new Date(data.date_applied) < new Date(oldDate) && (data.status === "Active" || data.status === "Moving Forward") ) {
                         $('td', row).eq(x).addClass('highlightRed');
                     } else if (data.status === "Inactive") {
                         $('td', row).eq(x).addClass('highlightGrey');
@@ -208,8 +213,13 @@ $(document).ready(function() {
         let table = $('#jobs').DataTable(tableOptions);
 
         // For the custom toolbar.  This displays the totals
-        $("div.toolbar").html('<span id="customToolbar">(' + activeApp + ' Active, ' + inactiveApp + ' Inactive)</span>');
-
+        if (movingForward == 0) {
+            $("div.toolbar").html('<span id="customToolbar">(' + activeApp + ' Active, ' + inactiveApp + ' Inactive)</span>');
+            $("#customToolbar").css("padding-right", "24%");
+        } else {
+            $("div.toolbar").html('<span id="customToolbar">(' + movingForward + ' Moving Forward, ' + activeApp + ' Active, ' + inactiveApp + ' Inactive)</span>');
+        }
+        
         // This gropus rows together in sections depending if they are ACTIVE or INACTIVE
         $('#jobs tbody').on( 'click', 'tr.group', function () {
             var currentOrder = table.order()[0];
@@ -224,7 +234,6 @@ $(document).ready(function() {
         // This runs each time the arrow is clicked.  It shows/hides more information
         $('#jobs tbody').on('click', 'td.details-control', function () {
             let tr = $(this).closest('tr');
-            // console.log(tr);
             let row = table.row( tr );
     
             if (row.child.isShown()) {
@@ -282,6 +291,18 @@ $(document).ready(function() {
         } else {
             response = $("#responseGoodOptions").val() || $("#responseBadOptions").val();
         }
+
+        // If the user does not make a selection of Moving Forward, Active or Inactive
+        if (status === undefined) {
+            if ($("#responseGoodOptions").val() != "") {
+                status = "Moving Forward";
+            } else if ($("#responseBadOptions").val() != "") {
+                status = "Inactive";
+            } else {
+                status = "Active";
+            }
+        }
+        
 
         let status_response = "";
         let goodOrBad = "";
