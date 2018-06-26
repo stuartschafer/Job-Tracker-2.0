@@ -110,6 +110,6 @@ Make sure to **SAVE** :floppy_disk: the changes.  These are remembered every tim
 ## ##
 <a name="thankyou"></a>
 **THANK YOU** :thumbsup: for using this application, and please let me know any feedback or problems/bugs you might encounter.  Of course positive comments are welcomed as well.  I can be reached at **stuart_schafer@hotmail.com**.
-Enjoy and GOOD LUCK on getting your next big job!
+<br>Enjoy and GOOD LUCK on getting your next big job!
 
 **https://job-tracker-career.herokuapp.com/**
