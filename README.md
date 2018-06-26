@@ -36,7 +36,7 @@ Also, you can :rocket: export all of your data to a pdf, csv, excel, copy it to 
 
 But first, you must [sign up :clipboard:](#signup) to get started.
 
-[Go to TOP](#top)
+:top:[Go to TOP](#top)
 
 <a name="signup"></a>
 ## Sign Up ##
