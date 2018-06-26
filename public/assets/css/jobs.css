@@ -17,20 +17,11 @@ h5 {
 	font-size: 100%;
 }
 
-a {
-	color: white;
-}
-
-a:hover {
-	color: #5eb076;
-}
-
 #footerNavbar {
 	background-color: green !important;
 	height: 49px;
 }
 
-/* RESPONSIVE BACKGROUND IMAGE */
 .bgimage {
 	z-index: -100;
     /* Set rules to fill background */
@@ -276,6 +267,15 @@ tr.shown td.details-control {
 #copyright {
 	margin-top: 9%;
 }
+
+#copyrightWords {
+	color: white;
+}
+
+#copyrightWords:hover {
+	color: #5eb076;
+}
+
 
 /* For the tooltip pop-up for the Github and Email buttons at the bottom of the page*/
 .fa-envelope-square,  {

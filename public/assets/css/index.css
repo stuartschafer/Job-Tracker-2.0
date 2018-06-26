@@ -13,15 +13,6 @@ h1 {
 	font-size: 350%;
 }
 
-a {
-	color: black;
-}
-
-a:hover {
-	color: green;
-}
-
-/* RESPONSIVE BACKGROUND IMAGE */
 .bgimage {
 	z-index: -100;
     /* Set rules to fill background */
@@ -113,8 +104,20 @@ a:hover {
     margin-top: 3%;
 }
 
+#copyrightWords {
+	color: white;
+}
+
+#copyrightWords:hover {
+	color: #5eb076;
+}
+
 #emailMe {
     margin-top: 3%;
+}
+
+#readMe {
+    font-size: 150%;
 }
 
 
