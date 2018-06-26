@@ -106,9 +106,9 @@ I.E. - To view by your highes interest level, select Interest level (order by), 
 
 Make sure to **SAVE** :floppy_disk: the changes.  These are remembered every time going forward.
 
-## ##
 [:top:](#top)
+## ##
 <a name="thankyou"></a>
-**THANK YOU** :thumbsup: for using this application, and please let me know any feedback or problems/bugs you might encounter.  Of course positive comments are welcomed as well.  I can be reached at **stuart_schafer@hotmail.com**.  Enjoy and GOOD LUCK!
+**THANK YOU** :thumbsup: for using this application, and please let me know any feedback or problems/bugs you might encounter.  Of course positive comments are welcomed as well.  I can be reached at **stuart_schafer@hotmail.com**.  Enjoy and GOOD LUCK on getting your next big job!
 
 **https://job-tracker-career.herokuapp.com/**
