@@ -1,3 +1,11 @@
+a {
+	color: black;
+}
+
+a:hover {
+	color: green;
+}
+
 /* RESPONSIVE BACKGROUND IMAGE */
 .bgimage {
 	z-index: -100;

@@ -17,6 +17,14 @@ h5 {
 	font-size: 100%;
 }
 
+a {
+	color: white;
+}
+
+a:hover {
+	color: #5eb076;
+}
+
 #footerNavbar {
 	background-color: green !important;
 	height: 49px;
