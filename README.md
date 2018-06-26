@@ -1,3 +1,4 @@
+<a name="top"></a>
 # Job-Tracker-2.0 #
 
 **Table of Contents**
@@ -9,7 +10,6 @@
 - [Entering a New Application](#new)
 - [Settings](#settings)
 - [Thank You!](#thankyou)
-
 
 To start tracking your career, please click on **https://job-tracker-career.herokuapp.com/**
 
@@ -35,6 +35,8 @@ Job Tracker can do it all.  It will remember your applications and store any not
 Also, you can :rocket: export all of your data to a pdf, csv, excel, copy it to the clipboard, or print it directly from the site.
 
 But first, you must [sign up :clipboard:](#signup) to get started.
+
+[Go to TOP](#top)
 
 <a name="signup"></a>
 ## Sign Up ##
