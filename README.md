@@ -37,23 +37,25 @@ Also, you can :rocket: export all of your data to a pdf, csv, excel, copy it to 
 But first, you must [sign up :clipboard:](#signup) to get started.
 
 [:top:](#top)
-
 <a name="signup"></a>
 ## Sign Up ##
 ![](public/assets/images/signup.gif)
 
 Filling out this information will allow you access to the full site, allowing you to save and export data.  Your password is fully encrpyted using [Passport.js](http://www.passportjs.org/).
 
+[:top:](#top)
 <a name="signin"></a>
 ## Sign In ##
 Forget your password?  No worries, just answer the security questions, and you can easily reset your password and get back in.
 
 ![](public/assets/images/signin2.gif)
 
+[:top:](#top)
 <a name="menu"></a>
 ## Menu ##
 Here you can go directly to your [:page_facing_up: Applications](#jobs), enter a [:card_index: New Application](#new), [:link: Adjust Settings](#settings), or log out.
 
+[:top:](#top)
 <a name="jobs"></a>
 ## All of Your Applications ##
 ![](public/assets/images/job2.gif)
@@ -74,12 +76,14 @@ You can hide/show columns at your leisure.
 
 *NOTE*: Rows that are red, mean they are past 28 days (customizable), and are colored that way to let you know it's been a while since you've applied.  You can click on the link to see if the position is open or closed, and mark your application as such.
 
+[:top:](#top)
 <a name="new"></a>
 ## Enter a New Application ##
 ![](public/assets/images/new.png)
 
 Here you can fill out what you want to about a job application.  The date, title, company, location, and interest level are required fields.  Everything else is left to your discretion.
 
+[:top:](#top)
 <a name="settings"></a>
 ## Settings ##
 Here you can customize your experience further.
@@ -103,6 +107,7 @@ I.E. - To view by your highes interest level, select Interest level (order by), 
 Make sure to **SAVE** :floppy_disk: the changes.  These are remembered every time going forward.
 
 ## ##
+[:top:](#top)
 <a name="thankyou"></a>
 **THANK YOU** :thumbsup: for using this application, and please let me know any feedback or problems/bugs you might encounter.  Of course positive comments are welcomed as well.  I can be reached at **stuart_schafer@hotmail.com**.  Enjoy and GOOD LUCK!
 
