@@ -43,7 +43,7 @@ But first, you must [sign up :clipboard:](#signup) to get started.
 To see an example of applications and how it will look for you, please visit **https://job-tracker-career.herokuapp.com/** and sign in using:
 
 - Email: `test@test.com`
-- Password: test
+- Password: `test`
 
 [:top:](#top)
 <a name="signup"></a>
