@@ -40,10 +40,9 @@ But first, you must [sign up :clipboard:](#signup) to get started.
 [:top:](#top)
 <a name="example"></a>
 ## Example ##
-To see an example of applications and how it will look for you, please visit **https://job-tracker-career.herokuapp.com/**.
+To see an example of applications and how it will look for you, please visit **https://job-tracker-career.herokuapp.com/** and sign in using:
 
-Sign in using:
-- Email: test@test.com
+- Email: \test@test.com\
 - Password: test
 
 [:top:](#top)
