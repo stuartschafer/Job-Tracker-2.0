@@ -208,7 +208,7 @@ $(document).ready(function() {
         tableOptions.order[1][1] = sortBy;
 
         // This sets the default length to show per page per the user's saved setting
-        tableOptions.displayLength = displayLength;
+        tableOptions.displayLength = Number(displayLength);
        
         let table = $('#jobs').DataTable(tableOptions);
 
