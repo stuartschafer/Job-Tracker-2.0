@@ -35,8 +35,7 @@ $(function() {
         location.href = "/jobs.html";
     }   
 
-    /////**********EVENT LISTENERS**********/////
-
+    // This is the 'Save Changes' button at the bottom of the page
     $("#editedJob").on("click", function(event) {
         event.preventDefault();
 
@@ -52,14 +51,13 @@ $(function() {
         let editedStatus = $("input:radio[name=statusRadios]:checked").val();
         let editedStatusResponse = $("#status_response").val().trim() || "";
 
-        // This converts the boring characters to the special ASCII characters
-        let editedStatusResponseView = editedStatusResponse.replace(/---/g, "&#9883;");
-        //editedStatusResponseView = editedStatusResponse.replace(/&#58;&#41;/g, "&#9786;");
-        //editedStatusResponseView2 = editedStatusResponse.replace(/&#58;&#40;/g, "&#9785;");
+        // This replaces all the line breaks with a <br> so it will display properly on the jobs.html page
+        let editedStatusResponseView = editedStatusResponse.replace(/\n/g, "<br>");
+        // To put a line break in the beginning as long as there is a response
+        if (editedStatusResponseView != "") {
+            editedStatusResponseView = "<br>" + editedStatusResponseView;
+        }
         
-
-        let userEntered = userLoggedInId;
-
         //Check to make sure these fields are not empty 
         if (!editedJobName) {
             $(".alertUser").text("Please enter a job position.");
@@ -82,7 +80,6 @@ $(function() {
             position: editedJobName,
             company: editedCompany,
             location: editedLocation,
-            //description: editedDescription,
             id_number: editedIdNumber,
             link: editedLink,
             posted_from: editedPostedFrom,
@@ -107,12 +104,13 @@ $(function() {
     }
 
     // This empties out the job so the system will check to see if the user accessed this page without selecting a job to edit
-    //sessionStorage.clear();
-    
-    // This is to replce the special ASCII characters that displays weird
-    let status_response_view = jobBeingEdited.status_response.replace(/&#9883;/g, " --- ");
-    //status_response_view = status_response_view.replace(/&#9786;/g, " :) ");
-    //status_response_view = status_response_view.replace(/&#9785;/g, " :( ");
+    sessionStorage.clear();
+
+    // This will just remove the first <br> tag at the beginning
+    jobBeingEdited.status_response = jobBeingEdited.status_response.replace("<br>", "");
+
+    // This replaces all remaining <br> tags with a /n (line break) so it will display properly
+    let status_response_view = jobBeingEdited.status_response.replace(/<br>/g, "\n");
 
     // To autopopulate the date field
     let loadedTime = moment.parseZone(jobBeingEdited.date_applied).utc().format("YYYY-MM-DD");

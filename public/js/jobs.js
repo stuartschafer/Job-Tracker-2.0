@@ -6,6 +6,7 @@ $(document).ready(function() {
     let activeApp = 0;
     let inactiveApp = 0;
     let movingForward = 0;
+    let position = 0;
     let chaching = new Audio("assets/sounds/chaching.mp3");
     let sadtrombone = new Audio("assets/sounds/sadtrombone.mp3");
     let youCanDoIt = new Audio("assets/sounds/youcandoit.mp3");
@@ -31,15 +32,38 @@ $(document).ready(function() {
             jobDetails += "<h5>Location:   <span class='subsection'>" + data.location + "</span>";
         }
         if (posted_from_column === "hide") {
-            jobDetails += "<h5>Posted From:   <span class='subsection'>" + data.posted_from + "</span>";
+            // This only shows the posted_from is there is one
+            if (data.posted_from != "") {
+                jobDetails += "<h5>Posted From:   <span class='subsection'>" + data.posted_from + "</span>";
+            }
         }
         if (id_column === "hide") {
-            jobDetails += "<h5>ID:   <span class='subsection'>" + data.id_number + "</span>";
+            // This only shows the id number is there is one
+            if (data.id_number != "") {
+                jobDetails += "<h5>ID:   <span class='subsection'>" + data.id_number + "</span>";
+            }
         }
-        jobDetails += "<h5>Notes:   <span class='subsection'>" + data.notes + "</span>";
-        jobDetails += "<h5>Link:   <span class='subsection'><a id='linkSection' href='" + data.link + "' target='_blank'>" + data.link + "</a></span>";
+
+        // This only shows the notes if there are any
+        if (data.notes != "") {
+            jobDetails += "<h5>Notes:   <span class='subsection'>" + data.notes + "</span>";
+        }
+
+        // This only shows a link if there is one
+        if (data.link != "") {
+            jobDetails += "<h5>Link:   <span class='subsection'><a id='linkSection' href='" + data.link + "' target='_blank'>" + data.link + "</a></span>";
+        }
+
+        if (data.status === "<- MOVING FORWARD ->") {
+            data.status = "Moving Forward";
+        }
         jobDetails += "<p><h5>Status:   <strong><span class='subsection'>" + data.status + "</span></strong></p>";
-        jobDetails += "<p><h5>Responses from Employer:   <span class='subsection'>" + data.status_response + "</span></p></div>";
+        
+        // This only shows the employer's responses if there are any
+        if (data.status_response != "") {
+            jobDetails += "<p><h5>Responses from Employer:   <span class='subsection'>" + data.status_response + "</span></p></div>";
+        }
+        
         return jobDetails;
     }
     
@@ -261,17 +285,21 @@ $(document).ready(function() {
          }
     });
 
+    // This is when the user clicks on the emplyer's response in the table
     $("#jobs").on("click", ".fa-comment-dots", function() {
         idResponse = $(this).attr('value');
+
         
         for (var x=0; x<allStuff.length; x++) {
             if (idResponse == allStuff[x].id) {
                 $("#companyName").text(allStuff[x].company);
                 $("#positionName").text(allStuff[x].position);
+                position = x;
             }
         }
     });
 
+    // When the user cliks the submit button after entering info for the employer's response
     $("#responseButton").on("click", function() {
         let status = $("input:radio[name=statusRadio]:checked").val();
         let status_day = moment($("#dateResponded").val()).format("L") || moment().format("L");
@@ -320,35 +348,26 @@ $(document).ready(function() {
                 responseNotes = " - " + responseNotes;
             }
 
-            for (var x=0; x<allStuff.length; x++) {
-                if (allStuff[x].status_response === "") {
-                    status_response = "(" + status_day + ") - " + response + responseNotes + " &#9883; ";
-                    companyResponse = "";
-                } else {
-                    status_response = "(" + status_day + ") - " + response + responseNotes + " &#9883; ";
-                    companyResponse = allStuff[x].status_response;
-                }
-                
-                // This will only show the user's jobs
-                if (idResponse == allStuff[x].id) {
-                    jobInfo = {
-                        id: idResponse,
-                        date_applied: allStuff[x].date_applied,
-                        position: allStuff[x].position,
-                        company: allStuff[x].company,
-                        location: allStuff[x].location,
-                        id_number: allStuff[x].id_number,
-                        link: allStuff[x].link,
-                        posted_from: allStuff[x].posted_from,
-                        interest_level: allStuff[x].interest_level,
-                        notes: allStuff[x].notes,
-                        status: status,
-                        status_response: status_response + companyResponse,
-                        UserId: userLoggedInId
-                    };
-                }
-            }
-           
+            status_response = "<br>(" + status_day + ") - " + response + responseNotes;
+            
+            companyResponse = allStuff[position].status_response === undefined ? "" : allStuff[position].status_response;
+
+            jobInfo = {
+                id: idResponse,
+                date_applied: allStuff[position].date_applied,
+                position: allStuff[position].position,
+                company: allStuff[position].company,
+                location: allStuff[position].location,
+                id_number: allStuff[position].id_number,
+                link: allStuff[position].link,
+                posted_from: allStuff[position].posted_from,
+                interest_level: allStuff[position].interest_level,
+                notes: allStuff[position].notes,
+                status: status,
+                status_response: status_response + companyResponse,
+                UserId: userLoggedInId
+            };
+            
             $.ajax({
                 method: "PUT",
                 url: "/api/jobs",
