@@ -1,5 +1,5 @@
 body {
-	height: 125%;
+	height: 100%;
 	padding-bottom: 70px;
 }
 
@@ -150,6 +150,7 @@ th {
 
 .dt-button-collection {
 	display: grid;
+	margin-bottom: 8%;
 }
 
 .buttons-colvis, .dt-button-collection {
