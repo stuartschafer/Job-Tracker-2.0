@@ -348,7 +348,7 @@ $(document).ready(function() {
                 responseNotes = " - " + responseNotes;
             }
 
-            status_response = "<br>(" + status_day + ") - " + response + responseNotes;
+            status_response = "<br>" + status_day + " - " + response + responseNotes;
             
             companyResponse = allStuff[position].status_response === undefined ? "" : allStuff[position].status_response;
 

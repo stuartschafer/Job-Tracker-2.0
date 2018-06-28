@@ -7,13 +7,13 @@ INSERT INTO USERS (name, email, password, settings, security_questions, createdA
 
 -- Inserting info for the Jobs table for UserId 1
 INSERT INTO JOBS (date_applied, position, company, location, id_number, link, posted_from, interest_level, notes, status, status_response, createdAt, updatedAt, UserId)
-VALUES ("04-02-2018", "President", "Schafer Enterprise", "Raleigh, NC", "111", "www.cnn.com", "LinkedIn", 5, "Well, I guess you run this.", "Moving Forward", "<br>(06/20/18) - Will Contact Me - Received an email", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
+VALUES ("04-02-2018", "President", "Schafer Enterprise", "Raleigh, NC", "111", "www.cnn.com", "LinkedIn", 5, "Well, I guess you run this.", "Moving Forward", "<br>06/20/18 - Will Contact Me - Received an email", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
 
 INSERT INTO JOBS (date_applied, position, company, location, id_number, link, posted_from, interest_level, notes, status, status_response, createdAt, updatedAt, UserId)
-VALUES ("05-02-2018", "Vice President", "Schafer Industries", "Charlotte, NC", "12345", "www.yahoo.com", "Glassdoor", 3, "You kinda run things around here.", "Moving Forward", "<br>(06/23/2018) - Phone Interview - Yes, I can show them what I can do", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
+VALUES ("05-02-2018", "Vice President", "Schafer Industries", "Charlotte, NC", "12345", "www.yahoo.com", "Glassdoor", 3, "You kinda run things around here.", "Moving Forward", "<br>06/23/2018 - Phone Interview - Yes, I can show them what I can do", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
 
 INSERT INTO JOBS (date_applied, position, company, location, id_number, link, posted_from, interest_level, notes, status, status_response, createdAt, updatedAt, UserId)
-VALUES ("05-13-2018", "The Man", "Schafer Incorporated", "Chapel Hill, NC", "85676", "https://www.youtube.com/watch?v=Uj1ykZWtPYI", "Zip Recruiter", 10, "Coolest job for the coolest kid.", "Moving Forward", "<br>(06/26/2018) - Requested Interview", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
+VALUES ("05-13-2018", "The Man", "Schafer Incorporated", "Chapel Hill, NC", "85676", "https://www.youtube.com/watch?v=Uj1ykZWtPYI", "Zip Recruiter", 10, "Coolest job for the coolest kid.", "Moving Forward", "<br>06/26/2018 - Requested Interview", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
 
 
 
@@ -57,19 +57,19 @@ VALUES ("05-19-2018", "Perfect Fit", "Perfection Inc", "Raleigh, NC", "98fdn3", 
 
 
 INSERT INTO JOBS (date_applied, position, company, location, id_number, link, posted_from, interest_level, notes, status, status_response, createdAt, updatedAt, UserId)
-VALUES ("04-23-2018", "Not good", "Scrubs R Us", "Blahtown, USA", "666", "www.yuckband.com", "Monster", 1, "Yuck, get out of here!", "Inactive", "<br>(06/27/2018) - Hiring Freeze - Ugh", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
+VALUES ("04-23-2018", "Not good", "Scrubs R Us", "Blahtown, USA", "666", "www.yuckband.com", "Monster", 1, "Yuck, get out of here!", "Inactive", "<br>06/27/2018 - Hiring Freeze - Ugh", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
 
 INSERT INTO JOBS (date_applied, position, company, location, id_number, link, posted_from, interest_level, notes, status, status_response, createdAt, updatedAt, UserId)
-VALUES ("05-10-2018", "Very Bad", "Do No Good", "Badtown, USA", "xxxxx", "www.yucky.com", "Zip Recruiter", 2, "Uhh, prob not a good idea", "Inactive", "<br>(06/22/2018) - Not the Right Fit - I don't want to work here", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
+VALUES ("05-10-2018", "Very Bad", "Do No Good", "Badtown, USA", "xxxxx", "www.yucky.com", "Zip Recruiter", 2, "Uhh, prob not a good idea", "Inactive", "<br>06/22/2018 - Not the Right Fit - I don't want to work here", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
 
 INSERT INTO JOBS (date_applied, position, company, location, id_number, link, posted_from, interest_level, notes, status, status_response, createdAt, updatedAt, UserId)
-VALUES ("04-30-2018", "Not a good job", "Clank", "Runaway, USA", "badbad", "www.gross.com", "Careerbuilder", 4, "Nah bruh", "Inactive", "<br>(06/22/2018) - They Went in a Different Direction - Well that sucks", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
+VALUES ("04-30-2018", "Not a good job", "Clank", "Runaway, USA", "badbad", "www.gross.com", "Careerbuilder", 4, "Nah bruh", "Inactive", "<br>06/22/2018 - They Went in a Different Direction - Well that sucks", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
 
 INSERT INTO JOBS (date_applied, position, company, location, id_number, link, posted_from, interest_level, notes, status, status_response, createdAt, updatedAt, UserId)
-VALUES ("05-08-2018", "Yucky", "Sir Yucks a Lot", "Oops, USA", "FU", "www.worser.com", "LinkedIn", 3, "NOPE", "Inactive", "<br>(06/27/2018) - Position Was Filled - Not by me though", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
+VALUES ("05-08-2018", "Yucky", "Sir Yucks a Lot", "Oops, USA", "FU", "www.worser.com", "LinkedIn", 3, "NOPE", "Inactive", "<br>06/27/2018 - Position Was Filled - Not by me though", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
 
 INSERT INTO JOBS (date_applied, position, company, location, id_number, link, posted_from, interest_level, notes, status, status_response, createdAt, updatedAt, UserId)
-VALUES ("04-17-2018", "Hate It", "Bummer", "Frickin-A, USA", "6X6X6X", "www.baddddd.com", "Monster", 1, "Not a chance", "Inactive", "<br>(06/27/2018) - No Longer Accepting Applications", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
+VALUES ("04-17-2018", "Hate It", "Bummer", "Frickin-A, USA", "6X6X6X", "www.baddddd.com", "Monster", 1, "Not a chance", "Inactive", "<br>06/27/2018 - No Longer Accepting Applications", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
 
 
 
