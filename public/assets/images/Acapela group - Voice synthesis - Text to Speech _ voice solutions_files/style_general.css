@@ -1,0 +1,415 @@
+/*-  RESET CSS
+----------------------------------------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+   	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*-  FONT FACE
+----------------------------------------------------------------------*/
+
+@font-face {
+    font-family: 'SansationRegular';
+    src: url('fonts/Sansation_Regular-webfont.eot');
+    src: url('fonts/Sansation_Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Sansation_Regular-webfont.woff') format('woff'),
+         url('fonts/Sansation_Regular-webfont.ttf') format('truetype'),
+         url('fonts/Sansation_Regular-webfont.svg#SansationRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SansationLight';
+    src: url('fonts/Sansation_Light-webfont.eot');
+    src: url('fonts/Sansation_Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Sansation_Light-webfont.woff') format('woff'),
+         url('fonts/Sansation_Light-webfont.ttf') format('truetype'),
+         url('fonts/Sansation_Light-webfont.svg#SansationLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SansationBold';
+    src: url('fonts/Sansation_Bold-webfont.eot');
+    src: url('fonts/Sansation_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Sansation_Bold-webfont.woff') format('woff'),
+         url('fonts/Sansation_Bold-webfont.ttf') format('truetype'),
+         url('fonts/Sansation_Bold-webfont.svg#SansationBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SansationLightLightItalic';
+    src: url('fonts/Sansation_Light_Italic-webfont.eot');
+    src: url('fonts/Sansation_Light_Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Sansation_Light_Italic-webfont.woff') format('woff'),
+         url('fonts/Sansation_Light_Italic-webfont.ttf') format('truetype'),
+         url('fonts/Sansation_Light_Italic-webfont.svg#SansationLightLightItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SansationItalic';
+    src: url('fonts/Sansation_Italic-webfont.eot');
+    src: url('fonts/Sansation_Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Sansation_Italic-webfont.woff') format('woff'),
+         url('fonts/Sansation_Italic-webfont.ttf') format('truetype'),
+         url('fonts/Sansation_Italic-webfont.svg#SansationItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SansationBoldItalic';
+    src: url('fonts/Sansation_Bold_Italic-webfont.eot');
+    src: url('fonts/Sansation_Bold_Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Sansation_Bold_Italic-webfont.woff') format('woff'),
+         url('fonts/Sansation_Bold_Italic-webfont.ttf') format('truetype'),
+         url('fonts/Sansation_Bold_Italic-webfont.svg#SansationBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*-  BASE STYLES
+----------------------------------------------------------------------*/
+
+html {
+
+}
+
+body {
+	color: #525e63;
+	font: normal 100% "Trebuchet MS", Arial, Helvetica, sans-serif;
+	-webkit-text-size-adjust: none;
+}
+.ie7 body {
+
+}
+
+
+hr{
+     height: 0;
+     margin: 0;
+     padding: 0;
+     border: 0;
+     clear: both;
+     visibility: hidden;
+ }
+ 
+ h2 {
+	margin:0 0 10px 0;
+	font: normal 1.25em 'SansationBold', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#a62d36;
+}
+p {
+	margin: 0 0 10px 0;
+	font-size:0.8125em;
+	line-height:1.3em;
+}
+
+a {
+	font-weight: bold;
+	color:#47778a;
+	text-decoration:underline;
+	font-style:italic;
+}
+a.littlelink {
+	font-size:0.6875em;
+	font-weight: bold;
+	color:#47778a;
+	text-decoration:none;
+	font-style:italic;
+}
+a:hover {
+	font-weight:bold;
+	color:#a62d36;
+	text-decoration:none;
+}
+
+a.subtitle {
+	display:block;
+	margin-top:-10px;
+	font-size:0.8em;
+	margin-bottom:10px;
+}
+
+img, embed, object, video{
+	max-width:100%;
+}
+
+em {
+	color:#a1acb0;
+}
+b {
+	font-weight:bold;
+}
+strong {
+	font-weight:bold;
+}
+
+
+
+label.screen-reader-text {
+	display:none;
+}
+
+ h2 a {
+	font: normal 1em 'SansationBold', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#a62d36;
+	text-decoration:none;
+}
+ h2 a:hover {
+	font: normal 1em 'SansationBold', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#a62d36;
+	text-decoration:underline;
+}
+ h2 div {
+	display:inline;
+}
+ h3 a {
+	font: normal 1em 'SansationBold', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#a62d36;
+	text-decoration:none;
+}
+ h3 a:hover {
+	font: normal 1em 'SansationBold', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#a62d36;
+	text-decoration:underline;
+}
+ h3 div {
+	display:inline;
+}
+
+#flags
+{
+position: absolute;
+top: 0px;
+right: 60px;
+}
+#flags a img { margin: 0; padding: 0;	}
+
+/* Listen to this page -------------------------------------------------------------------------------------------------------------------------- Listen to this page */
+
+
+#demo-html {
+	float:left;
+	width:96%;
+	margin:0 0 10px 0;
+	background: #658c9c /*url("images/background-demohtml.png") repeat-x left top*/;
+	background-image:linear-gradient(#8ba8b4, #658c9c);
+	background-image:-moz-linear-gradient(#8ba8b4, #658c9c);
+	background-image:-webkit-linear-gradient(#8ba8b4, #658c9c);
+	min-height:405px;
+	box-shadow: 1px 2px 6px #888;
+	-moz-box-shadow: 1px 2px 6px #888;
+	-webkit-box-shadow: 1px 2px 6px #888;
+	border-radius:18px;
+	-moz-border-radius:18px;
+	-webkit-border-radius:18px;
+	padding-bottom:15px;
+
+}
+#demo-container {
+margin:15px;
+}
+#demo-html h2 {
+	font: normal 0.925em 'SansationBoldItalic', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#fff;
+	border-bottom: 1px dotted #fff;
+	padding-bottom:5px;
+	/*text-shadow: 1px 1px 1px #333;
+	-moz-text-shadow: 1px 1px 1px #333;
+	-webkit-text-shadow: 1px 1px 1px #333;*/
+
+}
+
+#demo-html h2 span {
+	font-size:1.25em;
+}
+
+form#typetalkdemo {
+width:100%;
+}
+
+form#typetalkdemo legend {
+font-weight:bold;
+font-size:0.8125em;
+color:#ffffff;
+border:0;
+background: url("images/labelbg.png") no-repeat left center;
+padding-left:8px;
+line-height:24px;
+}
+
+form#typetalkdemo fieldset {
+  border-style: none;
+  border-color: #FFFFFF;
+  margin-bottom: 0px;
+}
+
+form#typetalkdemo textarea {
+width:98%;
+padding:3px;
+background-color:#c1d1d7;
+color:#47778a;
+border:0;
+/*font-weight:bold;*/
+font: normal 0.8125em "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+form#typetalkdemo input {
+background-color:#c1d1d7;
+color:#47778a;
+border:0;
+font: normal 0.8125em "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+form#typetalkdemo select {
+width:100%;
+padding:3px;
+background-color:#c1d1d7;
+font-size:0.8125em;
+color:#47778a;
+border:0;
+}
+
+form#typetalkdemo optgroup{
+  color : #47778a;
+  padding-left : 20px;
+}
+
+form#typetalkdemo option{
+  color : #47778a;
+  padding-right : 20px;
+}
+
+#cboxClose{position:absolute; bottom:0; right:0; background:url(controls.png) no-repeat -25px 0px; width:25px; height:25px; text-indent:-9999px;}
+
+/*form#typetalkdemo button{
+  color : #FFFFFF;
+  background-color: #6599B7;
+  border: 0px;
+  font-size: 15px
+}*/
+#listen{
+font: normal 0.8125em 'SansationBold', "Trebuchet MS", Arial, Helvetica, sans-serif;
+color:#47778a;
+background-color: #c1d1d7;
+border:none;
+width:100%;
+padding:3px;
+/*height:48px;*/
+margin-top:10px;
+height:40px;
+border-radius:6px;
+-moz-border-radius:6px;
+-webkit-border-radius:6px;
+-o-border-radius:6px;
+
+}
+
+#listen:hover{
+background-color: #ffffff;
+	box-shadow: 2px 2px 8px #666;
+	-moz-box-shadow: 2px 2px 8px #666;
+	-webkit-box-shadow: 2px 2px 8px #666;
+	-o-box-shadow: 2px 2px 8px #666;
+}
+
+#listenok{
+font: normal 0.8125em 'SansationBold', "Trebuchet MS", Arial, Helvetica, sans-serif;
+color:#47778a;
+background-color: #c1d1d7;
+border:none;
+width:100%;
+padding:3px;
+/*height:48px;*/
+margin-top:10px;
+height:40px;
+border-radius:6px;
+-moz-border-radius:6px;
+-webkit-border-radius:6px;
+-o-border-radius:6px;
+
+}
+
+#listenok:hover{
+background-color: #ffffff;
+	box-shadow: 2px 2px 8px #666;
+	-moz-box-shadow: 2px 2px 8px #666;
+	-webkit-box-shadow: 2px 2px 8px #666;
+	-o-box-shadow: 2px 2px 8px #666;
+}
+
+#report-demo {
+	font: normal 1em "Trebuchet MS", Arial, Helvetica, sans-serif;
+	float:right;
+	clear:both;
+       	z-index:5000;
+}
+#report-demo a {
+	font-size:0.6em;
+	font-weight:bold;
+	color:#fff;
+}
+/*form#typetalkdemo fieldset select option.allvoices {
+	display:none;
+}
+form#typetalkdemo fieldset select option.classbase {
+	display:block;
+}*/
+

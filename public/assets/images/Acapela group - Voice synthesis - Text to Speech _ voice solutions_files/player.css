@@ -1,0 +1,776 @@
+
+#voxi_core {
+  width: 17px;
+  height: 17px;
+  float: right;
+  margin-top: -10px;
+  margin-left: 2px;
+}
+
+.xvox_btn {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+#xvox_listen_img {
+    width: 20px;
+    height: 20px !important;
+    margin-top: 6px;
+    margin-left: 6px;
+    padding-left: 0px;
+}
+
+#xvox_listen_btn {
+    height: 18px !important;
+    float: left;
+    margin-top: 4px;
+    margin-right: 4px;
+}
+
+#xvox_li_btn {
+    position: absolute;
+    top: -2px;
+    right: 165px;
+}
+
+#xvox_listen_link {
+   display: block;
+    float: left;
+    width: 105px;
+    padding: 0 !important;
+}
+
+#xvox_listen_btn_img {
+    width: 61px;
+    height: 18px !important;
+    display: inline-block;
+    margin-top: 3px;
+    margin-left: 5px;
+}
+
+#xvox_listen_arrow {
+    height: 26px !important;
+    float: right;
+    width: 32px;
+}
+
+#xvox_player {
+  display: none;
+  position: absolute;
+  padding: 0;
+  width: 245px;
+  height: 26px;
+  background-image: url('https://core.xvox.fr/customer_area/imgs/Player/Generic/bg_generic.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 10000;
+  margin-left: -140px;
+}
+#phldiv {
+  display: none;
+  position: absolute;
+  padding: 0;
+  width: 143px;
+  height: 28px;
+  background-image: url('https://core.xvox.fr/customer_area/imgs/Player/Generic/bg_menu.png');
+  background-repeat: no-repeat;
+  background-size: 153px 28px;
+  background-position: -10px 0;
+  margin-left: 24px;
+}
+#voxi_player_div, #voxi_player_div_hl {
+width: 52px;
+float: left;
+height: 25px;
+}
+
+#play, #playHL, #pauseHL {
+  width: 20px;
+  height: 20px;
+  float: left;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  line-height: 0;
+  cursor: pointer;
+  margin-left: 3px;
+  margin-top: 3px;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+}
+
+#play_img, #stop_img, #engine_img, #playHL_img, #pauseHL_img, #stopHL_img {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+#vocHigh {
+  height: 28px;
+  width: 52px;
+  cursor: pointer;
+  margin-left: 1px;
+}
+
+#btn_voc_hig {
+  width: 35px;
+  height: 28px;
+  float: left;
+  display: block;
+  background-image: url('https://core.xvox.fr/customer_area/imgs/Player/Generic/bg_menu.png') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#xvox_hl_listen_img {
+    width: 21px;
+    height: 25px !important;
+    vertical-align: top;
+    margin-top: 1px;
+}
+
+#xvox_hl_arrow_img {
+  width: 25px;
+  height: 28px !important;
+  margin-top: -1px;
+}
+
+#pauseHL {
+  margin-left: 1px;
+}
+#stop, #stopHL {
+  width: 20px;
+  height: 20px;
+  float: left;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  line-height: 0;
+  cursor: pointer;
+  margin-top: 3px;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+}
+
+.img_btn_player {
+width: auto;
+height: 100%;
+}
+#voxi_actions_div {
+float: left;
+width: 237px;
+height: 25px;
+position: relative;
+margin-left: 5px;
+}
+#voxi_actions_div_hl {
+  float: left;
+  width: 137px;
+  height: 25px;
+  position: relative;
+  margin-left: 2px;
+}
+.btn_voxi_player {
+background-color: transparent !important;
+border: none !important;
+line-height: 0;
+float: left;
+padding: 0 !important;
+margin-right: 0px;
+margin-left: 1px;
+cursor: pointer;
+}
+#voxi_seekbar {
+  float: left;
+  width: 85px;
+  height: 14px;
+  background-color: black;
+  margin-top: 5.5px;
+  margin-left: 3px;
+  padding-right: 2px;
+}
+#voxi_seekbar_HL {
+    float: left;
+    width: 70px;
+    height: 14px;
+    background-color: black;
+    margin-top: 5.5px;
+    margin-left: 4px;
+    padding-right: 2px;
+}
+
+#voxi_time_play, #timePlayHL {
+  display: block;
+  width: 0%;
+  height: 86%;
+  border-radius: 2px;
+  margin-top: 1px;
+  background-color: white;
+  margin-left: 1px;
+}
+#voxi_loaded, #timePlayHLLoaded {
+  display: none;
+  width: 100%;
+  height: 90%;
+  background-image: url('https://core.xvox.fr/customer_area/imgs/Player/Generic/waitVoc.gif');
+  background-repeat: no-repeat no-repeat;
+  background-size: 105% 140%;
+  background-position: -2px -3px;
+  margin-top: 1px;
+  margin-left: 1px;
+}
+#engine {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  line-height: 0;
+  float: left;
+  width: 20px !important;
+  height: 20px !important;
+  cursor: pointer;
+  margin-top: 3px;
+  margin-left: 1px;
+  box-shadow: none;
+  background: none;
+}
+
+#play:hover, #pause:hover, #stop:hover, #engine:hover {
+  opacity: 0.6;
+}
+
+#close_player, #close_player_hl {
+    float: right;
+    background-color: transparent;
+    border: none;
+    font-size: 12px;
+    padding: 0;
+    width: 8px !important;
+    height: 13px;
+    cursor: pointer;
+    margin-top: 6px;
+    margin-right: 3px;
+    overflow: hidden;
+    box-shadow: none;
+    background: none;  
+}
+
+#close_player > img, #close_player_hl > img {
+  width: 8px;
+  height: 13px;
+  vertical-align: top !important;
+}
+
+#voxi_menu_bg {
+  font-family: 'Source Sans Pro';
+  position: absolute;
+  background-color: transparent;
+  width: 90px;
+  min-height: 36px;
+  right: 0px;
+  top: 28px;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-size: 100% 90%;
+  z-index: 1;
+}
+
+#voxi_menu {
+  display: none;
+  float: right;
+  width: 100%;
+  min-height: 36px;
+  background-image: url('https://core.xvox.fr/customer_area/imgs/Player/Generic/bg_menu.png');
+  background-size: 100% 100%;
+  font-size: 10px;
+  text-align: left;
+}
+
+#voxi_menu_ul {
+    margin: 0 !important;
+    list-style-type: none;
+    list-style-image: none;
+    padding: 0;
+}
+
+#voxi_menu_ul > li {
+    margin: 0;
+    padding: 0 !important;
+    background: none !important;
+}
+
+#voxi_menu_ul_last_child {
+  margin-top: 1px !important;
+  margin-bottom: 3px !important;
+}
+
+#voxi_highlight_pop {
+  margin-top: 2px;
+}
+
+#voxi_highlight_pop, #voxi_volume_pop, #voxi_speed_pop, #voxi_voice_pop {
+    width: 80%;
+    min-height: 15px;
+    color: #3B3B3B;
+    display: block;
+    line-height: 1.5;
+    margin-left: 6px;
+    margin-right: 0;
+    text-decoration: none;
+    padding-left: 6px;
+    font-size: 10px;
+    background: none;
+    border: none;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: left;
+    font-family: 'Source Sans Pro';
+    text-transform: none;
+    cursor: pointer;
+    word-wrap: break-word;
+    hyphens: auto;
+    text-shadow: none;
+}
+#voxi_highlight_pop:hover, #voxi_volume_pop:hover, .colorSpeed > button:hover, #voxi_speed_pop:hover, #voxi_voice_pop:hover, #voxi_highlight_pop:focus, #voxi_speed_pop:focus, #voxi_voice_pop:focus, .colorSpeed > button:focus, #voxi_volume_pop:focus, .xvox_sel_menu {
+  color: white !important;
+  background-image: url("https://core.xvox.fr/customer_area/imgs/Player/Generic/a_menu_hover.png") !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+}
+
+#voxi_highlight_ul {
+    position: absolute;
+    top: 68px;
+    left: -59px;
+    padding: 0 !important;
+    width: 150px;
+    height: 95px;
+    list-style-type: none;
+    list-style-image: none;
+    background-image: url('https://core.xvox.fr/customer_area/imgs/Player/Generic/bg_highlight_menu.png');
+    background-size: 100% 100%;
+    margin: 0 !important;
+}
+
+#voxi_highlight_ul > li, #voxi_speed_ul > li, #voxi_voice_ul > li {
+    height: 20px;
+    padding: 3px !important;
+    background: none !important;
+    padding-bottom: 0 !important;
+}
+
+#voxi_speed_ul {
+  position: absolute;
+  top: 68px;
+  padding: 0 !important;
+  width: 90px;
+  height: 48px;
+  margin: 0 !important;
+  list-style-type: none;
+  list-style-image: none;
+  background-image: url('https://core.xvox.fr/customer_area/imgs/Player/Generic/bg_highlight_menu.png');
+  background-size: 100% 100%;
+}
+
+#voxi_voice_ul {
+  position: absolute;
+  top: 68px;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 90px;
+  height: 35px;
+  list-style-type: none;
+  list-style-image: none;
+  background-image: url('https://core.xvox.fr/customer_area/imgs/Player/Generic/bg_highlight_menu.png');
+  background-size: 100% 100%;
+}
+
+.colorSpeed > button {
+  width: 80%;
+  min-height: 15px;
+  color: #3B3B3B;
+  display: block;
+  line-height: 1.5;
+  margin-left: 6px;
+  margin-right: 0;
+  text-decoration: none;
+  padding-left: 6px;
+  font-size: 10px;
+  background: none;
+  border: none;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: left;
+  font-family: 'Source Sans Pro';
+  text-transform: none;
+  cursor: pointer;
+  word-wrap: break-word;
+  hyphens: auto;
+  text-shadow: none;
+}
+
+.xvox_elem_to_voc {
+    background: none;
+    background-color: transparent;
+    border: none;
+    padding: 2px;
+    font-size: 10px;
+    font-weight: normal;
+    color: black;
+    overflow: hidden;
+    text-shadow: none;
+    font-family: Source Sans Pro !important;
+    border-radius: 3px;
+    cursor: pointer;
+    line-height: 12px !important;
+}
+
+.xvox_text_options > ul > li {
+    margin-top: 0;
+}
+
+#sentence_highlight_title, #word_highlight_title, #text_highlight_title {
+    display: block;
+    width: 30px;
+    height: 13px;
+    float: left;
+    margin-top: -2px;
+    font-size: 10px;
+    margin-left: 5px;
+    #overflow: hidden;
+    color: black;
+    text-transform: none;
+}
+
+#voxi_volume_ul {
+  position: absolute;
+  top: 68px;
+  left: 2px;
+  padding: 0 !important;
+  width: 76px;
+  height: 35px;
+  margin: 0 !important;
+  list-style-type: none;
+  list-style-image: none;
+  background-image: url('https://core.xvox.fr/customer_area/imgs/Player/Generic/bg_highlight_menu.png');
+  background-size: 100% 100%;
+}
+
+#voxi_volume_ul > li {
+    padding: 0 !important;
+}
+
+.colorSurb > ul > li > button:hover, .xvox_options_ul > li > button:hover {
+  border: 1px solid #3B3B3B;
+}
+
+#voxi_volume_managment {
+    top: 20px;
+}
+
+.vol_up {
+    background: black;
+}
+ 
+.vol_down {
+    background:#dedede !important;
+}
+
+ button[class*="voxi_lvl"] {
+    float: left;
+    display: block;
+    bottom: 0;
+    text-decoration : none;
+ }
+ button[class*="voxi_lvl"]:hover {
+    background:#999 !important;
+ }
+
+ #voxi_lvl1 {
+    width: 5px;
+    height: 8px;
+    display: block;
+    vertical-align: none;
+    margin-top: 19px;
+    padding: 0;
+    background-color: black;
+ }
+ #voxi_lvl2 {
+    width: 5px;
+    height: 12px;
+    display: block;
+    vertical-align: none;
+    margin-top: 15px;
+    padding: 0;
+    background-color: black;
+ }
+ #voxi_lvl3 {
+    width: 5px;
+    height: 16px;
+    display: block;
+    vertical-align: none;
+    margin-top: 11px;
+    padding: 0;
+    background-color: black;
+ }
+ #voxi_lvl4 {
+    width: 5px;
+    height: 20px;
+    display: block;
+    vertical-align: none;
+    margin-top: 7px;
+    padding: 0;
+    background-color: black;
+ }
+
+ .voxi_manage_lvl {
+    float: left;
+    display: block;
+    bottom: 0;
+    color: black;
+    text-decoration: none;
+    padding: 0;
+ }
+
+ #voxi_less_lvl {
+    width: 6px;
+    background: none !important;
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-top: 11px;
+    padding: 0;
+ }
+
+#voxi_less_lvl > img {
+  width: 6px;
+  height: 4px;
+}
+
+ #voxi_more_lvl {
+    width: 8px;
+    background: none !important;
+    margin-left: 5px;
+    margin-top: 10px;
+    padding: 0;
+ }
+
+ #voxi_more_lvl > img {
+    width: 8px;
+    height: 8px;
+ }
+
+ .vocalised_by_xvox {
+    display: block;
+    width: 71px;
+    position: absolute;
+    font-size: 8px;
+    padding-top: 0;
+    padding-right: 3px;
+    color: #3B3B3B;
+    left: 2px;
+    top: 24px;
+    z-index: 2;
+    text-transform: none;
+}
+
+.selectedColor {
+  border: 1px solid #3B3B3B !important;
+}
+
+.xvox_highlight_sentence_ul {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    list-style-image: none;
+    margin: 0 !important;
+}
+
+.xvox_highlight_sentence_ul > li {
+  padding: 0 !important;
+}
+
+.xvox_options_ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    height: 125%;
+    margin: 0 !important;
+}
+
+.xvox_options_ul > li {
+  width: 14px !important;
+  clear: none !important;
+  height: 13px;
+  margin: 3px;
+  float: left;
+  background: none !important;
+  padding: 0 !important;
+}
+
+.xvox_options_ul > li > button {
+  width: 115%;
+  height: 130%;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 12px;
+  color: black;
+  line-height: 13px;
+}
+
+.xvox_options_ul > li > button > img {
+  height: 95%;
+  padding: 1px;
+}
+
+.colorSurb > ul > li {
+  border-radius: 3px;
+  width: 13px !important;
+  height: 13px;
+  margin: 3px;
+  float: left;
+  list-style-type: none;
+  background: none !important;
+  clear: none !important;
+}
+
+.colorSurb > ul > li > button {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+}
+
+.colorVol > button {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 2px;
+    float: left;
+    padding: 0;
+    border: none !important;
+    background-color: black;
+}
+
+.xvox_span_visually_hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+}
+
+#xvox_tag {
+    color: #215998 !important;
+    float: right;
+    margin-left: 2px;
+    text-decoration: none;
+    background: none;
+    padding: 0;
+    font-weight: normal;
+    margin-top: 0;
+    font-size: 8px;
+    line-height: 20px;
+}
+
+#xvox_accesskey {
+  background: none;
+  width: 0;
+  height: 0;
+  padding: 0;
+}
+
+#xvox_core {
+  position: absolute;
+  display: none;
+  width: 90px;
+  height: 26px;
+  background-image: url('https://core.xvox.fr/customer_area/imgs/Player/Generic/bg_gip.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 50px;
+  right: 502px;
+  z-index: 1;
+}
+
+#voxi_error_div {
+    display: none;
+    text-align: center;
+}
+
+#voxi_error_msg {
+  display: block;
+}
+
+#surbBoldElem {
+  font-weight: bold;
+}
+
+#surbItalElem {
+  font-style: italic;
+}
+
+#surbUnderElem {
+  text-decoration: underline;
+}
+
+.xvox_313131 {
+  background-color: #313131 !important;
+}
+
+.xvox_3a6c97 {
+  background-color: #3a6c97 !important;
+}
+
+.xvox_lightyellow {
+  background-color: lightyellow !important;
+}
+
+.xvox_lightcyan {
+  background-color: lightcyan !important;
+}
+
+.xvox_darkorange {
+  background-color: darkorange !important;
+}
+
+.xvox_d73914 {
+  background-color: #d73914 !important;
+}
+
+.xvox_5cc4e1 {
+  background-color: #5cc4e1 !important;
+}
+
+.xvox_2164A5 {
+  background-color: #2164A5 !important;
+}
+
+.xvox_00294b {
+  background-color: #00294b ! important;
+}
+
+.xvox_A4CBFF {
+  background-color: #A4CBFF !important;
+}
+
+.xvox_initial {
+  background-color: initial !important;
+}

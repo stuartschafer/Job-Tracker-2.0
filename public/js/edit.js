@@ -53,9 +53,15 @@ $(function() {
 
         // This replaces all the line breaks with a <br> so it will display properly on the jobs.html page
         let editedStatusResponseView = editedStatusResponse.replace(/\n/g, "<br>");
+        editedNotes = editedNotes.replace(/\n/g, "<br>");
+
         // To put a line break in the beginning as long as there is a response
         if (editedStatusResponseView != "") {
             editedStatusResponseView = "<br>" + editedStatusResponseView;
+        }
+
+        if (editedNotes != "") {
+            editedNotes = "<br>" + editedNotes;
         }
         
         //Check to make sure these fields are not empty 
@@ -108,9 +114,12 @@ $(function() {
 
     // This will just remove the first <br> tag at the beginning
     jobBeingEdited.status_response = jobBeingEdited.status_response.replace("<br>", "");
+    jobBeingEdited.notes = jobBeingEdited.notes.replace("<br>", "");
 
     // This replaces all remaining <br> tags with a /n (line break) so it will display properly
     let status_response_view = jobBeingEdited.status_response.replace(/<br>/g, "\n");
+    let notes_view = jobBeingEdited.notes.replace(/<br>/g, "\n");
+    jobBeingEdited.notes = notes_view;
 
     // To autopopulate the date field
     let loadedTime = moment.parseZone(jobBeingEdited.date_applied).utc().format("YYYY-MM-DD");

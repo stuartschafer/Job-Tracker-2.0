@@ -44,11 +44,6 @@ $(document).ready(function() {
             }
         }
 
-        // This only shows the notes if there are any
-        if (data.notes != "") {
-            jobDetails += "<h5>Notes:   <span class='subsection'>" + data.notes + "</span>";
-        }
-
         // This only shows a link if there is one
         if (data.link != "") {
             jobDetails += "<h5>Link:   <span class='subsection'><a id='linkSection' href='" + data.link + "' target='_blank'>" + data.link + "</a></span>";
@@ -58,6 +53,11 @@ $(document).ready(function() {
             data.status = "Moving Forward";
         }
         jobDetails += "<p><h5>Status:   <strong><span class='subsection'>" + data.status + "</span></strong></p>";
+
+        // This only shows the notes if there are any
+        if (data.notes != "") {
+            jobDetails += "<h5>Notes:   <span class='subsection'>" + data.notes + "</span>";
+        }
         
         // This only shows the employer's responses if there are any
         if (data.status_response != "") {

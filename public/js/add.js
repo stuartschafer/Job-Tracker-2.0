@@ -47,7 +47,7 @@ $( document ).ready(function() {
         let newLink = $("#link").val().trim() || "";
         let newPostedFrom = $("#posted_from").val().trim();
         let newInterestLevel = $("input:radio[name=inlineRadioOptions]:checked").val() || "0";
-        let newNotes = $("#notes").val();
+        let newNotes = "<br>" + moment().format("L") + " - " + $("#notes").val();
 
         //Check to make sure these fields are not empty
         if (!newDateApplied) {
