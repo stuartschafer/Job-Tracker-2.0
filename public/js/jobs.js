@@ -56,12 +56,12 @@ $(document).ready(function() {
 
         // This only shows the notes if there are any
         if (data.notes != "") {
-            jobDetails += "<h5>Notes:   <span class='subsection'>" + data.notes + "</span>";
+            jobDetails += "<h5>NOTES:   <span class='subsection'>" + data.notes + "</span>";
         }
         
         // This only shows the employer's responses if there are any
         if (data.status_response != "") {
-            jobDetails += "<p><h5>Responses from Employer:   <span class='subsection'>" + data.status_response + "</span></p></div>";
+            jobDetails += "<p><h5>RESPONSES FROM EMPLOYER:   <span class='subsection'>" + data.status_response + "</span></p></div>";
         }
         
         return jobDetails;
