@@ -39,7 +39,8 @@ $( document ).ready(function() {
     }
     
     $("#submitNewJob").on("click", function(event) {
-        let newDateApplied = $("#date_applied").val() || moment().format("L");
+        //let newDateApplied = $("#date_applied").val() || moment().format("L");
+        let newDateApplied = $("#date_applied").val() || moment().format("MM/DD/YY");
         let newJobName = $("#job_name").val().trim();
         let newCompany = $("#company").val().trim();
         let newLocation = $("#location").val().trim();
@@ -47,7 +48,8 @@ $( document ).ready(function() {
         let newLink = $("#link").val().trim() || "";
         let newPostedFrom = $("#posted_from").val().trim();
         let newInterestLevel = $("input:radio[name=inlineRadioOptions]:checked").val() || "0";
-        let newNotes = "<br>" + moment().format("L") + " - " + $("#notes").val();
+        //let newNotes = "<br>" + moment().format("L") + " - " + $("#notes").val();
+        let newNotes = "<br>" + moment().format("MM/DD/YY") + " - " + $("#notes").val();
 
         //Check to make sure these fields are not empty
         if (!newDateApplied) {

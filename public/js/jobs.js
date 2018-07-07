@@ -84,7 +84,8 @@ $(document).ready(function() {
                 // Empty the object each time the loop is run
                 objArray = {};
 
-                objArray.date_applied = moment.parseZone(data[i].date_applied).utc().format("L");
+                //objArray.date_applied = moment.parseZone(data[i].date_applied).utc().format("L");
+                objArray.date_applied = moment.parseZone(data[i].date_applied).utc().format("MM/DD/YY");
                 objArray.position = data[i].position;
                 objArray.company = data[i].company;
                 objArray.location = data[i].location;
@@ -302,7 +303,8 @@ $(document).ready(function() {
     // When the user cliks the submit button after entering info for the employer's response
     $("#responseButton").on("click", function() {
         let status = $("input:radio[name=statusRadio]:checked").val();
-        let status_day = moment($("#dateResponded").val()).format("L") || moment().format("L");
+        //let status_day = moment($("#dateResponded").val()).format("L") || moment().format("L");
+        let status_day = moment($("#dateResponded").val()).format("MM/DD/YY") || moment().format("MM/DD/YY");
         let response = "";
         let goOn = "yes";
         $("#userError").text("");   

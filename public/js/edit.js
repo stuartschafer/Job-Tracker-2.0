@@ -39,7 +39,8 @@ $(function() {
     $("#editedJob").on("click", function(event) {
         event.preventDefault();
 
-        let editedDateApplied = $("#date_applied").val() || moment().format("L");
+        //let editedDateApplied = $("#date_applied").val() || moment().format("L");
+        let editedDateApplied = $("#date_applied").val() || moment().format("MM/DD/YY");
         let editedJobName = $("#job_name").val().trim();
         let editedCompany = $("#company").val().trim();
         let editedLocation = $("#location").val().trim();
