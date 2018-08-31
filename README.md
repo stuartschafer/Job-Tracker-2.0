@@ -13,6 +13,7 @@
 - [Thank You!](#thankyou)
 
 To start tracking your career, please click on **https://job-tracker-career.herokuapp.com/**
+To see a sample scenario, login using **test@test.com / test**
 
 <a name="intro"></a>
 ## Introduction / About Job Tracker ##
